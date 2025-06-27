@@ -5,8 +5,9 @@
 | --- | --- |
 | Discord | https://discord.gg/tc9SJMvf |
 | Trello | https://trello.com/b/eHowNWet/untitled-game-jam |
+| Itch team page | https://team-happy-cat.itch.io/ |
 | Jam website | https://godotwildjam.com/ |
-| Itch page | TBD |
+| Itch jam page | TBD |
 
 ## Team members
 | Discord name | Role |
