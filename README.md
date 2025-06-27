@@ -28,7 +28,7 @@
 | Jam end | July 20 2025 |
 
 ## Suggestions
-- Reduce anmiations by using a first-person view
+- Reduce animations by using a first-person view
 
 ## Tools
 | Usage | Tool |
