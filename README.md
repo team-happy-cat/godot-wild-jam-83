@@ -10,13 +10,13 @@
 | Itch jam page | TBD |
 
 ## Team members
-| Discord name | Role |
-| --- | --- |
-| AzuWo | Project manager |
-| bemore | Programmer |
-| Lazybones | Designer, Programmer, Audio engineer |
-| MadMoth | 3D modeler |
-| Arnoldas J | 3D modeler |
+| Discord name | Role | Timezone (GMT) |
+| --- | --- | --- |
+| AzuWo | Project manager | +2 |
+| bemore | Programmer | -4 |
+| Lazybones | Designer, Programmer, Audio engineer | +12 |
+| MadMoth | 3D modeler | -8 |
+| Arnoldas J | 3D modeler | +3 |
 
 ## Objectives
 - Release our first project together
