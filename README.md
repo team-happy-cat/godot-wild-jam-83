@@ -15,6 +15,7 @@
 | AzuWo | Project manager |
 | bemore | Programmer |
 | Lazybones | Designer, Programmer, Audio engineer |
+| MadMoth | 3D modeler |
 | Arnoldas J | 3D modeler |
 
 ## Objectives
@@ -35,3 +36,5 @@
 | Usage | Tool |
 | --- | --- |
 | Game engine | Godot |
+| 3D Modeling | Blender |
+| Texturing | Substance 3D Painter |
