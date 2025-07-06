@@ -7,7 +7,7 @@
 | Trello | https://trello.com/b/eHowNWet/untitled-game-jam |
 | Itch team page | https://team-happy-cat.itch.io/ |
 | Jam website | https://godotwildjam.com/ |
-| Itch jam page | TBD |
+| Itch jam page | https://itch.io/jam/godot-wild-jam-83 |
 
 ## Team members
 | Discord name | Role | Timezone (GMT) |
