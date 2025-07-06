@@ -16,6 +16,7 @@
 | bemore | Programmer | -4 |
 | Lazybones | Designer, Programmer, Audio engineer | +12 |
 | MadMoth | 3D modeler | -8 |
+| arujano | UI Designer | -3 |
 | Arnoldas J | 3D modeler | +3 |
 
 ## Objectives
