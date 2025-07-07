@@ -39,3 +39,8 @@
 | Game engine | Godot |
 | 3D Modeling | Blender |
 | Texturing | Substance 3D Painter |
+
+## Ressource Credits
+| Asset | Author | Source |
+| --- | --- | --- |
+|  |  |  |
