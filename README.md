@@ -40,7 +40,7 @@
 | 3D Modeling | Blender |
 | Texturing | Substance 3D Painter |
 
-## Ressource Credits
+## Resource Credits
 | Asset | Author | Source |
 | --- | --- | --- |
 |  |  |  |
