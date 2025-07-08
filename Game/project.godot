@@ -229,11 +229,6 @@ common/physics_interpolation=true
 
 "Editor Toolbox/enabled"=true
 
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
-
 [shader_globals]
 
 time_scale={
