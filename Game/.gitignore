@@ -1,0 +1,14 @@
+.godot*
+.Screenshot*
+.Temp*
+.vs*
+
+*.csproj
+*.csproj.*
+*.sln
+*.tmp
+*.old
+*.old*
+
+addons/dialogue_manager
+addons/phantom_camera
