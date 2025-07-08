@@ -9,6 +9,3 @@
 *.tmp
 *.old
 *.old*
-
-addons/dialogue_manager
-addons/phantom_camera
