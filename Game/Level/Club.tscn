@@ -164,7 +164,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.879231, 0.52087, 17.4554)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 5)
 
 [node name="TinyLight25" parent="Lights" instance=ExtResource("4_a0hih")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8372308, 3.1223261, 21.504402)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83723, 3.12233, 21.5044)
 
 [node name="TinyLight2" parent="Lights" instance=ExtResource("4_a0hih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, 5)

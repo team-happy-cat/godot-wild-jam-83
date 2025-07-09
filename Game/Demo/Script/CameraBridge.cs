@@ -1,5 +1,6 @@
 using Godot;
 using DialogueManagerRuntime;
+using PhantomCamera;
 
 namespace Game
 {
@@ -9,6 +10,8 @@ namespace Game
     /// </summary>
     public partial class CameraBridge : Node
     {
+        [Export] public bool FirstPersonMode = false;
+
         public bool HasDefaultYaw => Mathf.IsEqualApprox(Yaw, 0.0f);
         public readonly float KeyboardTurnRate = 0.045f;
         public float Pitch = 0.0f;
@@ -45,6 +48,9 @@ namespace Game
 
         public Vector3 CameraPosition => MainCamera.Position;
 
+        float xSensitivity = 0.06f;
+        float ySensitivity = 0.04f;
+
         public override void _Ready()
         {
             levelManager = GetNode<LevelManager>("/root/LevelManager");
@@ -61,9 +67,16 @@ namespace Game
             nodePhantomCamera3D.Set("spring_length", defaultSpringLength);
             nodePhantomCamera3D.Call("set_fov", 65);
 
-            Vector3 initialRotation = (Vector3)nodePhantomCamera3D.Call("get_third_person_rotation_degrees");
-            Pitch = Mathf.DegToRad(initialRotation.X);
-            Yaw = Mathf.DegToRad(initialRotation.Y);
+            if (!FirstPersonMode)
+            {
+                Pitch = 0.0f;
+                Yaw = MainCamera.Rotation.Y;
+            }
+            else
+            {
+                Pitch = pitchDefault;
+                Yaw = 0.0f;
+            }
 
             CharacterHub.Spawned += OnPlayerSpawned;
             CharacterHub.Destroyed += OnPlayerDestroyed;
@@ -71,10 +84,13 @@ namespace Game
             DialogueManager.DialogueEnded += OnDialogueEnded;
             Mouse.SetCaptured("CharacterController");
             GD.PrintRich($"[CameraBridge] [color={ColorsHex.MediumSeaGreen}]Ready[/color]");
-        }
 
-        float xSensitivity = 0.06f;
-        float ySensitivity = 0.04f;
+            if (FirstPersonMode)
+            {
+                xSensitivity = 0.002f;
+                ySensitivity = 0.0015f;
+            }
+        }
 
         public override void _Process(double delta)
         {
@@ -82,12 +98,18 @@ namespace Game
             Yaw -= mouseTwistInput * xSensitivity;
             Yaw = Mathf.Wrap(Yaw, 0, Mathf.Tau);
 
-            // Pitch
             Pitch += mousePitchInput * ySensitivity;
             Pitch = Mathf.Clamp(Pitch, pitchMin, pitchMax);
 
-            Vector3 newRotation = new(Mathf.RadToDeg(Pitch), Mathf.RadToDeg(-Yaw), 0);
-            nodePhantomCamera3D.Call("set_third_person_rotation_degrees", newRotation);
+            if (FirstPersonMode)
+            {
+                nodePhantomCamera3D.RotationDegrees = new(Mathf.RadToDeg(Pitch), Mathf.RadToDeg(-Yaw), 0);
+            }
+            else
+            {
+                Vector3 newRotation = new(Mathf.RadToDeg(Pitch), Mathf.RadToDeg(-Yaw), 0);
+                nodePhantomCamera3D.Call("set_third_person_rotation_degrees", newRotation);
+            }
 
             mouseTwistInput = 0.0f;
             mousePitchInput = 0.0f;
@@ -114,11 +136,8 @@ namespace Game
 
             if (inputEvent is InputEventMouseMotion eventMouseMotion)
             {
-                //if (Input.IsActionPressed("left_click") || Input.IsActionPressed("right_click"))
-                //{
-                mouseTwistInput = -eventMouseMotion.Relative.X * xSensitivity;
-                mousePitchInput = -eventMouseMotion.Relative.Y * ySensitivity;
-                //}
+                mouseTwistInput = -eventMouseMotion.Relative.X;
+                mousePitchInput = -eventMouseMotion.Relative.Y;
             }
         }
 

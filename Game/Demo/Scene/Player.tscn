@@ -28,9 +28,9 @@ material = SubResource("StandardMaterial3D_kp17n")
 radius = 0.2
 height = 1.8
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_e1pvd"]
-
 [sub_resource type="BoxMesh" id="BoxMesh_fx7e7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e1pvd"]
 
 [node name="CharacterHub" type="Node" node_paths=PackedStringArray("CameraAngles", "LookAt")]
 script = ExtResource("1_p8ic4")
@@ -190,9 +190,14 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_uy03j")
 
-[node name="Mesh" type="MeshInstance3D" parent="Player"]
+[node name="Body" type="MeshInstance3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 mesh = SubResource("CapsuleMesh_jw1de")
+
+[node name="Hat" type="MeshInstance3D" parent="Player/Body"]
+transform = Transform3D(0.248288, 0, 0, 0, 0.0248288, 0, 0, 0, 0.347603, 0, 0.76485, 0.154044)
+mesh = SubResource("BoxMesh_fx7e7")
+skeleton = NodePath("../..")
 
 [node name="Proximity" type="Area3D" parent="Player"]
 collision_layer = 8
@@ -237,7 +242,3 @@ offset_left = 512.0
 offset_top = 480.0
 offset_right = 640.0
 offset_bottom = 507.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(0.248288, 0, 0, 0, 0.0248288, 0, 0, 0, 0.347603, 0, 1.66485, 0.154044)
-mesh = SubResource("BoxMesh_fx7e7")

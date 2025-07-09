@@ -9,28 +9,18 @@
 [sub_resource type="Resource" id="Resource_4uua2"]
 script = ExtResource("4_21qu8")
 duration = 0.0
-transition = 0
-ease = 2
 
 [sub_resource type="Resource" id="Resource_hcqet"]
 script = ExtResource("5_nhrbx")
-keep_aspect = 1
-cull_mask = 1048575
-h_offset = 0.0
-v_offset = 0.0
-projection = 0
 fov = 65.0
-size = 1.0
-frustum_offset = Vector2(0, 0)
-near = 0.05
-far = 4000.0
 metadata/_custom_type_script = "uid://b8hhnqsugykly"
 
 [node name="CameraBridge" type="Node"]
 script = ExtResource("1_obuy3")
+FirstPersonMode = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 fov = 65.0
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
@@ -49,18 +39,18 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 2.5)
+[node name="PhantomCamera3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+top_level = true
 script = ExtResource("3_kg3ka")
 priority = 3
-follow_mode = 6
-follow_target = NodePath("../TemporaryFollowTarget")
+follow_mode = 2
 tween_resource = SubResource("Resource_4uua2")
 tween_on_load = false
 camera_3d_resource = SubResource("Resource_hcqet")
 follow_offset = Vector3(0, 1.4, 0)
-follow_distance = 2.5
-spring_length = 2.5
+follow_distance = 0.0
+spring_length = 0.0
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="TemporaryFollowTarget" type="Node3D" parent="."]
