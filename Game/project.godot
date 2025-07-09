@@ -62,6 +62,7 @@ folder_colors={
 "res://Demo/Script/": "pink",
 "res://Demo/Texture/": "yellow",
 "res://Demo/VFX/": "orange",
+"res://LZB Temp/": "red",
 "res://Level/": "green",
 "res://Todo/": "red"
 }

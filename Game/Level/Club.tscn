@@ -1,5 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://b6ptyi2ppebtg"]
+[gd_scene load_steps=32 format=3 uid="uid://b6ptyi2ppebtg"]
 
+[ext_resource type="PackedScene" uid="uid://dmo76c5ypv4ba" path="res://LZB Temp/music_player.tscn" id="1_3orid"]
 [ext_resource type="PackedScene" uid="uid://brxkfam33msli" path="res://Demo/Scene/Prop/counter.tscn" id="1_vjgbc"]
 [ext_resource type="PackedScene" uid="uid://go7yxh0hi4jc" path="res://Demo/Scene/Prop/sofa.tscn" id="2_w0m5x"]
 [ext_resource type="PackedScene" uid="uid://dcry1jr17pov6" path="res://Demo/Scene/Actor/npc.tscn" id="3_swy2a"]
@@ -76,6 +77,8 @@ albedo_color = Color(0.314316, 0.314316, 0.314316, 1)
 [sub_resource type="SphereShape3D" id="SphereShape3D_3orid"]
 
 [node name="Club" type="Node3D"]
+
+[node name="Music Player" parent="." instance=ExtResource("1_3orid")]
 
 [node name="Actor" type="Node3D" parent="."]
 
