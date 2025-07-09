@@ -117,8 +117,7 @@ ActorID = "Rupert"
 StartTitle = "club"
 DialogueResource = ExtResource("5_7ro6o")
 
-[node name="CameraAngles" parent="Actor/Manager" node_paths=PackedStringArray("Angles") instance=ExtResource("4_ddhng")]
-Angles = []
+[node name="CameraAngles" parent="Actor/Manager" instance=ExtResource("4_ddhng")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Actor/Manager"]
 transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 0.787217, 0)
