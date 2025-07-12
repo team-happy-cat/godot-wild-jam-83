@@ -21,12 +21,16 @@ namespace Game
         private float gravity;
         private float speed;
         private CameraBridge cameraBridge;
+        
+        private Vector3 lastGroundedVelocity = Vector3.Zero;
+        private bool groundedLastFrame = false;
 
         public override void _Ready()
         {
             gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
             speed = BaseSpeed;
             cameraBridge = GetNode<CameraBridge>("/root/CameraBridge");
+            Mouse.SetCaptured("CharacterController");
         }
 
         public override void _PhysicsProcess(double delta)
@@ -41,57 +45,55 @@ namespace Game
                 Velocity = new Vector3(Velocity.X, JumpVelocity, Velocity.Z);
             }
 
-            speed = Input.IsActionPressed(Sprint) ? SprintSpeed : BaseSpeed;
-
-            Vector2 inputDir = Input.GetVector(Left, Right, Forward, Backward);
-
-            Vector3 cameraForward = cameraBridge.MainCamera.GlobalTransform.Basis.Z;
-            Vector3 cameraRight = cameraBridge.MainCamera.GlobalTransform.Basis.X;
-
-            cameraForward.Y = 0;
-            cameraRight.Y = 0;
-            cameraForward = cameraForward.Normalized();
-            cameraRight = cameraRight.Normalized();
-
-            Vector3 direction = (cameraForward * inputDir.Y + cameraRight * inputDir.X).Normalized();
-
-            if (direction != Vector3.Zero)
+            if (IsOnFloor())
             {
-                Velocity = new Vector3(direction.X * speed, Velocity.Y, direction.Z * speed);
+                if (!groundedLastFrame)
+                {
+                    lastGroundedVelocity = Vector3.Zero;
+                }
+                groundedLastFrame = true;
 
-                float targetAngle = Mathf.Atan2(direction.X, direction.Z);
-                Rotation = new Vector3(0, targetAngle, 0);
+                speed = Input.IsActionPressed(Sprint) ? SprintSpeed : BaseSpeed;
+
+                Vector2 inputDir = Input.GetVector(Left, Right, Forward, Backward);
+                Vector3 cameraForward = cameraBridge.MainCamera.GlobalTransform.Basis.Z;
+                Vector3 cameraRight = cameraBridge.MainCamera.GlobalTransform.Basis.X;
+
+                cameraForward.Y = 0;
+                cameraRight.Y = 0;
+                cameraForward = cameraForward.Normalized();
+                cameraRight = cameraRight.Normalized();
+
+                Vector3 direction = (cameraForward * inputDir.Y + cameraRight * inputDir.X).Normalized();
+
+                if (direction != Vector3.Zero)
+                {
+                    Velocity = new Vector3(direction.X * speed, Velocity.Y, direction.Z * speed);
+
+                    float targetAngle = Mathf.Atan2(direction.X, direction.Z);
+                    Rotation = new Vector3(0, targetAngle, 0);
+                }
+                else
+                {
+                    Velocity = new Vector3(
+                        Mathf.MoveToward(Velocity.X, 0, speed),
+                        Velocity.Y,
+                        Mathf.MoveToward(Velocity.Z, 0, speed)
+                    );
+                }
             }
             else
             {
-                Velocity = new Vector3(
-                    Mathf.MoveToward(Velocity.X, 0, speed),
-                    Velocity.Y,
-                    Mathf.MoveToward(Velocity.Z, 0, speed)
-                );
+                if (groundedLastFrame)
+                {
+                    lastGroundedVelocity = new Vector3(Velocity.X, 0, Velocity.Z);
+                }
+                groundedLastFrame = false;
+
+                Velocity = new Vector3(lastGroundedVelocity.X, Velocity.Y, lastGroundedVelocity.Z);
             }
 
             MoveAndSlide();
-        }
-
-        public override void _Process(double delta)
-        {
-            if (Input.IsActionJustPressed(Pause))
-            {
-                ToggleMouseCapture();
-            }
-        }
-
-        private void ToggleMouseCapture()
-        {
-            if (Mouse.IsCursorCaptured())
-            {
-                Mouse.SetVisible("CharacterController");
-            }
-            else
-            {
-                Mouse.SetCaptured("CharacterController");
-            }
         }
 
     }
