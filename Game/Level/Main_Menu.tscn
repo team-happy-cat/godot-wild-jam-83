@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cql8bvyn0kd8k" path="res://Demo/Script/MainMenu.cs" id="1_k2w80"]
 [ext_resource type="Texture2D" uid="uid://cmh820w0oh4c3" path="res://Demo/UI/Images/title.png" id="2_qfmni"]
-[ext_resource type="Script" uid="uid://cmdqjc0tkmms6" path="res://Demo/UI/Components/SquishyButton.cs" id="3_gh453"]
+[ext_resource type="Texture2D" uid="uid://cd6t8tehkpdiw" path="res://Demo/UI/Images/team_logo.svg" id="3_gh453"]
 
 [node name="Main_Menu" type="Node3D"]
 
-[node name="Main_Menu" type="Control" parent="." node_paths=PackedStringArray("StartButton", "LevelButton1", "LevelButton2", "LevelButton3")]
+[node name="Main_Menu" type="Control" parent="." node_paths=PackedStringArray("StartButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,35 +14,45 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k2w80")
-StartButton = NodePath("Panel/StartGame")
-LevelButton1 = NodePath("DebugLevelSelector/LevelButton1")
-LevelButton2 = NodePath("DebugLevelSelector/LevelButton2")
-LevelButton3 = NodePath("DebugLevelSelector/LevelButton3")
+StartButton = NodePath("StartGame")
 
-[node name="Panel" type="Panel" parent="Main_Menu"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 320.0
-offset_right = 256.0
-offset_bottom = 576.0
+[node name="Title" type="TextureRect" parent="Main_Menu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -512.0
+offset_top = 64.0
+offset_right = 512.0
+offset_bottom = 320.0
+grow_horizontal = 2
+texture = ExtResource("2_qfmni")
+expand_mode = 1
 
-[node name="StartGame" type="Button" parent="Main_Menu/Panel"]
+[node name="TeamLogo" type="TextureRect" parent="Main_Menu"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -128.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_gh453")
+expand_mode = 1
+
+[node name="StartGame" type="Button" parent="Main_Menu"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 48.0
-offset_top = 24.0
-offset_right = 144.0
-offset_bottom = 55.0
+offset_left = 112.0
+offset_top = 344.0
+offset_right = 208.0
+offset_bottom = 375.0
 text = "Start Game"
-
-[node name="Label" type="Label" parent="Main_Menu"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 40.0
-offset_right = 148.0
-offset_bottom = 63.0
-theme_override_font_sizes/font_size = 42
-text = "Frog Game"
 
 [node name="DebugLevelSelector" type="HBoxContainer" parent="Main_Menu"]
 layout_mode = 1
