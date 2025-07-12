@@ -8,22 +8,26 @@ namespace Game
     /// </summary>
     public partial class SFX2D : Node
     {
-        public Dictionary<string, AudioStreamPlayer> SoundGroups = new();
+        private static SFX2D _instance;
+        
+        public static Dictionary<string, AudioStreamPlayer> SoundGroups = new();
 
         public override void _Ready()
         {
+            _instance = this;
+            
             foreach (Node child in GetChildren())
             {
-                if (child is AudioStreamPlayer)
+                if (child is AudioStreamPlayer player)
                 {
-                    SoundGroups[child.Name] = child as AudioStreamPlayer;
+                    SoundGroups[player.Name] = player;
                 }
             }
 
             GD.PrintRich($"[SFX2D] [color={ColorsHex.MediumSeaGreen}]Ready[/color] with {SoundGroups.Count} sound groups");
         }
 
-        public void PlaySound(string soundGroupName)
+        public static void PlaySound(string soundGroupName)
         {
             if (SoundGroups.TryGetValue(soundGroupName, out AudioStreamPlayer player))
             {

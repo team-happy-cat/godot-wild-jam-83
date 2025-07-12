@@ -26,6 +26,7 @@ PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_came
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Preferences="*res://addons/StandardAssets/Script/Preferences/Preferences.cs"
 SFX="*res://Demo/Scene/Autoload/SFX.tscn"
+SFX2D="*res://Demo/Scene/Autoload/SFX2D.tscn"
 PC="*res://Demo/Script/PC.cs"
 NPC="*res://Demo/Script/NPC.cs"
 CameraBridge="*res://Demo/Scene/Autoload/CameraBridge.tscn"
