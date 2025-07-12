@@ -84,7 +84,7 @@ Spawnpoint=""
 
 [gui]
 
-theme/custom_font="uid://ibqn3exx4l8h"
+theme/custom="uid://ibqn3exx4l8h"
 
 [input]
 
