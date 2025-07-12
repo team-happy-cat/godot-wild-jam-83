@@ -3,7 +3,8 @@ using Godot;
 
 public partial class MainMenu : Control
 {
-	[Export] public Button StartButton;
+	[Export] public Button PlayButton;
+	[Export] public Button QuitButton;
 	
 	// Debug - to be removed for release
 	[Export] public Button LevelButton1;
@@ -14,7 +15,8 @@ public partial class MainMenu : Control
 
 	public override void _Ready()
 	{
-		StartButton.Pressed += OnStartButtonPressed;
+		PlayButton.Pressed += StartGame;
+		QuitButton.Pressed += () => GetTree().Quit();
 		
 		// Debug - to be removed for release
 		LevelButton1.Pressed += OnLevelButton1Pressed;
@@ -24,7 +26,7 @@ public partial class MainMenu : Control
 		levelManager = GetNode<LevelManager>("/root/LevelManager");
 	}
 
-	private void OnStartButtonPressed()
+	private void StartGame()
 	{
 		levelManager.ChangeLevel("Level_01", "SP_Level_01");
 	}

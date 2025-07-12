@@ -1,3 +1,28 @@
-[gd_resource type="Theme" format=3 uid="uid://ibqn3exx4l8h"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://ibqn3exx4l8h"]
+
+[ext_resource type="FontFile" uid="uid://junpc6d2mv84" path="res://Demo/UI/Fonts/Go2OldWestern-Bold.ttf" id="1_vo2f0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vo2f0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rkuhb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q7r5v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0v6oj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1np5"]
 
 [resource]
+WesternButton/base_type = &"Button"
+WesternButton/colors/font_color = Color(1, 1, 1, 1)
+WesternButton/colors/font_disabled_color = Color(1, 1, 1, 1)
+WesternButton/colors/font_focus_color = Color(1, 1, 1, 1)
+WesternButton/colors/font_hover_color = Color(1, 1, 1, 1)
+WesternButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+WesternButton/font_sizes/font_size = 192
+WesternButton/fonts/font = ExtResource("1_vo2f0")
+WesternButton/styles/disabled = SubResource("StyleBoxEmpty_vo2f0")
+WesternButton/styles/focus = SubResource("StyleBoxEmpty_rkuhb")
+WesternButton/styles/hover = SubResource("StyleBoxEmpty_q7r5v")
+WesternButton/styles/normal = SubResource("StyleBoxEmpty_0v6oj")
+WesternButton/styles/pressed = SubResource("StyleBoxEmpty_f1np5")

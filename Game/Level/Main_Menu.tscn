@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://celj1wfd0mq20"]
+[gd_scene load_steps=9 format=3 uid="uid://celj1wfd0mq20"]
 
 [ext_resource type="Script" uid="uid://cql8bvyn0kd8k" path="res://Demo/Script/MainMenu.cs" id="1_k2w80"]
+[ext_resource type="Texture2D" uid="uid://dn3h0x7un2jsv" path="res://Demo/UI/Images/menu.png" id="2_nnjs3"]
 [ext_resource type="Texture2D" uid="uid://cmh820w0oh4c3" path="res://Demo/UI/Images/title.png" id="2_qfmni"]
 [ext_resource type="Texture2D" uid="uid://cd6t8tehkpdiw" path="res://Demo/UI/Images/team_logo.svg" id="3_gh453"]
+[ext_resource type="Texture2D" uid="uid://d6ahuxhvhluk" path="res://Demo/UI/Images/sign.png" id="3_peqny"]
+[ext_resource type="Script" uid="uid://cmdqjc0tkmms6" path="res://Demo/UI/Components/SquishyButton.cs" id="4_0dyxq"]
+[ext_resource type="Script" uid="uid://ckbkgyfqndr1f" path="res://Demo/UI/Components/Bopper.cs" id="4_yl1rr"]
+[ext_resource type="AudioStream" uid="uid://m4e3jqwxt665" path="res://Assets/Audio/godot wild jam 83 menu.wav" id="7_rd8ke"]
 
 [node name="Main_Menu" type="Node3D"]
 
-[node name="Main_Menu" type="Control" parent="." node_paths=PackedStringArray("StartButton")]
+[node name="Main_Menu" type="Control" parent="." node_paths=PackedStringArray("PlayButton", "QuitButton", "LevelButton1", "LevelButton2", "LevelButton3")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +19,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k2w80")
-StartButton = NodePath("StartGame")
+PlayButton = NodePath("Sign/PlayButton")
+QuitButton = NodePath("Sign/QuitButton")
+LevelButton1 = NodePath("DebugLevelSelector/LevelButton1")
+LevelButton2 = NodePath("DebugLevelSelector/LevelButton2")
+LevelButton3 = NodePath("DebugLevelSelector/LevelButton3")
+
+[node name="Background" type="TextureRect" parent="Main_Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nnjs3")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="Title" type="TextureRect" parent="Main_Menu"]
 layout_mode = 1
@@ -28,6 +48,62 @@ offset_bottom = 320.0
 grow_horizontal = 2
 texture = ExtResource("2_qfmni")
 expand_mode = 1
+script = ExtResource("4_yl1rr")
+
+[node name="Sign" type="TextureRect" parent="Main_Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -224.0
+offset_right = 512.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_peqny")
+
+[node name="PlayButton" type="Button" parent="Main_Menu/Sign"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.5
+offset_top = -224.5
+offset_right = 148.5
+offset_bottom = -31.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 3
+mouse_default_cursor_shape = 2
+theme_type_variation = &"WesternButton"
+text = "Play"
+script = ExtResource("4_0dyxq")
+metadata/_custom_type_script = "uid://cmdqjc0tkmms6"
+
+[node name="QuitButton" type="Button" parent="Main_Menu/Sign"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.5
+offset_top = 47.5
+offset_right = 148.5
+offset_bottom = 240.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 3
+mouse_default_cursor_shape = 2
+theme_type_variation = &"WesternButton"
+text = "Quit"
+script = ExtResource("4_0dyxq")
+metadata/_custom_type_script = "uid://cmdqjc0tkmms6"
 
 [node name="TeamLogo" type="TextureRect" parent="Main_Menu"]
 layout_mode = 1
@@ -44,15 +120,6 @@ grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("3_gh453")
 expand_mode = 1
-
-[node name="StartGame" type="Button" parent="Main_Menu"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 112.0
-offset_top = 344.0
-offset_right = 208.0
-offset_bottom = 375.0
-text = "Start Game"
 
 [node name="DebugLevelSelector" type="HBoxContainer" parent="Main_Menu"]
 layout_mode = 1
@@ -79,3 +146,8 @@ text = "Level 2"
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 text = "Level 3"
+
+[node name="MenuTheme" type="AudioStreamPlayer" parent="Main_Menu"]
+stream = ExtResource("7_rd8ke")
+volume_db = -8.0
+autoplay = true
