@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dg0pomn3l8tsk"]
+
+[ext_resource type="PackedScene" uid="uid://c7i1ufn52g7to" path="res://Level/Level_03.tscn" id="1_qoj50"]
+[ext_resource type="Script" uid="uid://c56kgadb3fuil" path="res://addons/StandardAssets/Script/Level/LevelInfo.cs" id="2_t6wwh"]
+
+[resource]
+script = ExtResource("2_t6wwh")
+LevelName = "Level_03"
+LevelID = "Level_03"
+Level = ExtResource("1_qoj50")

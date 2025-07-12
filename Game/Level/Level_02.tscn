@@ -1,0 +1,171 @@
+[gd_scene load_steps=6 format=3 uid="uid://c03xokj410jth"]
+
+[ext_resource type="PackedScene" uid="uid://8tl1ghmq6i1w" path="res://addons/StandardAssets/Scene/Ocean.tscn" id="1_8oik3"]
+[ext_resource type="PackedScene" uid="uid://4pssytbq3qo1" path="res://Demo/Scene/Character/PF_Chicken_Friend_Random_Walker.tscn" id="2_cx2d6"]
+[ext_resource type="PackedScene" uid="uid://p6gywi2c54n2" path="res://decor.tscn" id="3_hmuci"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7ms4"]
+albedo_color = Color(0.35, 0.27124998, 0.1925, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0fsu"]
+albedo_color = Color(0.41824, 0.64, 0.23679999, 1)
+
+[node name="Level_02" type="Node3D"]
+
+[node name="SP_Level_02" type="Marker3D" parent="." groups=["Spawnpoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.44091, 1, -19.504025)
+
+[node name="Ocean-n1" parent="." instance=ExtResource("1_8oik3")]
+
+[node name="Layout" type="Node3D" parent="."]
+
+[node name="InvisibleWalls" type="CSGCombiner3D" parent="Layout"]
+visible = false
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Layout/InvisibleWalls"]
+size = Vector3(200, 50, 200)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Layout/InvisibleWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+operation = 2
+size = Vector3(90, 10, 61)
+
+[node name="SurrondingDirt" type="CSGCombiner3D" parent="Layout"]
+material_override = SubResource("StandardMaterial3D_t7ms4")
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Layout/SurrondingDirt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.5, 0)
+size = Vector3(200, 27, 200)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Layout/SurrondingDirt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+operation = 2
+size = Vector3(90, 1.5, 61)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Layout/SurrondingDirt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 0)
+operation = 2
+size = Vector3(40, 3, 61)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Layout/SurrondingDirt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 1, 4.5)
+operation = 2
+size = Vector3(54, 3, 52)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Layout/SurrondingDirt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 1, 15.25)
+operation = 2
+size = Vector3(49, 3, 30.5)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Layout/SurrondingDirt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 1, -17)
+operation = 2
+size = Vector3(32, 3, 27)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Layout/SurrondingDirt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 1, -27.5)
+operation = 2
+size = Vector3(46, 3, 6)
+
+[node name="LilyPads" type="CSGCombiner3D" parent="Layout"]
+material_override = SubResource("StandardMaterial3D_o0fsu")
+use_collision = true
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Layout/LilyPads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.355804, -0.5, -25.937153)
+radius = 1.5
+height = 1.0
+
+[node name="CSGCylinder3D19" type="CSGCylinder3D" parent="Layout/LilyPads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.224216, -0.5, -11.442357)
+radius = 1.5
+height = 1.0
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Layout/LilyPads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.380566, -0.5, -19.378649)
+radius = 2.1777344
+height = 1.0
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Layout/LilyPads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.693382, -0.5, -23.718668)
+radius = 1.7426758
+height = 1.0
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Layout/LilyPads"]
+transform = Transform3D(1, 0, 0, 0, 0.9998406, 0.01785377, 0, -0.01785377, 0.9998406, -32.19306, -0.49482232, 17.482193)
+radius = 1.7426758
+height = 1.0
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Layout/LilyPads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.120644, -0.5, 20.864407)
+radius = 2.1777344
+height = 1.0
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Layout/LilyPads"]
+transform = Transform3D(1, 0, 0, 0, 0.9998406, 0.01785377, 0, -0.01785377, 0.9998406, 1.9310703, -0.5051777, -15.178117)
+radius = 2.1831055
+height = 1.0
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Layout/LilyPads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42432785, -0.5, 22.434063)
+radius = 1.5
+height = 1.0
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Layout/LilyPads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.17947, -0.5, 23.400604)
+radius = 2.322754
+height = 1.0
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Layout/LilyPads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.629421, -0.5, 23.739086)
+radius = 1.7426758
+height = 1.0
+
+[node name="CSGCylinder3D13" type="CSGCylinder3D" parent="Layout/LilyPads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8083, -0.5, 9.330497)
+radius = 2.322754
+height = 1.0
+
+[node name="CSGCylinder3D14" type="CSGCylinder3D" parent="Layout/LilyPads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.87469, -0.5, 4.3867083)
+radius = 1.8876953
+height = 1.0
+
+[node name="CSGCylinder3D15" type="CSGCylinder3D" parent="Layout/LilyPads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.431736, -0.5, -14.598555)
+radius = 2.4677734
+height = 1.0
+
+[node name="CSGCylinder3D16" type="CSGCylinder3D" parent="Layout/LilyPads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.975033, -0.5, -27.601236)
+radius = 1.590332
+height = 1.0
+
+[node name="CSGCylinder3D18" type="CSGCylinder3D" parent="Layout/LilyPads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.257404, -0.5, -19.180534)
+radius = 2.4677734
+height = 1.0
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="PF_Chicken_Friend_Random_Walker-n1" parent="Enemies" instance=ExtResource("2_cx2d6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.424963, -0.19598326, -2.8670878)
+
+[node name="PF_Chicken_Friend_Random_Walker-n2" parent="Enemies" instance=ExtResource("2_cx2d6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17177276, -0.19598314, -9.33516)
+
+[node name="PF_Chicken_Friend_Random_Walker-n3" parent="Enemies" instance=ExtResource("2_cx2d6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.522922, -0.19598326, 5.9301558)
+
+[node name="PF_Chicken_Friend_Random_Walker-n4" parent="Enemies" instance=ExtResource("2_cx2d6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5224648, -0.1959823, -1.7291695)
+
+[node name="PF_Chicken_Friend_Random_Walker-n5" parent="Enemies" instance=ExtResource("2_cx2d6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.002134, -0.19598326, -4.2638273)
+
+[node name="PF_Chicken_Friend_Random_Walker-n6" parent="Enemies" instance=ExtResource("2_cx2d6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.948841, -0.19598326, 3.6018162)
+
+[node name="Decor" parent="." instance=ExtResource("3_hmuci")]
