@@ -1,20 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://djkg1y2m6p644"]
+[gd_scene load_steps=9 format=3 uid="uid://djkg1y2m6p644"]
 
 [ext_resource type="PackedScene" uid="uid://8tl1ghmq6i1w" path="res://addons/StandardAssets/Scene/Ocean.tscn" id="1_0amv2"]
 [ext_resource type="PackedScene" uid="uid://4pssytbq3qo1" path="res://Demo/Scene/Character/PF_Chicken_Friend_Random_Walker.tscn" id="2_o0fsu"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4vr7d"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_0amv2"]
-sky_material = SubResource("ProceduralSkyMaterial_4vr7d")
-
-[sub_resource type="Environment" id="Environment_o0fsu"]
-background_mode = 2
-sky = SubResource("Sky_0amv2")
-tonemap_mode = 2
-glow_enabled = true
+[ext_resource type="PackedScene" uid="uid://p6gywi2c54n2" path="res://decor.tscn" id="3_t7ms4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4vr7d"]
 
@@ -31,14 +19,6 @@ vertices = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.
 polygons = [PackedInt32Array(0, 2, 4), PackedInt32Array(2, 6, 4), PackedInt32Array(1, 3, 5), PackedInt32Array(3, 7, 5), PackedInt32Array(8, 10, 12), PackedInt32Array(10, 14, 12), PackedInt32Array(9, 11, 13), PackedInt32Array(11, 15, 13), PackedInt32Array(16, 18, 20), PackedInt32Array(18, 22, 20), PackedInt32Array(17, 19, 21), PackedInt32Array(19, 23, 21)]
 
 [node name="Level_01" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_o0fsu")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
-directional_shadow_max_distance = 1.0
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 2, 0, 0, 0, 5, 0, -1, 0)
@@ -155,3 +135,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.002134, -0.19598326, -4.263
 
 [node name="PF_Chicken_Friend_Random_Walker-n6" parent="." instance=ExtResource("2_o0fsu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.948841, -0.19598326, 3.6018162)
+
+[node name="Decor" parent="." instance=ExtResource("3_t7ms4")]
