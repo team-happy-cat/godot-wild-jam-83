@@ -82,6 +82,10 @@ import/blender/enabled=false
 MainCamera=""
 Spawnpoint=""
 
+[gui]
+
+theme/custom_font="uid://ibqn3exx4l8h"
+
 [input]
 
 camera_up={
