@@ -5,7 +5,7 @@ using Godot.Collections;
 public partial class EatAndLungeAbility : Node
 {
     [Export(PropertyHint.None, "suffix:m")] public float RayLength = 30.0f;
-    [Export] public BellyDisplay bellyDisplay;
+    [Export] public BellyDisplay BellyDisplay;
     [Export] public CharacterController characterController;
 
     private bool bellyIsFull = false;
@@ -30,7 +30,7 @@ public partial class EatAndLungeAbility : Node
                 Vector3 launchDirection = -cameraBridge.MainCamera.GlobalTransform.Basis.Z;
                 float launchForce = 20.0f;
                 characterController.Velocity += launchDirection * launchForce;
-                bellyDisplay.Empty();
+                BellyDisplay.Empty();
                 bellyIsFull = false;
             }
             else
@@ -52,7 +52,7 @@ public partial class EatAndLungeAbility : Node
                     if (hitBody != null && hitBody is RandomWalkerChicken randomWalkerChicken)
                     {
                         randomWalkerChicken.Licked();
-                        bellyDisplay.Full();
+                        BellyDisplay.Full();
                         bellyIsFull = true;
                         return;
                     }

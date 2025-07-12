@@ -1,15 +1,24 @@
 using Godot;
 
-public partial class BellyDisplay : Node
+public partial class BellyDisplay : TextureRect
 {
+    [Export] public TextureRect FoodTexture;
+
+    public override void _Ready()
+    {
+        FoodTexture.Visible = false;
+    }
+
     public void Full()
     {
-        GD.Print("[BellyDisplay] Todo: Set to full");
+        FoodTexture.Visible = true;
+        GD.Print("[BellyDisplay] Set to full");
     }
 
     public void Empty()
     {
-        GD.Print("[BellyDisplay] Todo: Set to empty");
+        FoodTexture.Visible = false;
+        GD.Print("[BellyDisplay] Set to empty");
     }
 
 }

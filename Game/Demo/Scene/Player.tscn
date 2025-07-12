@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cc1m2a1obsyn4"]
+[gd_scene load_steps=22 format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" uid="uid://hdsvtpxi0o2d" path="res://Demo/Script/CharacterHub.cs" id="1_p8ic4"]
 [ext_resource type="Script" uid="uid://coaqcn4leqqcd" path="res://Demo/Script/CharacterController.cs" id="2_m3i4r"]
@@ -7,19 +7,27 @@
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_fx7e7"]
 [ext_resource type="Script" uid="uid://cv6lmtmyabh3g" path="res://addons/StandardAssets/Script/Dialogue/CameraAngles.cs" id="4_oabsn"]
 [ext_resource type="PackedScene" uid="uid://voiq5jjerjsw" path="res://Demo/Scene/Compass.tscn" id="6_cljnr"]
+[ext_resource type="Texture2D" uid="uid://bf457c8stsvon" path="res://Demo/UI/hud_frog_full_mask.png" id="6_ep717"]
+[ext_resource type="Texture2D" uid="uid://cy7w0oprhhtr5" path="res://icon.png" id="6_uapvr"]
+[ext_resource type="Script" uid="uid://7a645geywot" path="res://Demo/Script/EatAndLungeAbility.cs" id="8_lc2fc"]
 [ext_resource type="Texture2D" uid="uid://ctd1q7pv6jive" path="res://Demo/UI/hud_frog_full.png" id="8_oabsn"]
+[ext_resource type="Texture2D" uid="uid://dm1m7v6qfev7u" path="res://addons/StandardAssets/Texture/Particle/T_FX_Star_04.png" id="9_qrurj"]
 [ext_resource type="Shader" uid="uid://th1fak6vqjt7" path="res://Demo/UI/FrogHUD.gdshader" id="9_wknp7"]
-[ext_resource type="Texture2D" uid="uid://bf457c8stsvon" path="res://Demo/UI/hud_frog_full_mask.png" id="10_lc2fc"]
+[ext_resource type="Script" uid="uid://kchvvvrw4k33" path="res://Demo/Script/BellyDisplay.cs" id="10_lc2fc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lc2fc"]
+shader = ExtResource("9_wknp7")
+shader_parameter/mask = ExtResource("6_ep717")
 
 [sub_resource type="Resource" id="Resource_ujvtr"]
 script = ExtResource("4_fx7e7")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uy03j"]
-radius = 0.25
-height = 1.8
+radius = 0.2
+height = 0.4
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
-albedo_color = Color(0.909804, 0.596078, 0, 1)
+albedo_color = Color(0, 0.59607846, 0, 1)
 clearcoat_enabled = true
 clearcoat_roughness = 0.2
 
@@ -32,20 +40,67 @@ height = 1.8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_e1pvd"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lc2fc"]
-shader = ExtResource("9_wknp7")
-shader_parameter/mask = ExtResource("10_lc2fc")
-
 [node name="CharacterHub" type="Node" node_paths=PackedStringArray("CameraAngles", "LookAt")]
 script = ExtResource("1_p8ic4")
 CameraAngles = NodePath("Player/CameraAngles")
 LookAt = NodePath("Player")
 
+[node name="Compass" parent="." instance=ExtResource("6_cljnr")]
+
+[node name="EatAndLungeAbility" type="Node" parent="." node_paths=PackedStringArray("BellyDisplay", "characterController")]
+script = ExtResource("8_lc2fc")
+BellyDisplay = NodePath("../HUD/Stomach")
+characterController = NodePath("../Player")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Stomach" type="TextureRect" parent="HUD" node_paths=PackedStringArray("FoodTexture")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -415.0
+offset_top = -416.0
+offset_right = -31.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("8_oabsn")
+expand_mode = 1
+script = ExtResource("10_lc2fc")
+FoodTexture = NodePath("Food")
+
+[node name="Food" type="TextureRect" parent="HUD/Stomach"]
+material = SubResource("ShaderMaterial_lc2fc")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_uapvr")
+expand_mode = 1
+
+[node name="Reticle" type="TextureRect" parent="HUD"]
+self_modulate = Color(0.5568628, 1, 1, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_qrurj")
+expand_mode = 1
+
 [node name="Player" type="CharacterBody3D" parent="."]
 collision_layer = 4
 script = ExtResource("2_m3i4r")
-
-[node name="Compass" parent="Player" instance=ExtResource("6_cljnr")]
 
 [node name="CameraAngles" type="Node3D" parent="Player" node_paths=PackedStringArray("Angles")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -191,15 +246,15 @@ tween_resource = SubResource("Resource_ujvtr")
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="Collision" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 shape = SubResource("CapsuleShape3D_uy03j")
 
 [node name="Body" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+transform = Transform3D(1, 0, 0, 0, 0.19999999, 0, 0, 0, 1, 0, 0.16233641, 0)
 mesh = SubResource("CapsuleMesh_jw1de")
 
 [node name="Hat" type="MeshInstance3D" parent="Player/Body"]
-transform = Transform3D(0.248288, 0, 0, 0, 0.0248288, 0, 0, 0, 0.347603, 0, 0.76485, 0.154044)
+transform = Transform3D(0.248288, 0, 0, 0, 0.0248288, 0, 0, 0, 0.347603, 0, 0.76485014, 0.06068784)
 mesh = SubResource("BoxMesh_fx7e7")
 skeleton = NodePath("../..")
 
@@ -246,30 +301,3 @@ offset_left = 512.0
 offset_top = 480.0
 offset_right = 640.0
 offset_bottom = 507.0
-
-[node name="HUD" type="CanvasLayer" parent="Player"]
-
-[node name="Stomach" type="TextureRect" parent="Player/HUD"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -416.0
-offset_top = -416.0
-offset_right = -32.0
-offset_bottom = -32.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("8_oabsn")
-expand_mode = 1
-
-[node name="Food" type="TextureRect" parent="Player/HUD/Stomach"]
-material = SubResource("ShaderMaterial_lc2fc")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1

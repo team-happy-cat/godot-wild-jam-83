@@ -20,7 +20,7 @@ script = ExtResource("1_obuy3")
 FirstPersonMode = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 fov = 65.0
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
@@ -40,7 +40,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="PhantomCamera3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 top_level = true
 script = ExtResource("3_kg3ka")
 priority = 3
@@ -48,7 +48,7 @@ follow_mode = 2
 tween_resource = SubResource("Resource_4uua2")
 tween_on_load = false
 camera_3d_resource = SubResource("Resource_hcqet")
-follow_offset = Vector3(0, 1.4, 0)
+follow_offset = Vector3(0, 0.6, 0)
 follow_distance = 0.0
 spring_length = 0.0
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
