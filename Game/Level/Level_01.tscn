@@ -42,6 +42,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0amv2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_4vr7d")
 
-[node name="SP_Level_01" type="Marker3D" parent="."]
+[node name="SP_Level_01" type="Marker3D" parent="." groups=["Spawnpoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Ocean-n1" parent="." instance=ExtResource("1_0amv2")]

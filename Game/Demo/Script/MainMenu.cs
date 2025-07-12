@@ -15,7 +15,7 @@ public partial class MainMenu : Control
 
     private void OnStartButtonPressed()
     {
-        levelManager.ChangeLevel("Level_01");
+        levelManager.ChangeLevel("Level_01", "SP_Level_01");
     }
 
 } 
