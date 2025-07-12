@@ -1,10 +1,10 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://c77b57d84r0rb"]
 
-[ext_resource type="PackedScene" uid="uid://djkg1y2m6p644" path="res://Level/Level_01.tscn" id="1_td2is"]
+[ext_resource type="PackedScene" uid="uid://c03xokj410jth" path="res://Level/Level_02.tscn" id="1_td2is"]
 [ext_resource type="Script" uid="uid://c56kgadb3fuil" path="res://addons/StandardAssets/Script/Level/LevelInfo.cs" id="2_56bd5"]
 
 [resource]
 script = ExtResource("2_56bd5")
-LevelName = "Level_01"
-LevelID = "Level_01"
+LevelName = "Level_02"
+LevelID = "Level_02"
 Level = ExtResource("1_td2is")
