@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Game
 {
+    [GlobalClass]
     public partial class SoundGroup3D : Node
     {
         [Export] public int MaxVoices = 3;

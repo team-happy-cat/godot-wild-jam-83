@@ -18,6 +18,7 @@ script = ExtResource("1_nyur7")
 
 [node name="bubbles" type="Node" parent="Effect"]
 script = ExtResource("2_urscx")
+metadata/_custom_type_script = "uid://d1jbqgge5bxn1"
 
 [node name="bubbles_01" type="AudioStreamPlayer3D" parent="Effect/bubbles"]
 stream = ExtResource("3_xk762")
@@ -36,6 +37,7 @@ stream = ExtResource("7_ge528")
 
 [node name="velcro" type="Node" parent="Effect"]
 script = ExtResource("2_urscx")
+metadata/_custom_type_script = "uid://d1jbqgge5bxn1"
 
 [node name="velcro_01" type="AudioStreamPlayer3D" parent="Effect/velcro"]
 stream = ExtResource("8_fjdtm")
