@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://celj1wfd0mq20"]
+
+[ext_resource type="Script" uid="uid://cql8bvyn0kd8k" path="res://Demo/Script/MainMenu.cs" id="1_k2w80"]
+
+[node name="Main_Menu" type="Node3D"]
+
+[node name="Main_Menu" type="Control" parent="." node_paths=PackedStringArray("StartButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k2w80")
+StartButton = NodePath("Panel/StartGame")
+
+[node name="Panel" type="Panel" parent="Main_Menu"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 320.0
+offset_right = 256.0
+offset_bottom = 576.0
+
+[node name="StartGame" type="Button" parent="Main_Menu/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 48.0
+offset_top = 24.0
+offset_right = 144.0
+offset_bottom = 55.0
+text = "Start Game"
+
+[node name="Label" type="Label" parent="Main_Menu"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 40.0
+offset_right = 148.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 42
+text = "Frog Game"

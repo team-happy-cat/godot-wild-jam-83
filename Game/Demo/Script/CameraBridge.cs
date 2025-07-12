@@ -82,7 +82,7 @@ namespace Game
             CharacterHub.Destroyed += OnPlayerDestroyed;
             levelManager.BeginUnloadingLevel += OnBeginUnloadingLevel;
             DialogueManager.DialogueEnded += OnDialogueEnded;
-            Mouse.SetCaptured("CharacterController");
+            //Mouse.SetCaptured("CharacterController");
             GD.PrintRich($"[CameraBridge] [color={ColorsHex.MediumSeaGreen}]Ready[/color]");
 
             if (FirstPersonMode)

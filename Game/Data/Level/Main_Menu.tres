@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c1i5levcuypwa"]
+
+[ext_resource type="PackedScene" uid="uid://celj1wfd0mq20" path="res://Level/Main_Menu.tscn" id="1_154t5"]
+[ext_resource type="Script" uid="uid://c56kgadb3fuil" path="res://addons/StandardAssets/Script/Level/LevelInfo.cs" id="2_8h8ng"]
+
+[resource]
+script = ExtResource("2_8h8ng")
+AllowMenu = false
+PlayerExistsInLevel = false
+Environment = ""
+LevelName = "Main_Menu"
+LevelID = "Main_Menu"
+Level = ExtResource("1_154t5")

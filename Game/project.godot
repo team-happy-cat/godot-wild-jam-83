@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Godot Wild Jam 83"
-run/main_scene="uid://b6ptyi2ppebtg"
+run/main_scene="uid://celj1wfd0mq20"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 config/windows_native_icon="res://godot_icon.ico"

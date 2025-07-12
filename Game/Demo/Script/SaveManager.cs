@@ -7,8 +7,8 @@ using Godot;
 /// </summary>
 public partial class SaveManager : Node
 {
-    public string SpawnpointName = "SP_Club";
-    public string CurrentLevel = "Club";
+    public string SpawnpointName = "";
+    public string CurrentLevel = "Main_Menu";
 
     private LevelManager levelManager;
 

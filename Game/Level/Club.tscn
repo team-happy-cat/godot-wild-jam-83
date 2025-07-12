@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b6ptyi2ppebtg"]
+[gd_scene load_steps=35 format=3 uid="uid://b6ptyi2ppebtg"]
 
 [ext_resource type="PackedScene" uid="uid://dmo76c5ypv4ba" path="res://LZB Temp/music_player.tscn" id="1_3orid"]
 [ext_resource type="PackedScene" uid="uid://brxkfam33msli" path="res://Demo/Scene/Prop/counter.tscn" id="1_vjgbc"]
@@ -12,6 +12,9 @@
 [ext_resource type="Script" uid="uid://oj1nsgwhibi7" path="res://addons/StandardAssets/Script/Compass/PointOfInterest.cs" id="6_7iwxl"]
 [ext_resource type="Texture2D" uid="uid://cy7w0oprhhtr5" path="res://icon.png" id="7_3orid"]
 [ext_resource type="Script" uid="uid://05dqolsno4nw" path="res://addons/StandardAssets/Script/Audio/PlaySound.cs" id="11_3orid"]
+[ext_resource type="PackedScene" uid="uid://dfqvqgyyvil2a" path="res://Demo/Scene/Stone/PF_RockA-convcol.glb" id="13_g4ibf"]
+[ext_resource type="PackedScene" uid="uid://cqpf62ohtp32r" path="res://Demo/Scene/Stone/PF_RockB-convcol.glb" id="14_gbyrt"]
+[ext_resource type="PackedScene" uid="uid://cd4co8prpn0oi" path="res://Demo/Scene/Stone/PF_RockD-convcol.glb" id="15_wkepm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_04gbw"]
 albedo_color = Color(1, 0.64, 0.64, 1)
@@ -243,7 +246,7 @@ transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 4.7, 3
 environment = SubResource("Environment_uqsom")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Settings"]
-transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(0.4242394, -0.9055498, 0.00072106626, 0, 0.0007962742, 0.9999995, -0.9055499, -0.42423916, 0.00033781084, 1.023356, 8.855146, 16.269264)
 light_energy = 0.1
 shadow_enabled = true
 
@@ -464,6 +467,21 @@ _Details = "Interact to play sound"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SFX_Tests/bubbles"]
 shape = SubResource("SphereShape3D_3orid")
+
+[node name="PF_RockA-convcol" parent="." instance=ExtResource("13_g4ibf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3116865, 0.77508575, 14.406869)
+
+[node name="PF_RockB-convcol" parent="." instance=ExtResource("14_gbyrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9385524, 0.3707465, 12.646784)
+
+[node name="PF_RockB-convcol2" parent="." instance=ExtResource("14_gbyrt")]
+transform = Transform3D(1.7580113, 0, 0, 0, 1.7580113, 0, 0, 0, 1.7580113, -4.0958586, 0.3707465, 10.976367)
+
+[node name="PF_RockB-convcol3" parent="." instance=ExtResource("14_gbyrt")]
+transform = Transform3D(3.2450047, 0, 0, 0, 3.2450047, 0, 0, 0, 3.2450047, -7.0858583, 0.3707465, 13.317258)
+
+[node name="PF_RockD-convcol" parent="." instance=ExtResource("15_wkepm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.896868, 2.5633159, 14.97081)
 
 [editable path="Actor/Assistant"]
 [editable path="Actor/Bartender"]
