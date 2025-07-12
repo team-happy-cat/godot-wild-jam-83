@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf457c8stsvon"
-path="res://.godot/imported/hud_frog_full_mask.png-c4caa0d0c9a7234475766ae3dbbf2457.ctex"
+uid="uid://cmh820w0oh4c3"
+path="res://.godot/imported/title.png-910f29fa82328f099d4429d8d22a5402.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Demo/UI/hud_frog_full_mask.png"
-dest_files=["res://.godot/imported/hud_frog_full_mask.png-c4caa0d0c9a7234475766ae3dbbf2457.ctex"]
+source_file="res://Demo/UI/Images/title.png"
+dest_files=["res://.godot/imported/title.png-910f29fa82328f099d4429d8d22a5402.ctex"]
 
 [params]
 

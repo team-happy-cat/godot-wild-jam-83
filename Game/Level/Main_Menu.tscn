@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://celj1wfd0mq20"]
+[gd_scene load_steps=4 format=3 uid="uid://celj1wfd0mq20"]
 
 [ext_resource type="Script" uid="uid://cql8bvyn0kd8k" path="res://Demo/Script/MainMenu.cs" id="1_k2w80"]
+[ext_resource type="Texture2D" uid="uid://cmh820w0oh4c3" path="res://Demo/UI/Images/title.png" id="2_qfmni"]
+[ext_resource type="Script" uid="uid://cmdqjc0tkmms6" path="res://Demo/UI/Components/SquishyButton.cs" id="3_gh453"]
 
 [node name="Main_Menu" type="Node3D"]
 
