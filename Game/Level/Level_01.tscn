@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://djkg1y2m6p644"]
+[gd_scene load_steps=8 format=3 uid="uid://djkg1y2m6p644"]
+
+[ext_resource type="PackedScene" uid="uid://8tl1ghmq6i1w" path="res://addons/StandardAssets/Scene/Ocean.tscn" id="1_0amv2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4vr7d"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -31,7 +33,7 @@ shadow_enabled = true
 directional_shadow_max_distance = 1.0
 
 [node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(25, 0, 0, 0, 2, 0, 0, 0, 25, 0, -1, 0)
+transform = Transform3D(20, 0, 0, 0, 2, 0, 0, 0, 20, 0, -1, 0)
 mesh = SubResource("BoxMesh_4vr7d")
 surface_material_override/0 = SubResource("StandardMaterial3D_0amv2")
 
@@ -41,3 +43,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0amv2")
 shape = SubResource("BoxShape3D_4vr7d")
 
 [node name="SP_Level_01" type="Marker3D" parent="."]
+
+[node name="Ocean-n1" parent="." instance=ExtResource("1_0amv2")]
