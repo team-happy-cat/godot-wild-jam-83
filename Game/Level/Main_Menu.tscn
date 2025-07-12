@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://celj1wfd0mq20"]
+[gd_scene load_steps=3 format=3 uid="uid://celj1wfd0mq20"]
 
 [ext_resource type="Script" uid="uid://cql8bvyn0kd8k" path="res://Demo/Script/MainMenu.cs" id="1_k2w80"]
-[ext_resource type="Texture2D" uid="uid://cmh820w0oh4c3" path="res://Demo/UI/Images/title.png" id="2_qfmni"]
-[ext_resource type="Script" uid="uid://cmdqjc0tkmms6" path="res://Demo/UI/Components/SquishyButton.cs" id="3_gh453"]
+[ext_resource type="AudioStream" uid="uid://m4e3jqwxt665" path="res://Assets/Audio/godot wild jam 83 menu.wav" id="2_qfmni"]
 
 [node name="Main_Menu" type="Node3D"]
 
@@ -69,3 +68,8 @@ text = "Level 2"
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 text = "Level 3"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qfmni")
+volume_db = -8.0
+autoplay = true
