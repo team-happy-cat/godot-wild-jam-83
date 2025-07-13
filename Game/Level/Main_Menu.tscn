@@ -171,8 +171,8 @@ focus_mode = 3
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_gh453")
 script = ExtResource("8_8exua")
-soundHover = "Hover"
-soundClick = "Select"
+soundHover = "Squeak"
+soundClick = "Meow"
 metadata/_custom_type_script = "uid://cr05f2g78pvlt"
 
 [node name="MenuTheme" type="AudioStreamPlayer" parent="Main_Menu"]

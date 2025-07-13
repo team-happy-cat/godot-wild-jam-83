@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpkjv6b1e07ap"]
+[gd_scene load_steps=10 format=3 uid="uid://cpkjv6b1e07ap"]
 
 [ext_resource type="Script" uid="uid://bgqtuv4wokfqb" path="res://addons/StandardAssets/Script/Audio/SFX2D.cs" id="1_1odp3"]
 [ext_resource type="Script" uid="uid://bn1obed5dlkv6" path="res://addons/StandardAssets/Script/Audio/SoundGroup2D.cs" id="2_ve4wk"]
 [ext_resource type="AudioStream" uid="uid://b45ogwi1cou3b" path="res://Demo/UI/Audio/bong_001.ogg" id="3_fssal"]
 [ext_resource type="AudioStream" uid="uid://da0ovbhs4ln7u" path="res://Demo/UI/Audio/select.mp3" id="4_fssal"]
+[ext_resource type="AudioStream" uid="uid://2tlvfguv8rru" path="res://Demo/UI/Audio/squeak_001.mp3" id="5_foioq"]
+[ext_resource type="AudioStream" uid="uid://bb8gr8jp7mftr" path="res://Demo/UI/Audio/squeak_002.mp3" id="6_cifoq"]
+[ext_resource type="AudioStream" uid="uid://cav2ax3ftcxx5" path="res://Demo/UI/Audio/squeak_003.mp3" id="7_6835m"]
+[ext_resource type="AudioStream" uid="uid://phig5i6qeira" path="res://Demo/UI/Audio/squeak_004.mp3" id="8_nkfwd"]
+[ext_resource type="AudioStream" uid="uid://uc53r46vwf0m" path="res://Demo/UI/Audio/meow.mp3" id="9_cifoq"]
 
 [node name="SFX2D" type="Node"]
 script = ExtResource("1_1odp3")
@@ -23,3 +28,26 @@ metadata/_custom_type_script = "uid://bn1obed5dlkv6"
 
 [node name="Select" type="AudioStreamPlayer" parent="UI/Select"]
 stream = ExtResource("4_fssal")
+
+[node name="Squeak" type="Node" parent="UI"]
+script = ExtResource("2_ve4wk")
+metadata/_custom_type_script = "uid://bn1obed5dlkv6"
+
+[node name="Squeak001" type="AudioStreamPlayer" parent="UI/Squeak"]
+stream = ExtResource("5_foioq")
+
+[node name="Squeak002" type="AudioStreamPlayer" parent="UI/Squeak"]
+stream = ExtResource("6_cifoq")
+
+[node name="Squeak003" type="AudioStreamPlayer" parent="UI/Squeak"]
+stream = ExtResource("7_6835m")
+
+[node name="Squeak004" type="AudioStreamPlayer" parent="UI/Squeak"]
+stream = ExtResource("8_nkfwd")
+
+[node name="Meow" type="Node" parent="UI"]
+script = ExtResource("2_ve4wk")
+metadata/_custom_type_script = "uid://bn1obed5dlkv6"
+
+[node name="Meow" type="AudioStreamPlayer" parent="UI/Meow"]
+stream = ExtResource("9_cifoq")
