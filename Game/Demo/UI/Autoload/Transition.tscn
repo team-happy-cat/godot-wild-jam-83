@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://pqsxpa3hsunb"]
+[gd_scene load_steps=5 format=3 uid="uid://pqsxpa3hsunb"]
 
 [ext_resource type="Texture2D" uid="uid://b4y8ejh1d0wbu" path="res://Demo/UI/Images/transition.png" id="1_3m505"]
 [ext_resource type="Script" uid="uid://c24buv8cgxtvw" path="res://Demo/UI/Autoload/Transition.cs" id="1_uh4t5"]
+[ext_resource type="SpriteFrames" uid="uid://brbibm6k5ao60" path="res://Demo/UI/Animations/transition_frog.tres" id="3_6t5n6"]
 [ext_resource type="AudioStream" uid="uid://cvq38xx86p5wp" path="res://Demo/UI/Audio/transition.mp3" id="3_tnuc3"]
 
 [node name="Transition" type="CanvasLayer" node_paths=PackedStringArray("InputBlocker", "RightEdge", "Image", "Trail", "Audio")]
@@ -40,6 +41,11 @@ offset_top = -796.0
 offset_bottom = 796.0
 grow_vertical = 2
 texture = ExtResource("1_3m505")
+
+[node name="Frog" type="AnimatedSprite2D" parent="Image"]
+position = Vector2(2080, 824)
+sprite_frames = ExtResource("3_6t5n6")
+autoplay = "default"
 
 [node name="Trail" type="ColorRect" parent="Image"]
 layout_mode = 1
