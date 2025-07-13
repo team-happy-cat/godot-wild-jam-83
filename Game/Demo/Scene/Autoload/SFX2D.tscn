@@ -1,6 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpkjv6b1e07ap"]
+[gd_scene load_steps=5 format=3 uid="uid://cpkjv6b1e07ap"]
 
 [ext_resource type="Script" uid="uid://bgqtuv4wokfqb" path="res://addons/StandardAssets/Script/Audio/SFX2D.cs" id="1_1odp3"]
+[ext_resource type="Script" uid="uid://bn1obed5dlkv6" path="res://addons/StandardAssets/Script/Audio/SoundGroup2D.cs" id="2_ve4wk"]
+[ext_resource type="AudioStream" uid="uid://b45ogwi1cou3b" path="res://Demo/UI/Audio/bong_001.ogg" id="3_fssal"]
+[ext_resource type="AudioStream" uid="uid://da0ovbhs4ln7u" path="res://Demo/UI/Audio/select.mp3" id="4_fssal"]
 
 [node name="SFX2D" type="Node"]
 script = ExtResource("1_1odp3")
+
+[node name="UI" type="Node" parent="."]
+
+[node name="Hover" type="Node" parent="UI"]
+script = ExtResource("2_ve4wk")
+metadata/_custom_type_script = "uid://bn1obed5dlkv6"
+
+[node name="Hover" type="AudioStreamPlayer" parent="UI/Hover"]
+stream = ExtResource("3_fssal")
+
+[node name="Select" type="Node" parent="UI"]
+script = ExtResource("2_ve4wk")
+metadata/_custom_type_script = "uid://bn1obed5dlkv6"
+
+[node name="Select" type="AudioStreamPlayer" parent="UI/Select"]
+stream = ExtResource("4_fssal")

@@ -85,6 +85,8 @@ mouse_default_cursor_shape = 2
 theme_type_variation = &"WesternButton"
 text = "Play"
 script = ExtResource("4_0dyxq")
+soundHover = "Hover"
+soundClick = "Select"
 metadata/_custom_type_script = "uid://cmdqjc0tkmms6"
 
 [node name="QuitButton" type="Button" parent="Main_Menu/Sign"]
@@ -105,6 +107,7 @@ mouse_default_cursor_shape = 2
 theme_type_variation = &"WesternButton"
 text = "Quit"
 script = ExtResource("4_0dyxq")
+soundHover = "Hover"
 metadata/_custom_type_script = "uid://cmdqjc0tkmms6"
 
 [node name="DebugLevelSelector" type="HBoxContainer" parent="Main_Menu"]
@@ -150,6 +153,8 @@ focus_mode = 3
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_gh453")
 script = ExtResource("8_8exua")
+soundHover = "Hover"
+soundClick = "Select"
 metadata/_custom_type_script = "uid://cr05f2g78pvlt"
 
 [node name="MenuTheme" type="AudioStreamPlayer" parent="Main_Menu"]
