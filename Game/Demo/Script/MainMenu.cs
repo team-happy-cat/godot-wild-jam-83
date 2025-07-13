@@ -3,8 +3,8 @@ using Godot;
 
 public partial class MainMenu : Control
 {
-	[Export] public Button PlayButton;
-	[Export] public Button QuitButton;
+	[Export] public TextureButton PlayButton;
+	[Export] public TextureButton QuitButton;
 	[Export] public TextureButton TeamButton;
 	
 	// Debug - to be removed for release

@@ -1,14 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://celj1wfd0mq20"]
+[gd_scene load_steps=12 format=3 uid="uid://celj1wfd0mq20"]
 
 [ext_resource type="Script" uid="uid://cql8bvyn0kd8k" path="res://Demo/Script/MainMenu.cs" id="1_k2w80"]
 [ext_resource type="Texture2D" uid="uid://dn3h0x7un2jsv" path="res://Demo/UI/Images/menu.png" id="2_nnjs3"]
 [ext_resource type="Texture2D" uid="uid://cmh820w0oh4c3" path="res://Demo/UI/Images/title.png" id="2_qfmni"]
 [ext_resource type="Texture2D" uid="uid://cd6t8tehkpdiw" path="res://Demo/UI/Images/team_logo.svg" id="3_gh453"]
 [ext_resource type="Texture2D" uid="uid://d6ahuxhvhluk" path="res://Demo/UI/Images/sign.png" id="3_peqny"]
-[ext_resource type="Script" uid="uid://cmdqjc0tkmms6" path="res://Demo/UI/Components/SquishyButton.cs" id="4_0dyxq"]
 [ext_resource type="Script" uid="uid://ckbkgyfqndr1f" path="res://Demo/UI/Components/Bopper.cs" id="4_yl1rr"]
+[ext_resource type="Texture2D" uid="uid://ckixjqny77wod" path="res://Demo/UI/Images/sign_post.png" id="6_v66sp"]
 [ext_resource type="AudioStream" uid="uid://m4e3jqwxt665" path="res://Assets/Audio/godot wild jam 83 menu.wav" id="7_rd8ke"]
+[ext_resource type="Texture2D" uid="uid://bay0vfel1y8nb" path="res://Demo/UI/Images/sign_play.png" id="7_urqk6"]
 [ext_resource type="Script" uid="uid://cr05f2g78pvlt" path="res://Demo/UI/Components/SquishyTextureButton.cs" id="8_8exua"]
+[ext_resource type="Texture2D" uid="uid://4twrmcdlggwa" path="res://Demo/UI/Images/sign_quit.png" id="9_04a0p"]
 
 [node name="Main_Menu" type="Node3D"]
 
@@ -67,48 +69,64 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_peqny")
 
-[node name="PlayButton" type="Button" parent="Main_Menu/Sign"]
+[node name="Post" type="TextureRect" parent="Main_Menu/Sign"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -33.0
+offset_right = 128.0
+offset_bottom = 607.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_v66sp")
+
+[node name="PlayButton" type="TextureButton" parent="Main_Menu/Sign"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -148.5
-offset_top = -224.5
-offset_right = 148.5
-offset_bottom = -31.5
+offset_left = -235.0
+offset_top = -244.0
+offset_right = 235.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 3
 mouse_default_cursor_shape = 2
 theme_type_variation = &"WesternButton"
-text = "Play"
-script = ExtResource("4_0dyxq")
+texture_normal = ExtResource("7_urqk6")
+script = ExtResource("8_8exua")
 soundHover = "Hover"
 soundClick = "Select"
-metadata/_custom_type_script = "uid://cmdqjc0tkmms6"
+metadata/_custom_type_script = "uid://cr05f2g78pvlt"
 
-[node name="QuitButton" type="Button" parent="Main_Menu/Sign"]
+[node name="QuitButton" type="TextureButton" parent="Main_Menu/Sign"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -148.5
-offset_top = 47.5
-offset_right = 148.5
-offset_bottom = 240.5
+offset_left = -169.0
+offset_top = 54.5
+offset_right = 169.0
+offset_bottom = 233.5
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 3
 mouse_default_cursor_shape = 2
 theme_type_variation = &"WesternButton"
-text = "Quit"
-script = ExtResource("4_0dyxq")
+texture_normal = ExtResource("9_04a0p")
+script = ExtResource("8_8exua")
 soundHover = "Hover"
-metadata/_custom_type_script = "uid://cmdqjc0tkmms6"
+metadata/_custom_type_script = "uid://cr05f2g78pvlt"
 
 [node name="DebugLevelSelector" type="HBoxContainer" parent="Main_Menu"]
 layout_mode = 1
