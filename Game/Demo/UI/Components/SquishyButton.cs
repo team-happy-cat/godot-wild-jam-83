@@ -7,9 +7,11 @@ public partial class SquishyButton : Button
 {
     private const double AnimationTime = 0.2;
     
-    [ExportSubgroup("Sounds", "_sound")]
-    [Export] private string _soundHover;
-    [Export] private string _soundClick;
+    [ExportSubgroup("Sounds", "sound")]
+    [Export] private string soundHover;
+    [Export] private float soundHoverVolume = 0.25f;
+    [Export] private string soundClick;
+    [Export] private float soundClickVolume = 0.5f;
 
     public override void _Ready()
     {
@@ -31,6 +33,9 @@ public partial class SquishyButton : Button
         tween.TweenProperty(this, "scale", Vector2.One * 1.1f, AnimationTime);
         
         tween.Play();
+        
+        if (soundHover != null)
+            SFX2D.PlaySound(soundHover, soundHoverVolume);
     }
 
     private void OnMouseExited()
@@ -55,5 +60,8 @@ public partial class SquishyButton : Button
         tween.TweenProperty(this, "scale", Vector2.One * 1.1f, AnimationTime / 2f);
         
         tween.Play();
+        
+        if (soundClick != null)
+            SFX2D.PlaySound(soundClick, soundClickVolume);
     }
 }
