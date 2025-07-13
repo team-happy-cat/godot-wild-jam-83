@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://pqsxpa3hsunb"]
+
+[ext_resource type="Texture2D" uid="uid://b4y8ejh1d0wbu" path="res://Demo/UI/Images/transition.png" id="1_3m505"]
+[ext_resource type="Script" uid="uid://c24buv8cgxtvw" path="res://Demo/UI/Autoload/Transition.cs" id="1_uh4t5"]
+[ext_resource type="AudioStream" uid="uid://cvq38xx86p5wp" path="res://Demo/UI/Audio/transition.mp3" id="3_tnuc3"]
+
+[node name="Transition" type="CanvasLayer" node_paths=PackedStringArray("InputBlocker", "RightEdge", "Image", "Trail", "Audio")]
+layer = 10
+script = ExtResource("1_uh4t5")
+InputBlocker = NodePath("InputBlocker")
+RightEdge = NodePath("RightEdge")
+Image = NodePath("Image")
+Trail = NodePath("Image/Trail")
+Audio = NodePath("Audio")
+
+[node name="InputBlocker" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RightEdge" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Image" type="TextureRect" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -2432.0
+offset_top = -796.0
+offset_bottom = 796.0
+grow_vertical = 2
+texture = ExtResource("1_3m505")
+
+[node name="Trail" type="ColorRect" parent="Image"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1920.0
+offset_top = 256.0
+offset_right = -2432.0
+offset_bottom = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.6313726, 0.9490196, 1, 1)
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tnuc3")
+volume_db = -5.0

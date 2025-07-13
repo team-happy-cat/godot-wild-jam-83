@@ -34,6 +34,7 @@ LevelManager="*res://Demo/Scene/Autoload/LevelManager.tscn"
 SaveManager="*res://Demo/Script/SaveManager.cs"
 PlayerSpawner="*res://Demo/Scene/Autoload/PlayerSpawner.tscn"
 Particles="*res://Demo/Scene/Autoload/Particles.tscn"
+Transition="*res://Demo/UI/Autoload/Transition.tscn"
 
 [dialogue_manager]
 
