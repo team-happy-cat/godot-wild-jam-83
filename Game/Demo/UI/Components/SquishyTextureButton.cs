@@ -3,7 +3,7 @@ using System;
 using Game;
 
 [GlobalClass]
-public partial class SquishyButton : Button
+public partial class SquishyTextureButton : TextureButton
 {
     private const double AnimationTime = 0.2;
     

@@ -5,6 +5,7 @@ public partial class MainMenu : Control
 {
 	[Export] public Button PlayButton;
 	[Export] public Button QuitButton;
+	[Export] public TextureButton TeamButton;
 	
 	// Debug - to be removed for release
 	[Export] public Button LevelButton1;
@@ -17,6 +18,7 @@ public partial class MainMenu : Control
 	{
 		PlayButton.Pressed += StartGame;
 		QuitButton.Pressed += () => GetTree().Quit();
+		TeamButton.Pressed += () => OS.ShellOpen("https://team-happy-cat.itch.io/");
 		
 		// Debug - to be removed for release
 		LevelButton1.Pressed += OnLevelButton1Pressed;

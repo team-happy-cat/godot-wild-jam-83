@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://celj1wfd0mq20"]
+[gd_scene load_steps=10 format=3 uid="uid://celj1wfd0mq20"]
 
 [ext_resource type="Script" uid="uid://cql8bvyn0kd8k" path="res://Demo/Script/MainMenu.cs" id="1_k2w80"]
 [ext_resource type="Texture2D" uid="uid://dn3h0x7un2jsv" path="res://Demo/UI/Images/menu.png" id="2_nnjs3"]
@@ -8,10 +8,11 @@
 [ext_resource type="Script" uid="uid://cmdqjc0tkmms6" path="res://Demo/UI/Components/SquishyButton.cs" id="4_0dyxq"]
 [ext_resource type="Script" uid="uid://ckbkgyfqndr1f" path="res://Demo/UI/Components/Bopper.cs" id="4_yl1rr"]
 [ext_resource type="AudioStream" uid="uid://m4e3jqwxt665" path="res://Assets/Audio/godot wild jam 83 menu.wav" id="7_rd8ke"]
+[ext_resource type="Script" uid="uid://cr05f2g78pvlt" path="res://Demo/UI/Components/SquishyTextureButton.cs" id="8_8exua"]
 
 [node name="Main_Menu" type="Node3D"]
 
-[node name="Main_Menu" type="Control" parent="." node_paths=PackedStringArray("PlayButton", "QuitButton", "LevelButton1", "LevelButton2", "LevelButton3")]
+[node name="Main_Menu" type="Control" parent="." node_paths=PackedStringArray("PlayButton", "QuitButton", "TeamButton", "LevelButton1", "LevelButton2", "LevelButton3")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,6 +22,7 @@ grow_vertical = 2
 script = ExtResource("1_k2w80")
 PlayButton = NodePath("Sign/PlayButton")
 QuitButton = NodePath("Sign/QuitButton")
+TeamButton = NodePath("TeamLogo")
 LevelButton1 = NodePath("DebugLevelSelector/LevelButton1")
 LevelButton2 = NodePath("DebugLevelSelector/LevelButton2")
 LevelButton3 = NodePath("DebugLevelSelector/LevelButton3")
@@ -105,27 +107,13 @@ text = "Quit"
 script = ExtResource("4_0dyxq")
 metadata/_custom_type_script = "uid://cmdqjc0tkmms6"
 
-[node name="TeamLogo" type="TextureRect" parent="Main_Menu"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -208.0
-offset_top = -192.0
-offset_right = -16.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("3_gh453")
-expand_mode = 1
-
 [node name="DebugLevelSelector" type="HBoxContainer" parent="Main_Menu"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -100.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 20
@@ -145,6 +133,24 @@ text = "Level 2"
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 text = "Level 3"
+
+[node name="TeamLogo" type="TextureButton" parent="Main_Menu"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -208.0
+offset_top = -192.0
+offset_right = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_gh453")
+script = ExtResource("8_8exua")
+metadata/_custom_type_script = "uid://cr05f2g78pvlt"
 
 [node name="MenuTheme" type="AudioStreamPlayer" parent="Main_Menu"]
 stream = ExtResource("7_rd8ke")
