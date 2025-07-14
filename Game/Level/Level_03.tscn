@@ -1,167 +1,238 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7i1ufn52g7to"]
+[gd_scene load_steps=5 format=3 uid="uid://c7i1ufn52g7to"]
 
-[ext_resource type="PackedScene" uid="uid://8tl1ghmq6i1w" path="res://addons/StandardAssets/Scene/Ocean.tscn" id="1_4m831"]
+[ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/PF_LilyPad.glb" id="1_4m831"]
 [ext_resource type="PackedScene" uid="uid://4pssytbq3qo1" path="res://Demo/Scene/Character/PF_Chicken_Friend_Random_Walker.tscn" id="2_p0tvw"]
-[ext_resource type="PackedScene" uid="uid://p6gywi2c54n2" path="res://decor.tscn" id="3_es5q4"]
+[ext_resource type="PackedScene" uid="uid://dpg7c2fxet7nr" path="res://Level/environment.tscn" id="2_u8qrg"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7ms4"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ht6ow"]
 albedo_color = Color(0.35, 0.27124998, 0.1925, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0fsu"]
-albedo_color = Color(0.41824, 0.64, 0.23679999, 1)
 
 [node name="Level_03" type="Node3D"]
 
 [node name="SP_Level_03" type="Marker3D" parent="." groups=["Spawnpoint"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.921707, 1, -25.471106)
 
-[node name="Ocean-n1" parent="." instance=ExtResource("1_4m831")]
-
 [node name="Layout" type="Node3D" parent="."]
 
-[node name="InvisibleWalls" type="CSGCombiner3D" parent="Layout"]
+[node name="LilyPads" type="Node3D" parent="Layout"]
+
+[node name="PF_LilyPad2" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(-2.8978965, 0, -1.5110576, 0, 1, 0, 1.5110576, 0, -2.8978965, -34.98568, -0.024991512, -25.34573)
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad2"]
+transform = Transform3D(0.30597928, 0, 0, 0, 1, 0, 0, 0, 0.30597928, 0, -0.4750085, 0)
 visible = false
 use_collision = true
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Layout/InvisibleWalls"]
-size = Vector3(200, 50, 200)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Layout/InvisibleWalls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
-operation = 2
-size = Vector3(90, 10, 61)
-
-[node name="SurrondingDirt" type="CSGCombiner3D" parent="Layout"]
-material_override = SubResource("StandardMaterial3D_t7ms4")
-use_collision = true
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Layout/SurrondingDirt"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.5, 0)
-size = Vector3(200, 27, 200)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Layout/SurrondingDirt"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 1, 0)
-operation = 2
-size = Vector3(22, 3, 61)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Layout/SurrondingDirt"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5, 1, 17)
-operation = 2
-size = Vector3(33, 3, 27)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Layout/SurrondingDirt"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 1, 0)
-operation = 2
-size = Vector3(29, 3, 61)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="Layout/SurrondingDirt"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -15.5)
-operation = 2
-size = Vector3(32, 3, 30)
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="Layout/SurrondingDirt"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 0)
-operation = 2
-size = Vector3(20, 3, 61)
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="Layout/SurrondingDirt"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
-operation = 2
-size = Vector3(90, 1.5, 61)
-
-[node name="LilyPads" type="CSGCombiner3D" parent="Layout"]
-material_override = SubResource("StandardMaterial3D_o0fsu")
-use_collision = true
-
-[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.98568, -0.5, -25.34573)
 radius = 2.1777344
 height = 1.0
+sides = 16
 
-[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.914581, -0.5, -19.367672)
+[node name="PF_LilyPad3" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(2.001023, 0, -2.9369123, 0, 1, 0, 2.9369123, 0, 2.001023, -31.914581, -0.024991512, -19.367672)
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad3"]
+transform = Transform3D(0.28138834, 0, 0, 0, 1, 0, 0, 0, 0.28138834, 0, -0.4750085, 0)
+visible = false
+use_collision = true
 radius = 2.3901367
 height = 1.0
+sides = 16
 
-[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 0.9998406, 0.01785377, 0, -0.01785377, 0.9998406, -31.695805, -0.49482232, 13.628456)
+[node name="PF_LilyPad4" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(2.5356095, 0, 0, 0, 0.9998406, 0.04527019, 0, -0.01785377, 2.5352054, -31.695803, -0.019889474, 13.619976)
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad4"]
+transform = Transform3D(0.39438248, 0, 0, 0, 0.99999994, 1.8626451e-09, 0, -4.656613e-10, 0.39438248, -9.536743e-07, -0.47500852, -4.7683716e-07)
+visible = false
+use_collision = true
 radius = 1.6738281
 height = 1.0
+sides = 16
 
-[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 0.9998406, 0.01785377, 0, -0.01785377, 0.9998406, -34.55503, -0.49482232, 17.233566)
+[node name="PF_LilyPad5" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(0.30204478, 0.017723262, -2.483934, -2.7784706e-16, 0.99984056, 0.04468127, 2.48433, -0.002154792, 0.30199662, -34.55503, -0.019889504, 17.225088)
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad5"]
+transform = Transform3D(0.39958063, 0, 0, 0, 0.99999994, 1.8626451e-09, 0, -4.656613e-10, 0.39958063, 0, -0.47500846, -4.7683716e-07)
+visible = false
+use_collision = true
 radius = 1.6738281
 height = 1.0
+sides = 16
 
-[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.202942, -0.5, -16.927113)
+[node name="PF_LilyPad6" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(-0.62552094, 0, -3.0365374, 0, 1, 0, 3.0365374, 0, -0.62552094, -13.202942, -0.024991512, -16.927113)
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad6"]
+transform = Transform3D(0.32254985, 0, 0, 0, 1, 0, 0, 0, 0.32254985, 0, -0.4750085, 0)
+visible = false
+use_collision = true
 radius = 2.0766602
 height = 1.0
+sides = 16
 
-[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 0.9998406, 0.01785377, 0, -0.01785377, 0.9998406, -26.288256, -0.5051777, 19.25692)
+[node name="PF_LilyPad7" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(0.44603136, 0.01768672, -3.2370996, 0, 0.99984056, 0.058349602, 3.2376156, -0.0024366172, 0.44596022, -26.288256, -0.030244887, 19.24844)
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad7"]
+transform = Transform3D(0.30597928, 0, 0, 0, 0.99999994, 0, 0, 0, 0.30597928, 0, -0.47500852, 0)
+visible = false
+use_collision = true
 radius = 2.1831055
 height = 1.0
+sides = 16
 
-[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7917824, -0.5, 8.883813)
+[node name="PF_LilyPad8" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(-2.3776166, 0, 1.5100454, 0, 1, 0, -1.5100454, 0, -2.3776166, 1.7917824, -0.024991512, 8.883813)
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad8"]
+transform = Transform3D(0.35503662, 0, 0, 0, 1, 0, 0, 0, 0.35503662, 0, -0.4750085, 0)
+visible = false
+use_collision = true
 radius = 1.8754883
 height = 1.0
+sides = 16
 
-[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.554287, -0.5, 21.784523)
+[node name="PF_LilyPad9" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(1.1399218, 0, -3.8726225, 0, 1, 0, 3.8726225, 0, 1.1399218, 3.554287, -0.024991512, 21.784523)
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad9"]
+transform = Transform3D(0.24771433, 0, 0, 0, 1, 0, 0, 0, 0.24771433, 0, -0.4750085, 0)
+visible = false
+use_collision = true
 radius = 2.7236328
 height = 1.0
+sides = 16
 
-[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9859047, -0.5, -21.386974)
+[node name="PF_LilyPad10" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(0.97142756, 0, -2.4113927, 0, 1, 0, 2.4113927, 0, 0.97142756, 7.9859047, -0.024991512, -21.386974)
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad10"]
+transform = Transform3D(0.3846585, 0, 0, 0, 1, 0, 0, 0, 0.3846585, 0, -0.4750085, 0)
+visible = false
+use_collision = true
 radius = 1.7426758
 height = 1.0
+sides = 16
 
-[node name="CSGCylinder3D13" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.625507, -0.5, 22.756432)
+[node name="PF_LilyPad11" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(-0.15943456, 0, 3.4433866, 0, 0.99999994, 0, -3.4433866, 0, -0.15943456, 20.625507, -0.024991512, 22.756432)
+
+[node name="CSGCylinder3D13" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad11"]
+transform = Transform3D(0.29010093, 0, 0, 0, 0.99999994, 0, 0, 0, 0.29010093, 0, -0.47500846, 0)
+visible = false
+use_collision = true
 radius = 2.322754
 height = 1.0
+sides = 16
 
-[node name="CSGCylinder3D14" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.05936, -0.5, 20.050299)
+[node name="PF_LilyPad12" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(-2.3944395, 0, -1.4995259, 0, 1, 0, 1.4995259, 0, -2.3944395, 27.05936, -0.024991512, 20.050299)
+
+[node name="CSGCylinder3D14" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad12"]
+transform = Transform3D(0.35395363, 0, 0, 0, 1, 0, 0, 0, 0.35395363, 0, -0.4750085, 0)
+visible = false
+use_collision = true
 radius = 1.84375
 height = 1.0
+sides = 16
 
-[node name="CSGCylinder3D15" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.340343, -0.5, 25.306314)
+[node name="PF_LilyPad13" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(0.14703669, 0, -3.6768928, 0, 1, 0, 3.6768928, 0, 0.14703669, 27.340343, -0.024991512, 25.306314)
+
+[node name="CSGCylinder3D15" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad13"]
+transform = Transform3D(0.2717516, 0, 0, 0, 1, 0, 0, 0, 0.2717516, 0, -0.4750085, 0)
+visible = false
+use_collision = true
 radius = 2.4677734
 height = 1.0
+sides = 16
 
-[node name="CSGCylinder3D16" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2236595, -0.5, -26.358093)
+[node name="PF_LilyPad14" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(0.24275519, 0, -3.0776303, 0, 1, 0, 3.0776303, 0, 0.24275519, 5.2236595, -0.024991512, -26.358093)
+
+[node name="CSGCylinder3D16" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad14"]
+transform = Transform3D(0.32391927, 0, 0, 0, 1, 0, 0, 0, 0.32391927, 0, -0.4750085, 0)
+visible = false
+use_collision = true
 radius = 2.0488281
 height = 1.0
+sides = 16
 
-[node name="CSGCylinder3D18" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.32137, -0.5, 1.9528847)
+[node name="PF_LilyPad15" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(-1.4467226, 0, 3.4003425, 0, 0.99999994, 0, -3.4003425, 0, -1.4467226, 39.32137, -0.024991512, 1.9528847)
+
+[node name="CSGCylinder3D18" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad15"]
+transform = Transform3D(0.2706131, 0, 0, 0, 0.99999994, 0, 0, 0, 0.2706131, 0, -0.47500846, 0)
+visible = false
+use_collision = true
 radius = 2.4677734
 height = 1.0
+sides = 16
 
-[node name="CSGCylinder3D19" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.824116, -0.5, -23.282902)
+[node name="PF_LilyPad16" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(-0.5116621, 0, 2.5831366, 0, 1, 0, -2.5831366, 0, -0.5116621, 38.824116, -0.024991512, -23.282902)
+
+[node name="CSGCylinder3D19" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad16"]
+transform = Transform3D(0.37974826, 0, 0, 0, 1, 0, 0, 0, 0.37974826, 0, -0.4750085, 0)
+visible = false
+use_collision = true
 radius = 1.7646484
 height = 1.0
+sides = 16
 
-[node name="CSGCylinder3D20" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.798557, -0.5, -25.520557)
+[node name="PF_LilyPad17" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(0.35209158, 0, 2.4500093, 0, 1, 0, -2.4500093, 0, 0.35209158, 20.798557, -0.024991512, -25.520557)
+
+[node name="CSGCylinder3D20" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad17"]
+transform = Transform3D(0.40401107, 0, 0, 0, 1, 0, 0, 0, 0.40401107, 0, -0.4750085, 0)
+visible = false
+use_collision = true
 radius = 1.6401367
 height = 1.0
+sides = 16
 
-[node name="CSGCylinder3D21" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.900928, -0.5, -22.164072)
+[node name="PF_LilyPad18" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(-2.0746913, 0, -2.1781836, 0, 1, 0, 2.1781836, 0, -2.0746913, 24.900928, -0.024991512, -22.164072)
+
+[node name="CSGCylinder3D21" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad18"]
+transform = Transform3D(0.33243278, 0, 0, 0, 1, 0, 0, 0, 0.33243278, 0, -0.4750085, 0)
+visible = false
+use_collision = true
 radius = 2.0131836
 height = 1.0
+sides = 16
 
-[node name="CSGCylinder3D22" type="CSGCylinder3D" parent="Layout/LilyPads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.42564, -0.5, -20.050732)
+[node name="PF_LilyPad19" parent="Layout/LilyPads" instance=ExtResource("1_4m831")]
+transform = Transform3D(-2.0818272, 0, -0.44866166, 0, 1, 0, 0.44866166, 0, -2.0818272, 20.42564, -0.024991512, -20.050732)
+
+[node name="CSGCylinder3D22" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad19"]
+transform = Transform3D(0.46956626, 0, 0, 0, 1, 0, 0, 0, 0.46956626, 0, -0.4750085, 0)
+visible = false
+use_collision = true
 radius = 1.3916016
 height = 1.0
+sides = 16
+
+[node name="Obstacles" type="CSGCombiner3D" parent="Layout"]
+material_override = SubResource("StandardMaterial3D_ht6ow")
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Layout/Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.00883, 0.25, -18.451563)
+size = Vector3(3.7445679, 1.5, 43.761963)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Layout/Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.587355, 0.25, 1.506567)
+size = Vector3(14.965019, 1.5, 3.8457031)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Layout/Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.517242, 0.25, 20.422369)
+size = Vector3(4.824795, 1.5, 38.643738)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Layout/Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.532874, 0.25, 2.0873432)
+size = Vector3(2.944624, 1.5, 98.50759)
 
 [node name="Enemies" type="Node3D" parent="."]
 
@@ -183,4 +254,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.002134, -0.19598326, -4.263
 [node name="PF_Chicken_Friend_Random_Walker-n6" parent="Enemies" instance=ExtResource("2_p0tvw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.948841, -0.19598326, 3.6018162)
 
-[node name="Decor" parent="." instance=ExtResource("3_es5q4")]
+[node name="Environment" parent="." instance=ExtResource("2_u8qrg")]
