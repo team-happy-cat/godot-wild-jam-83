@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://djkg1y2m6p644"]
+[gd_scene load_steps=7 format=3 uid="uid://djkg1y2m6p644"]
 
 [ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/PF_LilyPad.glb" id="1_t7ms4"]
 [ext_resource type="PackedScene" uid="uid://4pssytbq3qo1" path="res://Demo/Scene/Character/PF_Chicken_Friend_Random_Walker.tscn" id="2_o0fsu"]
 [ext_resource type="Script" uid="uid://c4bnyda0v84kt" path="res://Demo/Script/EnemyContainer.cs" id="2_qpmwr"]
 [ext_resource type="PackedScene" uid="uid://dpg7c2fxet7nr" path="res://Level/environment.tscn" id="2_t7ms4"]
+[ext_resource type="Script" uid="uid://wxiqiqek0bdu" path="res://Demo/Script/WaterArea.cs" id="5_rrpac"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h1rqx"]
+size = Vector3(100, 2, 100)
 
 [node name="Level_01" type="Node3D"]
 
@@ -220,3 +224,13 @@ NextLevel = "Level_02"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.424963, -0.19598326, -2.8670878)
 
 [node name="Environment" parent="." instance=ExtResource("2_t7ms4")]
+
+[node name="WaterArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815, 0)
+collision_layer = 32
+collision_mask = 4
+script = ExtResource("5_rrpac")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WaterArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+shape = SubResource("BoxShape3D_h1rqx")

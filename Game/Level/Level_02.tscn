@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://c03xokj410jth"]
+[gd_scene load_steps=8 format=3 uid="uid://c03xokj410jth"]
 
 [ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/PF_LilyPad.glb" id="1_8oik3"]
 [ext_resource type="PackedScene" uid="uid://dpg7c2fxet7nr" path="res://Level/environment.tscn" id="2_0khoh"]
 [ext_resource type="PackedScene" uid="uid://4pssytbq3qo1" path="res://Demo/Scene/Character/PF_Chicken_Friend_Random_Walker.tscn" id="2_cx2d6"]
 [ext_resource type="Script" uid="uid://c4bnyda0v84kt" path="res://Demo/Script/EnemyContainer.cs" id="2_hmuci"]
+[ext_resource type="Script" uid="uid://wxiqiqek0bdu" path="res://Demo/Script/WaterArea.cs" id="5_hmuci"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7ms4"]
 albedo_color = Color(0.35, 0.27124998, 0.1925, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8x7d7"]
+size = Vector3(100, 2, 100)
 
 [node name="Level_02" type="Node3D"]
 
@@ -225,3 +229,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.002134, -0.19598326, -4.263
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.948841, -0.19598326, 3.6018162)
 
 [node name="Environment" parent="." instance=ExtResource("2_0khoh")]
+
+[node name="WaterArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815, 0)
+collision_layer = 32
+collision_mask = 4
+script = ExtResource("5_hmuci")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WaterArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+shape = SubResource("BoxShape3D_8x7d7")

@@ -21,9 +21,11 @@ namespace Game
         private float gravity;
         private float speed;
         private CameraBridge cameraBridge;
-        
+
         private Vector3 lastGroundedVelocity = Vector3.Zero;
         private bool groundedLastFrame = false;
+
+        public bool InWater { get; set; } = false;
 
         public override void _Ready()
         {
@@ -54,6 +56,11 @@ namespace Game
                 groundedLastFrame = true;
 
                 speed = Input.IsActionPressed(Sprint) ? SprintSpeed : BaseSpeed;
+
+                if (InWater)
+                {
+                    speed *= 0.5f;
+                }
 
                 Vector2 inputDir = Input.GetVector(Left, Right, Forward, Backward);
                 Vector3 cameraForward = cameraBridge.MainCamera.GlobalTransform.Basis.Z;
