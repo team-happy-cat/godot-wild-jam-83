@@ -87,6 +87,12 @@ Spawnpoint=""
 
 theme/custom="uid://ibqn3exx4l8h"
 
+[importer_defaults]
+
+scene={
+&"import_script/path": "uid://lbgyy260nu3e"
+}
+
 [input]
 
 camera_up={
