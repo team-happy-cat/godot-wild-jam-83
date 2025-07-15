@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://djkg1y2m6p644"]
 
-[ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/PF_LilyPad.glb" id="1_t7ms4"]
+[ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/Environment/PF_LilyPad.glb" id="1_t7ms4"]
 [ext_resource type="PackedScene" uid="uid://4pssytbq3qo1" path="res://Demo/Scene/Character/PF_Chicken_Friend_Random_Walker.tscn" id="2_o0fsu"]
 [ext_resource type="Script" uid="uid://c4bnyda0v84kt" path="res://Demo/Script/EnemyContainer.cs" id="2_qpmwr"]
 [ext_resource type="PackedScene" uid="uid://dpg7c2fxet7nr" path="res://Level/environment.tscn" id="2_t7ms4"]

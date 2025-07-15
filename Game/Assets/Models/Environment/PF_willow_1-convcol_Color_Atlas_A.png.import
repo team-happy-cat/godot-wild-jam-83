@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd8rvttvfgf72"
-path.s3tc="res://.godot/imported/PF_LilyPad_Color_Atlas_A.png-f399746ec60774c8dd9f57fb4553c101.s3tc.ctex"
+uid="uid://ccmsm8k4fiuqm"
+path.s3tc="res://.godot/imported/PF_willow_1-convcol_Color_Atlas_A.png-00b8eb8197d1b7edac4f477a7a3c3366.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "1eca21cea1e02f1f2197a53908aee51c"
+"md5": "7f3685f4aae3f2a27c9bdf53add74293"
 }
 
 [deps]
 
-source_file="res://Assets/Models/PF_LilyPad_Color_Atlas_A.png"
-dest_files=["res://.godot/imported/PF_LilyPad_Color_Atlas_A.png-f399746ec60774c8dd9f57fb4553c101.s3tc.ctex"]
+source_file="res://Assets/Models/Environment/PF_willow_1-convcol_Color_Atlas_A.png"
+dest_files=["res://.godot/imported/PF_willow_1-convcol_Color_Atlas_A.png-00b8eb8197d1b7edac4f477a7a3c3366.s3tc.ctex"]
 
 [params]
 

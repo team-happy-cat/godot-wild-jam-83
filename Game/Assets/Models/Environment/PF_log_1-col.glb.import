@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cfqyxrpk2d1y7"
-path="res://.godot/imported/PF_dirt_plane-col.glb-94d96c0a33fca6a0fafdf44b8451a7de.scn"
+uid="uid://d35qibodwkyg6"
+path="res://.godot/imported/PF_log_1-col.glb-45cd2575cb35d0cb566e001cafd2a0eb.scn"
 
 [deps]
 
-source_file="res://Assets/Models/PF_dirt_plane-col.glb"
-dest_files=["res://.godot/imported/PF_dirt_plane-col.glb-94d96c0a33fca6a0fafdf44b8451a7de.scn"]
+source_file="res://Assets/Models/Environment/PF_log_1-col.glb"
+dest_files=["res://.godot/imported/PF_log_1-col.glb-45cd2575cb35d0cb566e001cafd2a0eb.scn"]
 
 [params]
 

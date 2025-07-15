@@ -36,8 +36,8 @@ namespace Game
 		{
 			DialogueActor.DialogueStarted -= OnDialogueStarted;
 			Destroyed?.Invoke(this);
-            GD.Print("[CharacterHub] ExitTree");
-        }
+			GD.Print("[CharacterHub] ExitTree");
+		}
 
 		public void SetCharacterPosition(Vector3 position)
 		{
