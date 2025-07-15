@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7i1ufn52g7to"]
+[gd_scene load_steps=6 format=3 uid="uid://c7i1ufn52g7to"]
 
 [ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/PF_LilyPad.glb" id="1_4m831"]
+[ext_resource type="Script" uid="uid://c4bnyda0v84kt" path="res://Demo/Script/EnemyContainer.cs" id="2_es5q4"]
 [ext_resource type="PackedScene" uid="uid://4pssytbq3qo1" path="res://Demo/Scene/Character/PF_Chicken_Friend_Random_Walker.tscn" id="2_p0tvw"]
 [ext_resource type="PackedScene" uid="uid://dpg7c2fxet7nr" path="res://Level/environment.tscn" id="2_u8qrg"]
 
@@ -235,6 +236,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.532874, 0.25, 2.0873432)
 size = Vector3(2.944624, 1.5, 98.50759)
 
 [node name="Enemies" type="Node3D" parent="."]
+script = ExtResource("2_es5q4")
+NextLevel = "End_Screen"
 
 [node name="PF_Chicken_Friend_Random_Walker-n1" parent="Enemies" instance=ExtResource("2_p0tvw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.424963, -0.19598326, -2.8670878)

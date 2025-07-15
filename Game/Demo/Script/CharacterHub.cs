@@ -20,7 +20,6 @@ namespace Game
 
 		public override void _Ready()
 		{
-			// Autoload
 			cameraBridge = GetNode<CameraBridge>("/root/CameraBridge");
 			proximityDetector = GetNode<ProximityDetector>("Player/Proximity");
 			player = GetNode<CharacterBody3D>("Player");
@@ -37,7 +36,8 @@ namespace Game
 		{
 			DialogueActor.DialogueStarted -= OnDialogueStarted;
 			Destroyed?.Invoke(this);
-		}
+            GD.Print("[CharacterHub] ExitTree");
+        }
 
 		public void SetCharacterPosition(Vector3 position)
 		{

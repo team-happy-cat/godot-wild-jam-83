@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://djkg1y2m6p644"]
+[gd_scene load_steps=5 format=3 uid="uid://djkg1y2m6p644"]
 
 [ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/PF_LilyPad.glb" id="1_t7ms4"]
 [ext_resource type="PackedScene" uid="uid://4pssytbq3qo1" path="res://Demo/Scene/Character/PF_Chicken_Friend_Random_Walker.tscn" id="2_o0fsu"]
+[ext_resource type="Script" uid="uid://c4bnyda0v84kt" path="res://Demo/Script/EnemyContainer.cs" id="2_qpmwr"]
 [ext_resource type="PackedScene" uid="uid://dpg7c2fxet7nr" path="res://Level/environment.tscn" id="2_t7ms4"]
 
 [node name="Level_01" type="Node3D"]
@@ -211,24 +212,11 @@ radius = 2.4677734
 height = 1.0
 sides = 16
 
-[node name="Enemies" type="Node3D" parent="."]
+[node name="Enemies" type="Node" parent="."]
+script = ExtResource("2_qpmwr")
+NextLevel = "Level_02"
 
 [node name="PF_Chicken_Friend_Random_Walker-n1" parent="Enemies" instance=ExtResource("2_o0fsu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.424963, -0.19598326, -2.8670878)
-
-[node name="PF_Chicken_Friend_Random_Walker-n2" parent="Enemies" instance=ExtResource("2_o0fsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17177276, -0.19598314, -9.33516)
-
-[node name="PF_Chicken_Friend_Random_Walker-n3" parent="Enemies" instance=ExtResource("2_o0fsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.522922, -0.19598326, 5.9301558)
-
-[node name="PF_Chicken_Friend_Random_Walker-n4" parent="Enemies" instance=ExtResource("2_o0fsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5224648, -0.1959823, -1.7291695)
-
-[node name="PF_Chicken_Friend_Random_Walker-n5" parent="Enemies" instance=ExtResource("2_o0fsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.002134, -0.19598326, -4.2638273)
-
-[node name="PF_Chicken_Friend_Random_Walker-n6" parent="Enemies" instance=ExtResource("2_o0fsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.948841, -0.19598326, 3.6018162)
 
 [node name="Environment" parent="." instance=ExtResource("2_t7ms4")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cc3kgpdoricri"]
+[gd_scene load_steps=14 format=3 uid="uid://cc3kgpdoricri"]
 
 [ext_resource type="Script" uid="uid://b54l6k12r37px" path="res://addons/StandardAssets/Script/Level/LevelManager.cs" id="1_1rch1"]
 [ext_resource type="Script" uid="uid://c56kgadb3fuil" path="res://addons/StandardAssets/Script/Level/LevelInfo.cs" id="2_5b6l1"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://cffsnbd8qkjov" path="res://Data/Level/Level_01.tres" id="6_5b6l1"]
 [ext_resource type="Resource" uid="uid://c77b57d84r0rb" path="res://Data/Level/Level_02.tres" id="7_q8osh"]
 [ext_resource type="Resource" uid="uid://dg0pomn3l8tsk" path="res://Data/Level/Level_03.tres" id="8_jegmh"]
+[ext_resource type="Resource" uid="uid://h7rkid76jdtq" path="res://Data/Level/End_Screen.tres" id="9_v8k1l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5mrsu"]
 shader = ExtResource("3_4lg3s")
@@ -27,6 +28,7 @@ _data = {
 script = ExtResource("1_1rch1")
 LevelInfo = Dictionary[StringName, ExtResource("2_5b6l1")]({
 &"Club": ExtResource("4_5b6l1"),
+&"End_Screen": ExtResource("9_v8k1l"),
 &"Epigraph": ExtResource("4_foolj"),
 &"Level_01": ExtResource("6_5b6l1"),
 &"Level_02": ExtResource("7_q8osh"),

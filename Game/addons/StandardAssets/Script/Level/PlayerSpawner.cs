@@ -61,6 +61,10 @@ namespace Game
                         CallDeferred("SpawnPlayerAtEndOfFrame", _spawnpoint);
                     }
                 }
+                else
+                {
+                    GD.Print("[PlayerSpawner] Missing a spawnpoint");
+                }
             }
         }
 

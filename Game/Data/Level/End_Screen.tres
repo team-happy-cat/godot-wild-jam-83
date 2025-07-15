@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://h7rkid76jdtq"]
+
+[ext_resource type="PackedScene" uid="uid://diu6opq2wbtv5" path="res://Level/End_Screen.tscn" id="1_ah6ct"]
+[ext_resource type="Script" uid="uid://c56kgadb3fuil" path="res://addons/StandardAssets/Script/Level/LevelInfo.cs" id="2_y5usf"]
+
+[resource]
+script = ExtResource("2_y5usf")
+AllowMenu = false
+PlayerExistsInLevel = false
+Environment = ""
+LevelName = "End_Screen"
+LevelID = "End_Screen"
+Level = ExtResource("1_ah6ct")

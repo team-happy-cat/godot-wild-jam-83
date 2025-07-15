@@ -2,7 +2,7 @@ using Game;
 using Godot;
 using System;
 
-public partial class RandomWalkerChicken : CharacterBody3D
+public partial class RandomWalkerChicken : Enemy
 {
     [Export] public float Speed = 3.0f;
     [Export] public float wanderDistance = 3.0f;
