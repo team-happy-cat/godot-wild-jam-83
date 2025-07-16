@@ -18,6 +18,8 @@ namespace Game
         [Export] public string Pause = "start";
         [Export] public string Sprint = "sprint";
 
+        [Export] public EatAndLungeAbility eatAndLungeAbility;
+
         private float gravity;
         private float speed;
         private CameraBridge cameraBridge;
@@ -37,6 +39,13 @@ namespace Game
 
         public override void _PhysicsProcess(double delta)
         {
+            if (eatAndLungeAbility.Gobbling)
+            {
+                Velocity = new Vector3(Velocity.X, Velocity.Y - gravity * (float)delta, Velocity.Z);
+                MoveAndSlide();
+                return;
+            }
+
             if (!IsOnFloor())
             {
                 Velocity = new Vector3(Velocity.X, Velocity.Y - gravity * (float)delta, Velocity.Z);

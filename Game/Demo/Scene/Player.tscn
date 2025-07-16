@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cc1m2a1obsyn4"]
+[gd_scene load_steps=24 format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" uid="uid://hdsvtpxi0o2d" path="res://Demo/Script/CharacterHub.cs" id="1_p8ic4"]
 [ext_resource type="Script" uid="uid://coaqcn4leqqcd" path="res://Demo/Script/CharacterController.cs" id="2_m3i4r"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dm1m7v6qfev7u" path="res://addons/StandardAssets/Texture/Particle/T_FX_Star_04.png" id="9_qrurj"]
 [ext_resource type="Shader" uid="uid://th1fak6vqjt7" path="res://Demo/UI/FrogHUD.gdshader" id="9_wknp7"]
 [ext_resource type="Script" uid="uid://kchvvvrw4k33" path="res://Demo/Script/BellyDisplay.cs" id="10_lc2fc"]
+[ext_resource type="Script" uid="uid://bt2tpfi6a1dhv" path="res://Demo/Script/GobbleAbility.cs" id="15_dobti"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lc2fc"]
 shader = ExtResource("9_wknp7")
@@ -42,6 +43,8 @@ height = 1.8
 [sub_resource type="BoxMesh" id="BoxMesh_fx7e7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_e1pvd"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5j7mb"]
 
 [node name="CharacterHub" type="Node" node_paths=PackedStringArray("CameraAngles", "LookAt")]
 script = ExtResource("1_p8ic4")
@@ -101,9 +104,10 @@ grow_vertical = 2
 texture = ExtResource("9_qrurj")
 expand_mode = 1
 
-[node name="Player" type="CharacterBody3D" parent="."]
+[node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("eatAndLungeAbility")]
 collision_layer = 4
 script = ExtResource("2_m3i4r")
+eatAndLungeAbility = NodePath("../EatAndLungeAbility")
 
 [node name="CameraAngles" type="Node3D" parent="Player" node_paths=PackedStringArray("Angles")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -262,8 +266,11 @@ mesh = SubResource("BoxMesh_fx7e7")
 skeleton = NodePath("../..")
 
 [node name="Proximity" type="Area3D" parent="Player"]
+visible = false
 collision_layer = 8
 collision_mask = 48
+monitoring = false
+monitorable = false
 script = ExtResource("4_5a40d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Proximity"]
@@ -304,3 +311,13 @@ offset_left = 512.0
 offset_top = 480.0
 offset_right = 640.0
 offset_bottom = 507.0
+
+[node name="GobbleAbility" type="Area3D" parent="Player" node_paths=PackedStringArray("eatAndLungeAbility")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.432568, 0)
+collision_layer = 32
+collision_mask = 16384
+script = ExtResource("15_dobti")
+eatAndLungeAbility = NodePath("../../EatAndLungeAbility")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/GobbleAbility"]
+shape = SubResource("SphereShape3D_5j7mb")

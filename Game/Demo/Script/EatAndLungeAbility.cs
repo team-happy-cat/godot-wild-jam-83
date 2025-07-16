@@ -8,6 +8,8 @@ public partial class EatAndLungeAbility : Node
     [Export] public BellyDisplay BellyDisplay;
     [Export] public CharacterController characterController;
 
+    public bool Gobbling { get; set; } = false;
+
     private bool bellyIsFull = false;
     private CameraBridge cameraBridge;
     private SFX sfx;
@@ -17,6 +19,24 @@ public partial class EatAndLungeAbility : Node
         cameraBridge = GetNode<CameraBridge>("/root/CameraBridge");
         sfx = GetNode<SFX>("/root/SFX");
         sfx.PlaySound("Bubbles", new Vector3(0,0,0));
+    }
+
+    private float gobbleTimer = 0;
+    private float gobbleTimerMax = 1;
+
+    public override void _Process(double delta)
+    {
+        float dt = (float)delta;
+
+        if (Gobbling)
+        {
+            gobbleTimer += dt;
+
+            if (gobbleTimer > gobbleTimerMax)
+            {
+                Gobbling = false;
+            }
+        }
     }
 
     public override void _UnhandledInput(InputEvent inputEvent)
@@ -32,6 +52,8 @@ public partial class EatAndLungeAbility : Node
                 characterController.Velocity += launchDirection * launchForce;
                 BellyDisplay.Empty();
                 bellyIsFull = false;
+                Gobbling = true;
+                gobbleTimer = 0;
             }
             else
             {
