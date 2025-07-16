@@ -9,10 +9,10 @@ seed = 1
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_d40k6"]
 width = 1024
 height = 1024
-noise = SubResource("FastNoiseLite_m3msm")
 seamless = true
 as_normal_map = true
 bump_strength = 1.0
+noise = SubResource("FastNoiseLite_m3msm")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_bafo8"]
 noise_type = 3
@@ -21,17 +21,17 @@ frequency = 0.1
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wga72"]
 width = 1024
 height = 1024
-noise = SubResource("FastNoiseLite_bafo8")
 seamless = true
-as_normal_map = true
 seamless_blend_skirt = 0.2
+as_normal_map = true
 bump_strength = 2.0
+noise = SubResource("FastNoiseLite_bafo8")
 
 [resource]
 render_priority = -1
 shader = ExtResource("1_ihxse")
-shader_parameter/shallow_color = Color(0.37600002, 0.8, 0.66573334, 1)
-shader_parameter/deep_color = Color(0.13259998, 0.26, 0.21541, 1)
+shader_parameter/shallow_color = Color(0.376, 0.8, 0.665733, 1)
+shader_parameter/deep_color = Color(0.1326, 0.26, 0.21541, 1)
 shader_parameter/foam_color = Color(1, 1, 1, 1)
 shader_parameter/absorbance = 10.0
 shader_parameter/depth_fade_distance = 0.5

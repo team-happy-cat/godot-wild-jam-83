@@ -2,9 +2,9 @@ using Game;
 using Godot;
 using System;
 
-public partial class RandomWalkerChicken : Enemy
+public partial class RandomWalkerChicken : Node3D
 {
-    [Export] public float Speed = 3.0f;
+    /*[Export] public float Speed = 3.0f;
     [Export] public float wanderDistance = 3.0f;
 
     private NextEventTimer eggTimer;
@@ -75,6 +75,6 @@ public partial class RandomWalkerChicken : Enemy
     {
         QueueFree();
         GD.Print("Licked! -> ", Name);
-    }
+    }*/
 }
 
