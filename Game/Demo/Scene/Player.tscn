@@ -21,13 +21,16 @@ shader_parameter/mask = ExtResource("6_ep717")
 
 [sub_resource type="Resource" id="Resource_ujvtr"]
 script = ExtResource("4_fx7e7")
+duration = 1.0
+transition = 0
+ease = 2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uy03j"]
 radius = 0.2
 height = 0.4
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
-albedo_color = Color(0, 0.59607846, 0, 1)
+albedo_color = Color(0, 0.596078, 0, 1)
 clearcoat_enabled = true
 clearcoat_roughness = 0.2
 
@@ -83,7 +86,7 @@ texture = ExtResource("6_uapvr")
 expand_mode = 1
 
 [node name="Reticle" type="TextureRect" parent="HUD"]
-self_modulate = Color(0.5568628, 1, 1, 1)
+self_modulate = Color(0.556863, 1, 1, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -250,11 +253,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 shape = SubResource("CapsuleShape3D_uy03j")
 
 [node name="Body" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.19999999, 0, 0, 0, 1, 0, 0.16233641, 0)
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0.162336, 0)
 mesh = SubResource("CapsuleMesh_jw1de")
 
 [node name="Hat" type="MeshInstance3D" parent="Player/Body"]
-transform = Transform3D(0.248288, 0, 0, 0, 0.0248288, 0, 0, 0, 0.347603, 0, 0.76485014, 0.06068784)
+transform = Transform3D(0.248288, 0, 0, 0, 0.0248288, 0, 0, 0, 0.347603, 0, 0.76485, 0.0606878)
 mesh = SubResource("BoxMesh_fx7e7")
 skeleton = NodePath("../..")
 

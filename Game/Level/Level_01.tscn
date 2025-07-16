@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://djkg1y2m6p644"]
+[gd_scene load_steps=9 format=3 uid="uid://djkg1y2m6p644"]
 
 [ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/Environment/PF_LilyPad.glb" id="1_t7ms4"]
 [ext_resource type="PackedScene" uid="uid://4pssytbq3qo1" path="res://Demo/Scene/Character/PF_Chicken_Friend_Random_Walker.tscn" id="2_o0fsu"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dpg7c2fxet7nr" path="res://Demo/Scene/environment.tscn" id="2_t7ms4"]
 [ext_resource type="PackedScene" uid="uid://bwjlg15j8mwjg" path="res://Demo/Scene/Character/PF_Chicken_Friend_Fast_Random_Walker.tscn" id="4_h1rqx"]
 [ext_resource type="Script" uid="uid://wxiqiqek0bdu" path="res://Demo/Script/WaterArea.cs" id="5_rrpac"]
+[ext_resource type="PackedScene" uid="uid://bycwinetltyo" path="res://Demo/Scene/Character/fly.tscn" id="7_000dt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h1rqx"]
 size = Vector3(100, 2, 100)
@@ -263,3 +264,15 @@ script = ExtResource("5_rrpac")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WaterArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 shape = SubResource("BoxShape3D_h1rqx")
+
+[node name="Fly" parent="." instance=ExtResource("7_000dt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 3)
+
+[node name="Fly2" parent="." instance=ExtResource("7_000dt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8848, -4.76837e-07, -5.95448)
+
+[node name="Fly3" parent="." instance=ExtResource("7_000dt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99292, 0, 1.53563)
+
+[node name="Fly4" parent="." instance=ExtResource("7_000dt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56939, 0, -8.97396)

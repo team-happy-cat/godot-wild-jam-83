@@ -9,12 +9,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_byfd3"]
 height = 1.0
 
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_yf4ux"]
-var/speed/name = &"speed"
-var/speed/type = 3
-var/speed/value = 1.0
-var/speed/hint = 1
-var/speed/hint_string = "1,100,1"
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_qe2lw"]
 
 [node name="PF_Chicken_Friend_Random_Walker-n1" type="CharacterBody3D"]
 collision_layer = 16385
@@ -36,4 +31,4 @@ DisplayName = "Chicken"
 
 [node name="BTPlayer" type="BTPlayer" parent="."]
 behavior_tree = ExtResource("6_wjfod")
-blackboard_plan = SubResource("BlackboardPlan_yf4ux")
+blackboard_plan = SubResource("BlackboardPlan_qe2lw")
