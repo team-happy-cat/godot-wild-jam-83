@@ -5,6 +5,13 @@
 
 [resource]
 script = ExtResource("2_56bd5")
+AllowMenu = true
+FadeLevelTitleInOut = false
+HasEpigraph = false
+PlayerExistsInLevel = true
+AmbientVFX = ""
+Environment = "wind"
 LevelName = "Level_02"
 LevelID = "Level_02"
 Level = ExtResource("1_td2is")
+Epigraph = ""

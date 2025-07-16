@@ -6,7 +6,7 @@ public partial class EnemyContainer : Node
 {
     [Export] public string NextLevel = "";
 
-    private List<Enemy> enemies = [];
+    private List<AgentBase> enemies = [];
     private LevelManager levelManager;
 
     public override void _Ready()
@@ -15,18 +15,18 @@ public partial class EnemyContainer : Node
         
         foreach (var child in GetChildren())
         {
-            if (child != null && child is Enemy enemy) 
+            if (child != null && child is AgentBase agentBase) 
             {
-                enemies.Add(enemy);
+                enemies.Add(agentBase);
             }
         }
 
-        Enemy.Destroyed += OnDestroyed;
+        AgentBase.Destroyed += OnDestroyed;
     }
 
     public override void _ExitTree()
     {
-        Enemy.Destroyed -= OnDestroyed;
+        AgentBase.Destroyed -= OnDestroyed;
     }
 
     private void OnDestroyed()
