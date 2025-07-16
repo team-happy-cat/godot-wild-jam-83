@@ -13,8 +13,6 @@ public partial class MoveForward : BTAction
 
     public override Status _Tick(double delta)
     {
-        GD.Print($"[MoveForward] Tick... {ElapsedTime}s / {Duration}s");
-
         if (Agent is not AgentBase agentBase)
         {
             return Status.Failure;

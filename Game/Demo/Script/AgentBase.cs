@@ -3,14 +3,7 @@ using System;
 
 public partial class AgentBase : CharacterBody3D
 {
-    protected NavigationAgent3D navAgent;
     public static event Action Destroyed;
-
-    public override void _Ready()
-    {
-        navAgent = GetNodeOrNull<NavigationAgent3D>("NavigationAgent3D");
-        navAgent.VelocityComputed += VelocityComputed;
-    }
 
     public virtual void Move(Vector3 velocity)
     {
@@ -34,12 +27,6 @@ public partial class AgentBase : CharacterBody3D
     public virtual float GetFacing()
     {
         return -Transform.Basis.Z.X > 0 ? 1.0f : -1.0f;
-    }
-
-    private void VelocityComputed(Vector3 velocity)
-    {
-        Velocity = velocity;
-        MoveAndSlide();
     }
 
     public void Die()

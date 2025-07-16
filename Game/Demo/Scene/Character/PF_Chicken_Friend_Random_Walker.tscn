@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://4pssytbq3qo1"]
+[gd_scene load_steps=8 format=3 uid="uid://4pssytbq3qo1"]
 
 [ext_resource type="Script" uid="uid://ds2fwa44aferr" path="res://Demo/Script/AgentBase.cs" id="1_wjfod"]
-[ext_resource type="Script" uid="uid://bsnkbr2vg3h4i" path="res://addons/StandardAssets/Script/Utility/NextEventTimer.cs" id="2_7ppe6"]
 [ext_resource type="PackedScene" uid="uid://c8alf2ra2jals" path="res://Demo/Scene/Character/PF_Chicken_Friend.glb" id="3_vl7ar"]
 [ext_resource type="Script" uid="uid://oj1nsgwhibi7" path="res://addons/StandardAssets/Script/Compass/PointOfInterest.cs" id="4_qe2lw"]
 [ext_resource type="Texture2D" uid="uid://cy7w0oprhhtr5" path="res://icon.png" id="5_wjfod"]
@@ -23,16 +22,6 @@ axis_lock_angular_x = true
 axis_lock_angular_z = true
 safe_margin = 0.01
 script = ExtResource("1_wjfod")
-
-[node name="EggTimer" type="Node" parent="."]
-script = ExtResource("2_7ppe6")
-loop = true
-t_next_min = 2.0
-t_next_max = 7.0
-t_next_average = 3.0
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-avoidance_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

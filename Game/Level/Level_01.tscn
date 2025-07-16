@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://djkg1y2m6p644"]
+[gd_scene load_steps=8 format=3 uid="uid://djkg1y2m6p644"]
 
 [ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/Environment/PF_LilyPad.glb" id="1_t7ms4"]
 [ext_resource type="PackedScene" uid="uid://4pssytbq3qo1" path="res://Demo/Scene/Character/PF_Chicken_Friend_Random_Walker.tscn" id="2_o0fsu"]
 [ext_resource type="Script" uid="uid://c4bnyda0v84kt" path="res://Demo/Script/EnemyContainer.cs" id="2_qpmwr"]
 [ext_resource type="PackedScene" uid="uid://dpg7c2fxet7nr" path="res://Demo/Scene/environment.tscn" id="2_t7ms4"]
+[ext_resource type="PackedScene" uid="uid://bwjlg15j8mwjg" path="res://Demo/Scene/Character/PF_Chicken_Friend_Fast_Random_Walker.tscn" id="4_h1rqx"]
 [ext_resource type="Script" uid="uid://wxiqiqek0bdu" path="res://Demo/Script/WaterArea.cs" id="5_rrpac"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h1rqx"]
@@ -222,6 +223,33 @@ NextLevel = "Level_02"
 
 [node name="PF_Chicken_Friend_Random_Walker-n1" parent="Enemies" instance=ExtResource("2_o0fsu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.9497, -0.350846, -3.82795)
+
+[node name="PF_Chicken_Friend_Random_Walker-n2" parent="Enemies" instance=ExtResource("2_o0fsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8992, -0.350846, -14.9429)
+
+[node name="PF_Chicken_Friend_Random_Walker-n3" parent="Enemies" instance=ExtResource("2_o0fsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.44622, -0.350846, -11.7442)
+
+[node name="PF_Chicken_Friend_Random_Walker-n4" parent="Enemies" instance=ExtResource("2_o0fsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.13261, -0.350846, 1.86938)
+
+[node name="PF_Chicken_Friend_Random_Walker-n5" parent="Enemies" instance=ExtResource("2_o0fsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.93945, -0.350846, -6.37184)
+
+[node name="PF_Chicken_Friend_Random_Walker-n6" parent="Enemies" instance=ExtResource("2_o0fsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1793, -0.350847, 9.81338)
+
+[node name="PF_Chicken_Friend_Random_Walker-n7" parent="Enemies" instance=ExtResource("2_o0fsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54877, -0.350848, 6.43149)
+
+[node name="PF_Chicken_Friend_Random_Walker-n8" parent="Enemies" instance=ExtResource("2_o0fsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.22024, -0.350848, 0.594456)
+
+[node name="PF_Chicken_Friend_Fast_Random_Walker-n1" parent="Enemies" instance=ExtResource("4_h1rqx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4765, -0.495984, -1.21371)
+
+[node name="PF_Chicken_Friend_Fast_Random_Walker-n2" parent="Enemies" instance=ExtResource("4_h1rqx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.84464, -0.495984, -3.91708)
 
 [node name="Environment" parent="." instance=ExtResource("2_t7ms4")]
 

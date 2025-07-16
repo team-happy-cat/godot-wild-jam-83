@@ -1,7 +1,7 @@
-[gd_resource type="BehaviorTree" load_steps=11 format=3 uid="uid://bhork3d7aqj7l"]
+[gd_resource type="BehaviorTree" load_steps=11 format=3 uid="uid://cwywabvvlpxq6"]
 
-[ext_resource type="Script" uid="uid://6w2kh5nowody" path="res://ai/tasks/FaceRandomDirection.cs" id="1_cprs3"]
-[ext_resource type="Script" uid="uid://3ia0ihouvtsf" path="res://ai/tasks/MoveForward.cs" id="2_fi2ie"]
+[ext_resource type="Script" uid="uid://6w2kh5nowody" path="res://ai/tasks/FaceRandomDirection.cs" id="1_j700c"]
+[ext_resource type="Script" uid="uid://3ia0ihouvtsf" path="res://ai/tasks/MoveForward.cs" id="2_6wfoa"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_xeils"]
 var/speed/name = &"speed"
@@ -16,20 +16,20 @@ var/fast_speed/hint = 1
 var/fast_speed/hint_string = "1, 100, 1"
 
 [sub_resource type="BTRandomWait" id="BTRandomWait_3pqyr"]
-min_duration = 2.0
-max_duration = 4.0
+min_duration = 0.1
+max_duration = 0.5
 
 [sub_resource type="BTSequence" id="BTSequence_cprs3"]
 custom_name = "Pause before action"
 children = [SubResource("BTRandomWait_3pqyr")]
 
 [sub_resource type="BTAction" id="BTAction_fi2ie"]
-script = ExtResource("1_cprs3")
+script = ExtResource("1_j700c")
 
 [sub_resource type="BTAction" id="BTAction_3fpfi"]
-script = ExtResource("2_fi2ie")
-SpeedVar = &"speed"
-Duration = 2.0
+script = ExtResource("2_6wfoa")
+SpeedVar = &"fast_speed"
+Duration = 1.0
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_fi2ie"]
 children = [SubResource("BTAction_3fpfi")]
