@@ -16,6 +16,7 @@ height = 1.455
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_wqg6v"]
 
 [node name="Fly" type="CharacterBody3D"]
+collision_layer = 16385
 script = ExtResource("1_l3ie6")
 
 [node name="SK_Fly" parent="." instance=ExtResource("1_clhcm")]
@@ -25,7 +26,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04402, 0)
 transform = Transform3D(1.71718, 0, 0, 0, 1.71718, 0, 0, 0, 1.71718, 0, 0.188751, 0)
 
 [node name="Skeleton3D" parent="SK_Fly/SK_fly" index="0"]
-bones/1/position = Vector3(2.7519e-15, -0.0195873, -0.0602193)
+bones/1/position = Vector3(-4.00205e-16, -0.054327, -0.0602193)
 bones/2/rotation = Quaternion(0.102255, 1.1859e-06, 1.21895e-07, 0.994758)
 bones/3/rotation = Quaternion(0.674663, -0.137419, -0.221283, 0.690637)
 bones/4/rotation = Quaternion(-0.00504097, 0.112593, 0.106073, 0.98795)
@@ -42,8 +43,8 @@ bones/16/rotation = Quaternion(0.0944543, -0.20365, -0.308622, 0.924315)
 bones/18/rotation = Quaternion(0.723216, -0.0286974, 0.433165, 0.537125)
 bones/19/rotation = Quaternion(0.0510427, -0.343241, -0.479343, 0.806109)
 bones/21/rotation = Quaternion(0.869696, -4.01612e-15, 7.13322e-15, 0.493587)
-bones/22/rotation = Quaternion(0.957223, 0.240333, 0.111099, -0.116712)
-bones/23/rotation = Quaternion(0.957223, -0.240333, -0.111099, -0.116712)
+bones/22/rotation = Quaternion(0.877901, 0.279268, 0.173956, -0.347906)
+bones/23/rotation = Quaternion(0.877901, -0.279268, -0.173955, -0.347906)
 
 [node name="AnimationTree" type="AnimationTree" parent="SK_Fly"]
 tree_root = SubResource("AnimationNodeAnimation_clhcm")
