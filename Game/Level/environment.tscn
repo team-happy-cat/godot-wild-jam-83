@@ -1,8 +1,10 @@
-[gd_scene load_steps=38 format=4 uid="uid://dpg7c2fxet7nr"]
+[gd_scene load_steps=40 format=4 uid="uid://dpg7c2fxet7nr"]
 
 [ext_resource type="PackedScene" uid="uid://cfqyxrpk2d1y7" path="res://Assets/Models/Environment/PF_dirt_plane-col.glb" id="1_02srd"]
 [ext_resource type="PackedScene" uid="uid://8tl1ghmq6i1w" path="res://addons/StandardAssets/Scene/Ocean.tscn" id="2_jhbam"]
 [ext_resource type="PackedScene" uid="uid://csr3w3h7xlgjn" path="res://Assets/Models/Utils/outer_environment_plane.glb" id="3_02srd"]
+[ext_resource type="PackedScene" uid="uid://bn85uyhd1vd1k" path="res://Assets/Models/Environment/PF_cattail_1.glb" id="3_k5xax"]
+[ext_resource type="PackedScene" uid="uid://qxyyi1spfn5h" path="res://Assets/Models/Environment/PF_tall_grass_clump_1.glb" id="4_1c7fu"]
 [ext_resource type="PackedScene" uid="uid://cnyilg2wnjj5a" path="res://Assets/Models/Environment/PF_willow_1-convcol.glb" id="4_ymb1m"]
 [ext_resource type="PackedScene" uid="uid://b1g7wtybftm5y" path="res://Assets/Models/Utils/inner_environment_plane.glb" id="5_ca7yp"]
 [ext_resource type="Texture2D" uid="uid://ccmsm8k4fiuqm" path="res://Assets/Models/Environment/PF_willow_1-convcol_Color_Atlas_A.png" id="5_yqc2w"]
@@ -278,6 +280,82 @@ operation = 2
 radius = 75.0
 height = 10.0
 sides = 32
+
+[node name="Cattails" type="Node3D" parent="Meshes"]
+
+[node name="PF_cattail_12" parent="Meshes/Cattails" instance=ExtResource("3_k5xax")]
+transform = Transform3D(6.1521673, 0, -1.7637568, 0, 6.4, 0, 1.7637568, 0, 6.1521673, -39.142284, 1.9073486e-06, -25.087118)
+
+[node name="PF_cattail_13" parent="Meshes/Cattails" instance=ExtResource("3_k5xax")]
+transform = Transform3D(4.172121, 0, 3.0277765, 0, 5.155, 0, -3.0277765, 0, 4.172121, -37.453518, 1.9073486e-06, -26.111526)
+
+[node name="PF_cattail_14" parent="Meshes/Cattails" instance=ExtResource("3_k5xax")]
+transform = Transform3D(2.5239482, 0, 4.717222, 0, 5.3500004, 0, -4.717222, 0, 2.5239482, -38.938217, 1.9073486e-06, -23.20623)
+
+[node name="PF_cattail_15" parent="Meshes/Cattails" instance=ExtResource("3_k5xax")]
+transform = Transform3D(-3.535693, 0, 5.7792306, 0, 6.775, 0, -5.7792306, 0, -3.535693, -41.045914, -1.9073486e-06, 23.65318)
+
+[node name="PF_cattail_16" parent="Meshes/Cattails" instance=ExtResource("3_k5xax")]
+transform = Transform3D(-4.148961, 0, 3.3776646, 0, 5.3500004, 0, -3.3776646, 0, -4.148961, -38.205845, -1.9073486e-06, 24.922821)
+
+[node name="PF_cattail_17" parent="Meshes/Cattails" instance=ExtResource("3_k5xax")]
+transform = Transform3D(-4.9507923, 0, 2.0278435, 0, 5.3500004, 0, -2.0278435, 0, -4.9507923, -38.574223, -1.4654608, 23.309105)
+
+[node name="PF_cattail_18" parent="Meshes/Cattails" instance=ExtResource("3_k5xax")]
+transform = Transform3D(-1.0912105, 0, 4.5715704, 0, 4.7, 0, -4.5715704, 0, -1.0912105, 14.621898, -1.9073486e-06, 28.838757)
+
+[node name="PF_cattail_19" parent="Meshes/Cattails" instance=ExtResource("3_k5xax")]
+transform = Transform3D(-4.4306984, 0, -2.9985685, 0, 5.3500004, 0, 2.9985685, 0, -4.4306984, 16.190647, -1.9073486e-06, 28.904345)
+
+[node name="PF_cattail_20" parent="Meshes/Cattails" instance=ExtResource("3_k5xax")]
+transform = Transform3D(-1.0937189, 0, -5.701035, 0, 5.805, 0, 5.701035, 0, -1.0937189, 41.108723, 0, 12.706446)
+
+[node name="PF_cattail_21" parent="Meshes/Cattails" instance=ExtResource("3_k5xax")]
+transform = Transform3D(-4.130157, 0, -2.570997, 0, 4.865, 0, 2.570997, 0, -4.130157, 39.451126, 4.7683716e-07, 13.185927)
+
+[node name="PF_cattail_22" parent="Meshes/Cattails" instance=ExtResource("3_k5xax")]
+transform = Transform3D(-3.1237648, 0, -4.343339, 0, 5.3499994, 0, 4.343339, 0, -3.1237648, 40.8532, 4.7683716e-07, 11.202726)
+
+[node name="PF_cattail_23" parent="Meshes/Cattails" instance=ExtResource("3_k5xax")]
+transform = Transform3D(-2.4036062, 0, -4.7796626, 0, 5.3499994, 0, 4.7796626, 0, -2.4036062, 41.77319, 4.7683716e-07, -24.454035)
+
+[node name="PF_cattail_24" parent="Meshes/Cattails" instance=ExtResource("3_k5xax")]
+transform = Transform3D(3.0184352, 0, -3.1807666, 0, 4.385, 0, 3.1807666, 0, 3.0184352, 39.299732, 4.7683716e-07, -24.629787)
+
+[node name="PF_cattail_25" parent="Meshes/Cattails" instance=ExtResource("3_k5xax")]
+transform = Transform3D(-0.10155421, 0, -6.0291452, 0, 6.03, 0, 6.0291452, 0, -0.10155421, 39.953007, 4.7683716e-07, -26.44615)
+
+[node name="TallGrass" type="Node3D" parent="Meshes"]
+
+[node name="PF_tall_grass_clump_12" parent="Meshes/TallGrass" instance=ExtResource("4_1c7fu")]
+transform = Transform3D(0.87319964, 0, -1.3585829, 0, 1.615, 0, 1.3585829, 0, 0.87319964, 40.161858, -0.4951632, 11.639389)
+
+[node name="PF_tall_grass_clump_13" parent="Meshes/TallGrass" instance=ExtResource("4_1c7fu")]
+transform = Transform3D(1.5001317, 0, -0.59818834, 0, 1.6149998, 0, 0.59818834, 0, 1.5001317, 40.42362, -0.4951632, 13.53182)
+
+[node name="PF_tall_grass_clump_14" parent="Meshes/TallGrass" instance=ExtResource("4_1c7fu")]
+transform = Transform3D(1.5001317, 0, -0.59818834, 0, 1.6149998, 0, 0.59818834, 0, 1.5001317, 39.787395, -0.4951632, -25.844965)
+
+[node name="PF_tall_grass_clump_15" parent="Meshes/TallGrass" instance=ExtResource("4_1c7fu")]
+transform = Transform3D(2.024946, 0, -0.80746174, 0, 2.18, 0, 0.80746174, 0, 2.024946, 40.50074, -0.4951632, -24.02812)
+
+[node name="PF_tall_grass_clump_16" parent="Meshes/TallGrass" instance=ExtResource("4_1c7fu")]
+transform = Transform3D(2.1727536, 0, 0.17760229, 0, 2.1799998, 0, -0.17760229, 0, 2.1727536, 7.2504234, -0.4951632, -28.363825)
+
+[node name="PF_tall_grass_clump_17" parent="Meshes/TallGrass" instance=ExtResource("4_1c7fu")]
+transform = Transform3D(1.957265, 0, -0.95995545, 0, 2.18, 0, 0.95995545, 0, 1.957265, -39.364067, -0.4951632, -24.369497)
+
+[node name="PF_tall_grass_clump_18" parent="Meshes/TallGrass" instance=ExtResource("4_1c7fu")]
+transform = Transform3D(1.5783161, 0, 0.38670805, 0, 1.625, 0, -0.38670805, 0, 1.5783161, -37.588154, -0.4951632, -24.951183)
+
+[node name="PF_tall_grass_clump_19" parent="Meshes/TallGrass" instance=ExtResource("4_1c7fu")]
+transform = Transform3D(0.42298806, 0, 2.651472, 0, 2.685, 0, -2.651472, 0, 0.42298806, -39.20254, -0.49516308, 24.015123)
+
+[node name="PF_tall_grass_clump_20" parent="Meshes/TallGrass" instance=ExtResource("4_1c7fu")]
+transform = Transform3D(0.22212787, 0, 1.3923934, 0, 1.41, 0, -1.3923934, 0, 0.22212787, -37.435223, -0.49516308, 22.340326)
+
+[node name="PF_tall_grass_clump_21" parent="Meshes/TallGrass" instance=ExtResource("4_1c7fu")]
+transform = Transform3D(-1.2716179, 0, 1.4783397, 0, 1.9499999, 0, -1.4783397, 0, -1.2716179, 15.389236, -0.49516356, 29.015697)
 
 [node name="MultiMeshTargets" type="Node3D" parent="."]
 
