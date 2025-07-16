@@ -1,6 +1,5 @@
-[gd_resource type="BehaviorTree" load_steps=13 format=3 uid="uid://bhork3d7aqj7l"]
+[gd_resource type="BehaviorTree" load_steps=11 format=3 uid="uid://bhork3d7aqj7l"]
 
-[ext_resource type="Script" uid="uid://bvpavi6rw0xlg" path="res://ai/tasks/GetFirstInGroup.cs" id="1_3fpfi"]
 [ext_resource type="Script" uid="uid://6w2kh5nowody" path="res://ai/tasks/FaceRandomDirection.cs" id="1_cprs3"]
 [ext_resource type="Script" uid="uid://3ia0ihouvtsf" path="res://ai/tasks/MoveForward.cs" id="2_fi2ie"]
 
@@ -17,11 +16,6 @@ var/speed/hint_string = "1,100,1"
 custom_name = "Pause before action"
 children = [SubResource("BTRandomWait_3pqyr")]
 
-[sub_resource type="BTAction" id="BTAction_6p1dr"]
-script = ExtResource("1_3fpfi")
-Group = &"Player"
-OutputVar = &"target"
-
 [sub_resource type="BTAction" id="BTAction_fi2ie"]
 script = ExtResource("1_cprs3")
 
@@ -36,7 +30,7 @@ time_limit = 2.0
 
 [sub_resource type="BTSequence" id="BTSequence_fi2ie"]
 custom_name = "Randomly walk"
-children = [SubResource("BTAction_6p1dr"), SubResource("BTAction_fi2ie"), SubResource("BTTimeLimit_fi2ie")]
+children = [SubResource("BTAction_fi2ie"), SubResource("BTTimeLimit_fi2ie")]
 
 [sub_resource type="BTSequence" id="BTSequence_3fpfi"]
 children = [SubResource("BTSequence_cprs3"), SubResource("BTSequence_fi2ie")]
