@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dmv16q7viwaxg"]
 
-[ext_resource type="Texture2D" uid="uid://dd8rvttvfgf72" path="res://Assets/Models/Environment/PF_LilyPad_Color_Atlas_A.png" id="1_ctjhh"]
+[ext_resource type="Texture2D" uid="uid://dgj4ax2k5xv41" path="res://Assets/Models/Color_Atlas_A.png" id="1_ctjhh"]
 
 [resource]
 albedo_texture = ExtResource("1_ctjhh")
