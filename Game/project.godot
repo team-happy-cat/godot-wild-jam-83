@@ -13,6 +13,8 @@ config_version=5
 config/name="Godot Wild Jam 83"
 run/main_scene="uid://celj1wfd0mq20"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 config/windows_native_icon="res://godot_icon.ico"
 
