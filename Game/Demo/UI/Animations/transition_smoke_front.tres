@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://b4pdmwkmnt0vj"]
+
+[ext_resource type="Texture2D" uid="uid://60i13lid13av" path="res://Demo/UI/Images/transition_smoke_front.png" id="1_ohgfe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7e84"]
+atlas = ExtResource("1_ohgfe")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vug2o"]
+atlas = ExtResource("1_ohgfe")
+region = Rect2(0, 1080, 1920, 1080)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7e84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vug2o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]

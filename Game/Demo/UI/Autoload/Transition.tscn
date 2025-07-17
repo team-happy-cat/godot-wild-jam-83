@@ -1,18 +1,117 @@
-[gd_scene load_steps=5 format=3 uid="uid://pqsxpa3hsunb"]
+[gd_scene load_steps=10 format=3 uid="uid://pqsxpa3hsunb"]
 
-[ext_resource type="Texture2D" uid="uid://b4y8ejh1d0wbu" path="res://Demo/UI/Images/transition.png" id="1_3m505"]
 [ext_resource type="Script" uid="uid://c24buv8cgxtvw" path="res://Demo/UI/Autoload/Transition.cs" id="1_uh4t5"]
 [ext_resource type="SpriteFrames" uid="uid://brbibm6k5ao60" path="res://Demo/UI/Animations/transition_frog.tres" id="3_6t5n6"]
 [ext_resource type="AudioStream" uid="uid://cvq38xx86p5wp" path="res://Demo/UI/Audio/transition.mp3" id="3_tnuc3"]
+[ext_resource type="SpriteFrames" uid="uid://b4pdmwkmnt0vj" path="res://Demo/UI/Animations/transition_smoke_front.tres" id="4_6rk5t"]
+[ext_resource type="SpriteFrames" uid="uid://c7jx782k7s37x" path="res://Demo/UI/Animations/transition_smoke_middle.tres" id="4_pigax"]
+[ext_resource type="SpriteFrames" uid="uid://jbqqp5lfrcf6" path="res://Demo/UI/Animations/transition_smoke_back.tres" id="4_ur0ry"]
 
-[node name="Transition" type="CanvasLayer" node_paths=PackedStringArray("InputBlocker", "RightEdge", "Image", "Trail", "Audio")]
+[sub_resource type="Animation" id="Animation_6rk5t"]
+resource_name = "transition"
+length = 2.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Audio:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(3840, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/SmokeBack")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites/SmokeMiddle:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_pigax"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Audio:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/SmokeMiddle:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c7udj"]
+_data = {
+&"RESET": SubResource("Animation_pigax"),
+&"transition": SubResource("Animation_6rk5t")
+}
+
+[node name="Transition" type="CanvasLayer" node_paths=PackedStringArray("InputBlocker", "Animations")]
 layer = 10
 script = ExtResource("1_uh4t5")
 InputBlocker = NodePath("InputBlocker")
-RightEdge = NodePath("RightEdge")
-Image = NodePath("Image")
-Trail = NodePath("Image/Trail")
-Audio = NodePath("Audio")
+Animations = NodePath("Animations")
 
 [node name="InputBlocker" type="Control" parent="."]
 layout_mode = 3
@@ -22,44 +121,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RightEdge" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-grow_horizontal = 0
-grow_vertical = 2
+[node name="Sprites" type="Node2D" parent="."]
 
-[node name="Image" type="TextureRect" parent="."]
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = -2432.0
-offset_top = -796.0
-offset_bottom = 796.0
-grow_vertical = 2
-texture = ExtResource("1_3m505")
+[node name="SmokeBack" type="AnimatedSprite2D" parent="Sprites"]
+position = Vector2(-3840, 0)
+sprite_frames = ExtResource("4_ur0ry")
+autoplay = "default"
+frame = 2
+centered = false
 
-[node name="Frog" type="AnimatedSprite2D" parent="Image"]
-position = Vector2(2080, 824)
+[node name="SmokeMiddle" type="AnimatedSprite2D" parent="Sprites"]
+position = Vector2(-3840, 0)
+sprite_frames = ExtResource("4_pigax")
+autoplay = "default"
+centered = false
+
+[node name="SmokeFront" type="AnimatedSprite2D" parent="Sprites"]
+position = Vector2(-1920, 0)
+sprite_frames = ExtResource("4_6rk5t")
+autoplay = "default"
+centered = false
+
+[node name="Frog" type="AnimatedSprite2D" parent="Sprites"]
+position = Vector2(-160, 540)
 sprite_frames = ExtResource("3_6t5n6")
 autoplay = "default"
 
-[node name="Trail" type="ColorRect" parent="Image"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1920.0
-offset_top = 256.0
-offset_right = -2432.0
-offset_bottom = -256.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.6313726, 0.9490196, 1, 1)
+[node name="Animations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_c7udj")
+}
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_tnuc3")
