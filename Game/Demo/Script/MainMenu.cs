@@ -6,6 +6,9 @@ public partial class MainMenu : Control
 	[Export] public TextureButton PlayButton;
 	[Export] public TextureButton QuitButton;
 	[Export] public TextureButton TeamButton;
+	[Export] public TextureButton StartButton;
+
+	[Export] public AnimationPlayer TutorialAnimations;
 	
 	// Debug - to be removed for release
 	[Export] public Button LevelButton1;
@@ -18,9 +21,10 @@ public partial class MainMenu : Control
 	{
 		Mouse.SetVisible();
 		
-		PlayButton.Pressed += StartGame;
+		PlayButton.Pressed += () => TutorialAnimations.Play("open");
 		QuitButton.Pressed += () => GetTree().Quit();
 		TeamButton.Pressed += () => OS.ShellOpen("https://team-happy-cat.itch.io/");
+		StartButton.Pressed += StartGame;
 		
 		// Debug - to be removed for release
 		LevelButton1.Pressed += OnLevelButton1Pressed;

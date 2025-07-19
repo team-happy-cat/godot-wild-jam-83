@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://celj1wfd0mq20"]
+[gd_scene load_steps=24 format=3 uid="uid://celj1wfd0mq20"]
 
 [ext_resource type="Texture2D" uid="uid://du65rg8x8xvri" path="res://Demo/UI/Images/team_banner.png" id="1_04a0p"]
 [ext_resource type="Script" uid="uid://cql8bvyn0kd8k" path="res://Demo/Script/MainMenu.cs" id="1_k2w80"]
@@ -13,6 +13,99 @@
 [ext_resource type="Texture2D" uid="uid://bay0vfel1y8nb" path="res://Demo/UI/Images/sign_play.png" id="7_urqk6"]
 [ext_resource type="Script" uid="uid://cr05f2g78pvlt" path="res://Demo/UI/Components/SquishyTextureButton.cs" id="8_8exua"]
 [ext_resource type="Texture2D" uid="uid://4twrmcdlggwa" path="res://Demo/UI/Images/sign_quit.png" id="9_04a0p"]
+[ext_resource type="Shader" uid="uid://g7p7p0bxd6k3" path="res://Demo/UI/Shaders/Blur.gdshader" id="11_3xcul"]
+[ext_resource type="Texture2D" uid="uid://5pwkkcvu5oe3" path="res://Demo/UI/Images/tutorial_sign.png" id="12_fd2lg"]
+[ext_resource type="Texture2D" uid="uid://dhftwquoplpue" path="res://Demo/UI/Images/pause_sign_resume.png" id="13_fjxyp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fd2lg"]
+shader = ExtResource("11_3xcul")
+shader_parameter/amount = 3.0
+
+[sub_resource type="Animation" id="Animation_fjxyp"]
+resource_name = "open"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sign:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.333, 1),
+"update": 0,
+"values": [Vector2(448, 1200), Vector2(448, 220)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.333, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a2nm1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sign:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(448, 1200)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6c24m"]
+_data = {
+&"RESET": SubResource("Animation_a2nm1"),
+&"open": SubResource("Animation_fjxyp")
+}
 
 [sub_resource type="Animation" id="Animation_3xcul"]
 length = 0.001
@@ -198,7 +291,7 @@ _data = {
 
 [node name="Main_Menu" type="Node3D"]
 
-[node name="Main_Menu" type="Control" parent="." node_paths=PackedStringArray("PlayButton", "QuitButton", "TeamButton", "LevelButton1", "LevelButton2", "LevelButton3")]
+[node name="Main_Menu" type="Control" parent="." node_paths=PackedStringArray("PlayButton", "QuitButton", "TeamButton", "StartButton", "TutorialAnimations", "LevelButton1", "LevelButton2", "LevelButton3")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -209,6 +302,8 @@ script = ExtResource("1_k2w80")
 PlayButton = NodePath("Sign/PlayButton")
 QuitButton = NodePath("Sign/QuitButton")
 TeamButton = NodePath("TeamLogo")
+StartButton = NodePath("Tutorial/Sign/StartButton")
+TutorialAnimations = NodePath("Tutorial/Animations")
 LevelButton1 = NodePath("DebugLevelSelector/LevelButton1")
 LevelButton2 = NodePath("DebugLevelSelector/LevelButton2")
 LevelButton3 = NodePath("DebugLevelSelector/LevelButton3")
@@ -355,6 +450,60 @@ script = ExtResource("8_8exua")
 soundHover = "Squeak"
 soundClick = "Meow"
 metadata/_custom_type_script = "uid://cr05f2g78pvlt"
+
+[node name="Tutorial" type="ColorRect" parent="Main_Menu"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_fd2lg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="Sign" type="TextureRect" parent="Main_Menu/Tutorial"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = 660.0
+offset_right = 512.0
+offset_bottom = 1300.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_fd2lg")
+
+[node name="StartButton" type="TextureButton" parent="Main_Menu/Tutorial/Sign"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = 102.0
+offset_right = 138.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"WesternButton"
+texture_normal = ExtResource("13_fjxyp")
+script = ExtResource("8_8exua")
+soundHover = "Hover"
+soundClick = "Select"
+metadata/_custom_type_script = "uid://cr05f2g78pvlt"
+
+[node name="Animations" type="AnimationPlayer" parent="Main_Menu/Tutorial"]
+libraries = {
+&"": SubResource("AnimationLibrary_6c24m")
+}
+autoplay = "RESET"
 
 [node name="MenuTheme" type="AudioStreamPlayer" parent="Main_Menu"]
 stream = ExtResource("7_rd8ke")
