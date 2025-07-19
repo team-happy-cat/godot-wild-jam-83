@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c03xokj410jth"]
+[gd_scene load_steps=19 format=3 uid="uid://c03xokj410jth"]
 
 [ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/Environment/PF_LilyPad.glb" id="1_8oik3"]
 [ext_resource type="PackedScene" uid="uid://dpg7c2fxet7nr" path="res://Level/environment.tscn" id="2_0khoh"]
@@ -11,9 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://bwjlg15j8mwjg" path="res://Demo/Scene/Character/PF_Chicken_Friend_Fast_Random_Walker.tscn" id="5_6utp8"]
 [ext_resource type="Script" uid="uid://wxiqiqek0bdu" path="res://Demo/Script/WaterArea.cs" id="5_hmuci"]
 [ext_resource type="PackedScene" uid="uid://cjhwj7oqysobp" path="res://Assets/Models/Rocks/PF_RockD-convcol.glb" id="5_v4t6p"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7ms4"]
-albedo_color = Color(0.35, 0.27125, 0.1925, 1)
+[ext_resource type="PackedScene" uid="uid://eeoxboyxvnor" path="res://Assets/Models/Rocks/PF_RockE-convcol.glb" id="6_stq8n"]
+[ext_resource type="PackedScene" uid="uid://c525n4myuok4v" path="res://Assets/Models/Rocks/PF_RockF-convcol.glb" id="7_3f5or"]
+[ext_resource type="PackedScene" uid="uid://mjmdsksovbht" path="res://Assets/Models/Rocks/PF_RockG-convcol.glb" id="8_h7k3m"]
+[ext_resource type="PackedScene" uid="uid://cijtbb1pavxg7" path="res://Assets/Models/Rocks/PF_RockI-convcol.glb" id="9_pfx8k"]
+[ext_resource type="PackedScene" uid="uid://delv7obnt163u" path="res://Assets/Models/Rocks/PF_RockJ-convcol.glb" id="10_0yb8g"]
+[ext_resource type="PackedScene" uid="uid://cqkpoo1c7fpv3" path="res://Assets/Models/Rocks/PF_RockK-convcol.glb" id="11_j7bm6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8x7d7"]
 size = Vector3(100, 2, 100)
@@ -192,39 +195,94 @@ radius = 2.46777
 height = 1.0
 sides = 16
 
-[node name="ObstaclesOld" type="CSGCombiner3D" parent="Layout"]
-material_override = SubResource("StandardMaterial3D_t7ms4")
-use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Layout/ObstaclesOld"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00626, 0.25, -28.4847)
-size = Vector3(3.97644, 1.5, 13.9229)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Layout/ObstaclesOld"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88865, 0.25, -23.001)
-size = Vector3(14.217, 1.5, 2.95557)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Layout/ObstaclesOld"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9917, 0.25, -11.4951)
-size = Vector3(4.01097, 1.5, 23.0165)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="Layout/ObstaclesOld"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.8486, 0.25, -1.76388)
-size = Vector3(39.7068, 1.5, 3.55417)
-
 [node name="Obstacles" type="Node3D" parent="Layout"]
 
-[node name="PF_RockA-n1" parent="Layout" instance=ExtResource("2_wdx0b")]
+[node name="PF_RockA-n1" parent="Layout/Obstacles" instance=ExtResource("2_wdx0b")]
 transform = Transform3D(2.81529, 0, 1.85542, 0, 3.37171, 0, -1.85542, 0, 2.81529, -2.90185, -0.772044, -30.1507)
 
-[node name="PF_RockB-n1" parent="Layout" instance=ExtResource("3_j0d7i")]
-transform = Transform3D(1.32498, 0, 1.15175, 0, 1.75559, 0, -1.15175, 0, 1.32498, -2.99856, 0.722705, -26.7995)
+[node name="PF_RockA-n3" parent="Layout/Obstacles" instance=ExtResource("2_wdx0b")]
+transform = Transform3D(0.6244, 0, 3.31339, 0, 3.37171, 0, -3.31339, 0, 0.6244, 10.8954, -0.772042, -4.53178)
 
-[node name="PF_RockC-n1" parent="Layout" instance=ExtResource("4_rne3y")]
+[node name="PF_RockA-n2" parent="Layout/Obstacles" instance=ExtResource("2_wdx0b")]
+transform = Transform3D(0.299965, 0, 3.35834, 0, 3.37171, 0, -3.35834, 0, 0.299965, 11.4071, -0.815368, -11.262)
+
+[node name="PF_RockA-n4" parent="Layout/Obstacles" instance=ExtResource("2_wdx0b")]
+transform = Transform3D(0.299965, 0, 3.35834, 0, 3.37171, 0, -3.35834, 0, 0.299965, 40.6238, -0.815368, -1.9361)
+
+[node name="PF_RockB-n1" parent="Layout/Obstacles" instance=ExtResource("3_j0d7i")]
+transform = Transform3D(1.32498, 0, 1.15175, 0, 1.75559, 0, -1.15175, 0, 1.32498, -2.99856, 0.25821, -26.7995)
+
+[node name="PF_RockC-n1" parent="Layout/Obstacles" instance=ExtResource("4_rne3y")]
 transform = Transform3D(0.694168, 0, 1.24314, 0, 1.42382, 0, -1.24314, 0, 0.694168, -3.45016, 0.872428, -23.6744)
 
-[node name="PF_RockD-n1" parent="Layout" instance=ExtResource("5_v4t6p")]
-transform = Transform3D(1.13398, 0, -0.323921, 0, 1.17934, 0, 0.323921, 0, 1.13398, -0.54732, 1.02323, -22.3936)
+[node name="PF_RockC-n3" parent="Layout/Obstacles" instance=ExtResource("4_rne3y")]
+transform = Transform3D(0.8771, 0, 1.12159, 0, 1.42382, 0, -1.12159, 0, 0.8771, 34.026, 0.656023, -2.02697)
+
+[node name="PF_RockC-n2" parent="Layout/Obstacles" instance=ExtResource("4_rne3y")]
+transform = Transform3D(0.694168, 0, 1.24314, 0, 1.42382, 0, -1.24314, 0, 0.694168, 10.3001, 0.729208, -7.74792)
+
+[node name="PF_RockC-n4" parent="Layout/Obstacles" instance=ExtResource("4_rne3y")]
+transform = Transform3D(0.694168, 0, 1.24314, 0, 1.42382, 0, -1.24314, 0, 0.694168, 43.7006, 0.508312, -2.17125)
+
+[node name="PF_RockD-n1" parent="Layout/Obstacles" instance=ExtResource("5_v4t6p")]
+transform = Transform3D(1.13398, 0, -0.323921, 0, 1.17934, 0, 0.323921, 0, 1.13398, -0.54732, 0.696854, -22.3936)
+
+[node name="PF_RockD-n3" parent="Layout/Obstacles" instance=ExtResource("5_v4t6p")]
+transform = Transform3D(1.13398, 0, -0.323921, 0, 1.17934, 0, 0.323921, 0, 1.13398, 10.6551, 0.696854, -2.12553)
+
+[node name="PF_RockD-n2" parent="Layout/Obstacles" instance=ExtResource("5_v4t6p")]
+transform = Transform3D(1.26244, 0, -0.360616, 0, 1.31294, 0, 0.360616, 0, 1.26244, 10.9971, 0.696854, -16.1715)
+
+[node name="PF_RockD-n4" parent="Layout/Obstacles" instance=ExtResource("5_v4t6p")]
+transform = Transform3D(1.26244, 0, -0.360616, 0, 1.31294, 0, 0.360616, 0, 1.26244, 37.7759, 0.696854, -1.63347)
+
+[node name="PF_RockE-n1" parent="Layout/Obstacles" instance=ExtResource("6_stq8n")]
+transform = Transform3D(0.996991, 0, 0.148193, 0, 1, 0, -0.0775195, 0, 1.90594, 2.1262, -1.58841, -23.0296)
+
+[node name="PF_RockE-n5" parent="Layout/Obstacles" instance=ExtResource("6_stq8n")]
+transform = Transform3D(0.996991, 0, 0.148193, 0, 1, 0, -0.0775195, 0, 1.90594, 30.8845, -1.58841, -1.59278)
+
+[node name="PF_RockE-n3" parent="Layout/Obstacles" instance=ExtResource("6_stq8n")]
+transform = Transform3D(0.485908, 0, 1.67083, 0, 1, 0, -0.87401, 0, 0.928905, 15.1131, -1.58841, -1.49851)
+
+[node name="PF_RockE-n2" parent="Layout/Obstacles" instance=ExtResource("6_stq8n")]
+transform = Transform3D(0.737148, 0, -1.29179, 0, 1, 0, 0.675732, 0, 1.4092, 11.379, -1.58841, -13.5502)
+
+[node name="PF_RockE-n4" parent="Layout/Obstacles" instance=ExtResource("6_stq8n")]
+transform = Transform3D(0.999851, 0, -0.0329967, 0, 1, 0, 0.0172605, 0, 1.9114, 17.2411, -1.58841, -1.7448)
+
+[node name="PF_RockF-n1" parent="Layout/Obstacles" instance=ExtResource("7_3f5or")]
+transform = Transform3D(1, 0, 0, 0, 1.8419, 0, 0, 0, 1, 4.43973, -1.17627, -22.9629)
+
+[node name="PF_RockF-n2" parent="Layout/Obstacles" instance=ExtResource("7_3f5or")]
+transform = Transform3D(1.05441, 0, -0.984136, 0, 1.8419, 0, 0.900963, 0, 1.15175, 12.4476, -1.17627, -1.91939)
+
+[node name="PF_RockG-n1" parent="Layout/Obstacles" instance=ExtResource("8_h7k3m")]
+transform = Transform3D(1.70723, 0, 0, 0, 2.43123, 0, 0, 0, 1.13757, 6.30887, -1.24487, -22.7497)
+
+[node name="PF_RockG-n2" parent="Layout/Obstacles" instance=ExtResource("8_h7k3m")]
+transform = Transform3D(2.09936, 0, 0, 0, 2.43124, 0, 0, 0, 1.72702, 27.7609, -1.11808, -1.42498)
+
+[node name="PF_RockI-n1" parent="Layout/Obstacles" instance=ExtResource("9_pfx8k")]
+transform = Transform3D(2.26063, 0, 0, 0, 4.14028, 0, 0, 0, 2.26063, 8.54407, -1.36439, -22.9315)
+
+[node name="PF_RockI-n2" parent="Layout/Obstacles" instance=ExtResource("9_pfx8k")]
+transform = Transform3D(2.26063, 0, 0, 0, 4.14028, 0, 0, 0, 2.26063, 22.4522, -1.36439, -1.84042)
+
+[node name="PF_RockI-n3" parent="Layout/Obstacles" instance=ExtResource("9_pfx8k")]
+transform = Transform3D(2.26063, 0, 0, 0, 4.14028, 0, 0, 0, 2.26063, 47.012, -1.36439, -1.84042)
+
+[node name="PF_RockJ-n1" parent="Layout/Obstacles" instance=ExtResource("10_0yb8g")]
+transform = Transform3D(4.99009, 0, -2.99183, 0, 5.81825, 0, 2.99183, 0, 4.99009, 10.9716, -0.764615, -22.408)
+
+[node name="PF_RockJ-n3" parent="Layout/Obstacles" instance=ExtResource("10_0yb8g")]
+transform = Transform3D(2.34142, 0, 5.32633, 0, 5.81825, 0, -5.32633, 0, 2.34142, 24.3704, -0.764615, -1.83836)
+
+[node name="PF_RockJ-n2" parent="Layout/Obstacles" instance=ExtResource("10_0yb8g")]
+transform = Transform3D(2.20899, 0, -5.3826, 0, 5.81825, 0, 5.3826, 0, 2.20899, 20.8327, -0.764614, -2.19931)
+
+[node name="PF_RockK-n1" parent="Layout/Obstacles" instance=ExtResource("11_j7bm6")]
+transform = Transform3D(1.78382, 0, 0, 0, 1.78382, 0, 0, 0, 1.78382, 10.822, -1.71297, -18.59)
 
 [node name="Enemies" type="Node3D" parent="."]
 script = ExtResource("2_hmuci")
@@ -305,6 +363,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.475, 0.999998, 17.3236)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5578, 0.999998, 18.0104)
 
 [node name="Environment" parent="." instance=ExtResource("2_0khoh")]
+transform = Transform3D(0.999999, -0.0013584, -0.000846874, 0.0013576, 0.999999, -0.000962392, 0.000848169, 0.000961252, 0.999999, 0, 0, 0)
 
 [node name="WaterArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815, 0)
