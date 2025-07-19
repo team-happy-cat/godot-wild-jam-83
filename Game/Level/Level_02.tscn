@@ -24,7 +24,7 @@ size = Vector3(100, 2, 100)
 [node name="Level_02" type="Node3D"]
 
 [node name="SP_Level_02" type="Marker3D" parent="." groups=["Spawnpoint"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4409, 1, -19.504)
+transform = Transform3D(-0.9102, 0, -0.414169, 0, 1, 0, 0.414169, 0, -0.9102, -31.4409, 1, -19.504)
 
 [node name="Layout" type="Node3D" parent="."]
 
