@@ -1,31 +1,26 @@
 [gd_scene load_steps=10 format=3 uid="uid://diu6opq2wbtv5"]
 
-[ext_resource type="Script" uid="uid://cql8bvyn0kd8k" path="res://Demo/Script/MainMenu.cs" id="1_6fi60"]
-[ext_resource type="Texture2D" uid="uid://dn3h0x7un2jsv" path="res://Demo/UI/Images/menu.png" id="2_o1f84"]
-[ext_resource type="Texture2D" uid="uid://cmh820w0oh4c3" path="res://Demo/UI/Images/title.png" id="3_6s0co"]
-[ext_resource type="Script" uid="uid://ckbkgyfqndr1f" path="res://Demo/UI/Components/Bopper.cs" id="4_r1bnl"]
-[ext_resource type="Texture2D" uid="uid://d6ahuxhvhluk" path="res://Demo/UI/Images/sign.png" id="5_luksa"]
-[ext_resource type="Texture2D" uid="uid://ckixjqny77wod" path="res://Demo/UI/Images/sign_post.png" id="6_ru61v"]
+[ext_resource type="Script" uid="uid://dole3ccq4u5sw" path="res://Level/EndScreen.cs" id="1_gi1ei"]
+[ext_resource type="Texture2D" uid="uid://0ev07ob6tcou" path="res://Demo/UI/Images/end_screen.png" id="2_fhuw8"]
+[ext_resource type="Texture2D" uid="uid://nhot22uihx32" path="res://Demo/UI/Images/Logos/brasonite.png" id="3_d3enf"]
+[ext_resource type="FontFile" uid="uid://c2ha02k6sfaij" path="res://Demo/UI/Fonts/Cute Dino.ttf" id="4_6u1ha"]
+[ext_resource type="Texture2D" uid="uid://lxyf0wtro5o5" path="res://Demo/UI/Images/Logos/lazybones.png" id="5_sl8nb"]
+[ext_resource type="Texture2D" uid="uid://dljntn21kgggh" path="res://Demo/UI/Images/Logos/madmoth.png" id="6_bblhd"]
 [ext_resource type="Script" uid="uid://cr05f2g78pvlt" path="res://Demo/UI/Components/SquishyTextureButton.cs" id="8_g2h5y"]
-[ext_resource type="Texture2D" uid="uid://cd6t8tehkpdiw" path="res://Demo/UI/Images/team_logo.svg" id="10_bqrqu"]
+[ext_resource type="Texture2D" uid="uid://m6ls3ytsbsu0" path="res://Demo/UI/Images/pause_sign_exit.png" id="8_gi1ei"]
 [ext_resource type="AudioStream" uid="uid://m4e3jqwxt665" path="res://Assets/Audio/godot wild jam 83 menu.wav" id="11_n884q"]
 
 [node name="End_Screen" type="Node3D"]
 
-[node name="End_Screen" type="Control" parent="." node_paths=PackedStringArray("PlayButton", "QuitButton", "TeamButton", "LevelButton1", "LevelButton2", "LevelButton3")]
+[node name="End_Screen" type="Control" parent="." node_paths=PackedStringArray("_exitButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6fi60")
-PlayButton = NodePath("")
-QuitButton = NodePath("")
-TeamButton = NodePath("TeamLogo")
-LevelButton1 = NodePath("")
-LevelButton2 = NodePath("")
-LevelButton3 = NodePath("")
+script = ExtResource("1_gi1ei")
+_exitButton = NodePath("ExitButton")
 
 [node name="Background" type="TextureRect" parent="End_Screen"]
 layout_mode = 1
@@ -34,109 +29,182 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_o1f84")
+texture = ExtResource("2_fhuw8")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Title" type="TextureRect" parent="End_Screen"]
+[node name="Credits" type="VBoxContainer" parent="End_Screen"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -512.0
-offset_top = 64.0
-offset_right = 512.0
-offset_bottom = 320.0
-grow_horizontal = 2
-texture = ExtResource("3_6s0co")
-expand_mode = 1
-script = ExtResource("4_r1bnl")
-
-[node name="Sign" type="TextureRect" parent="End_Screen"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -511.0
-offset_top = -224.0
-offset_right = 513.0
-offset_bottom = 416.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_luksa")
-
-[node name="Post" type="TextureRect" parent="End_Screen/Sign"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -128.0
-offset_top = -33.0
-offset_right = 128.0
-offset_bottom = 607.0
-grow_horizontal = 2
+offset_left = 48.0
+offset_top = -592.0
+offset_right = 944.0
+offset_bottom = -48.0
 grow_vertical = 0
-texture = ExtResource("6_ru61v")
+theme_override_constants/separation = 16
+alignment = 2
 
-[node name="You Win" type="Label" parent="End_Screen/Sign"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -235.0
-offset_top = -244.0
-offset_right = 235.0
-offset_bottom = -12.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_mode = 3
-mouse_default_cursor_shape = 2
-theme_type_variation = &"WesternButton"
-text = "You win!"
+[node name="azuwo" type="HBoxContainer" parent="End_Screen/Credits"]
+layout_mode = 2
+theme_override_constants/separation = 16
 
-[node name="DoBop" type="Label" parent="End_Screen/Sign"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -169.0
-offset_top = 47.5
-offset_right = 169.0
-offset_bottom = 240.5
-grow_horizontal = 2
-grow_vertical = 2
-focus_mode = 3
-mouse_default_cursor_shape = 2
-theme_type_variation = &"WesternButton"
-text = "Do bop be do"
+[node name="icon" type="TextureRect" parent="End_Screen/Credits/azuwo"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = ExtResource("6_bblhd")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="TeamLogo" type="TextureButton" parent="End_Screen"]
+[node name="handle" type="Label" parent="End_Screen/Credits/azuwo"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_6u1ha")
+theme_override_font_sizes/font_size = 64
+text = "AzuWo"
+vertical_alignment = 2
+
+[node name="task" type="Label" parent="End_Screen/Credits/azuwo"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.780392, 0.811765, 0.866667, 1)
+theme_override_fonts/font = ExtResource("4_6u1ha")
+theme_override_font_sizes/font_size = 48
+text = "(Management & Level Design)"
+vertical_alignment = 2
+
+[node name="bemore" type="HBoxContainer" parent="End_Screen/Credits"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="icon" type="TextureRect" parent="End_Screen/Credits/bemore"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = ExtResource("6_bblhd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="handle" type="Label" parent="End_Screen/Credits/bemore"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_6u1ha")
+theme_override_font_sizes/font_size = 64
+text = "Bemore"
+vertical_alignment = 2
+
+[node name="task" type="Label" parent="End_Screen/Credits/bemore"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.780392, 0.811765, 0.866667, 1)
+theme_override_fonts/font = ExtResource("4_6u1ha")
+theme_override_font_sizes/font_size = 48
+text = "(Programming)"
+vertical_alignment = 2
+
+[node name="brasonite" type="HBoxContainer" parent="End_Screen/Credits"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="icon" type="TextureRect" parent="End_Screen/Credits/brasonite"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = ExtResource("3_d3enf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="handle" type="Label" parent="End_Screen/Credits/brasonite"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_6u1ha")
+theme_override_font_sizes/font_size = 64
+text = "Brasonite"
+vertical_alignment = 2
+
+[node name="task" type="Label" parent="End_Screen/Credits/brasonite"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.780392, 0.811765, 0.866667, 1)
+theme_override_fonts/font = ExtResource("4_6u1ha")
+theme_override_font_sizes/font_size = 48
+text = "(UI & 2D art)"
+vertical_alignment = 2
+
+[node name="lazybones" type="HBoxContainer" parent="End_Screen/Credits"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="icon" type="TextureRect" parent="End_Screen/Credits/lazybones"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = ExtResource("5_sl8nb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="handle" type="Label" parent="End_Screen/Credits/lazybones"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_6u1ha")
+theme_override_font_sizes/font_size = 64
+text = "LazyBones"
+vertical_alignment = 2
+
+[node name="task" type="Label" parent="End_Screen/Credits/lazybones"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.780392, 0.811765, 0.866667, 1)
+theme_override_fonts/font = ExtResource("4_6u1ha")
+theme_override_font_sizes/font_size = 48
+text = "(Music & SFX)"
+vertical_alignment = 2
+
+[node name="madmoth" type="HBoxContainer" parent="End_Screen/Credits"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="icon" type="TextureRect" parent="End_Screen/Credits/madmoth"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = ExtResource("6_bblhd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="handle" type="Label" parent="End_Screen/Credits/madmoth"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_6u1ha")
+theme_override_font_sizes/font_size = 64
+text = "MadMoth"
+vertical_alignment = 2
+
+[node name="task" type="Label" parent="End_Screen/Credits/madmoth"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.780392, 0.811765, 0.866667, 1)
+theme_override_fonts/font = ExtResource("4_6u1ha")
+theme_override_font_sizes/font_size = 48
+text = "(3D art)"
+vertical_alignment = 2
+
+[node name="ExitButton" type="TextureButton" parent="End_Screen"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -208.0
-offset_top = -192.0
-offset_right = -16.0
+offset_left = -257.0
+offset_top = -239.0
+offset_right = -32.0
+offset_bottom = -32.0
 grow_horizontal = 0
 grow_vertical = 0
-focus_mode = 3
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("10_bqrqu")
+theme_type_variation = &"WesternButton"
+texture_normal = ExtResource("8_gi1ei")
 script = ExtResource("8_g2h5y")
-soundHover = "Squeak"
-soundClick = "Meow"
+soundHover = "Hover"
+soundClick = "Select"
 metadata/_custom_type_script = "uid://cr05f2g78pvlt"
 
 [node name="MenuTheme" type="AudioStreamPlayer" parent="End_Screen"]
