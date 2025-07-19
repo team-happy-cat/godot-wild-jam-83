@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://djkg1y2m6p644"]
+[gd_scene load_steps=10 format=3 uid="uid://djkg1y2m6p644"]
 
 [ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/Environment/PF_LilyPad.glb" id="1_t7ms4"]
 [ext_resource type="PackedScene" uid="uid://4pssytbq3qo1" path="res://Demo/Scene/Character/PF_Chicken_Friend_Random_Walker.tscn" id="2_o0fsu"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bwjlg15j8mwjg" path="res://Demo/Scene/Character/PF_Chicken_Friend_Fast_Random_Walker.tscn" id="4_h1rqx"]
 [ext_resource type="Script" uid="uid://wxiqiqek0bdu" path="res://Demo/Script/WaterArea.cs" id="5_rrpac"]
 [ext_resource type="PackedScene" uid="uid://bycwinetltyo" path="res://Demo/Scene/Character/fly.tscn" id="7_000dt"]
+[ext_resource type="PackedScene" uid="uid://ddqb32u6rmjsy" path="res://Demo/Scene/Character/goose.tscn" id="8_k2iqv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h1rqx"]
 size = Vector3(100, 2, 100)
@@ -323,3 +324,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.4769, 3.8147e-06, -10.4669
 
 [node name="Fly10" parent="Flies" instance=ExtResource("7_000dt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0208473, 3.8147e-06, 0.0176748)
+
+[node name="Goose" type="Node3D" parent="."]
+
+[node name="Goose4" parent="Goose" instance=ExtResource("8_k2iqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3305, -0.49021, -1.88739)
+
+[node name="Goose" parent="Goose" instance=ExtResource("8_k2iqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.73946, -0.490211, -21.1457)
+
+[node name="Goose2" parent="Goose" instance=ExtResource("8_k2iqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2577, -0.490209, 0.0539322)
+
+[node name="Goose3" parent="Goose" instance=ExtResource("8_k2iqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.8734, -0.490211, -9.88763)

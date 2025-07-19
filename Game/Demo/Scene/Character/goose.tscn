@@ -19,7 +19,7 @@ height = 1.0
 transparency = 1
 albedo_color = Color(1, 0, 0, 0.360784)
 
-[node name="PF_Chicken_Friend_Random_Walker-n1" type="CharacterBody3D" node_paths=PackedStringArray("strikeArea")]
+[node name="Goose" type="CharacterBody3D" node_paths=PackedStringArray("strikeArea")]
 collision_layer = 16385
 axis_lock_angular_x = true
 axis_lock_angular_z = true
@@ -44,7 +44,7 @@ behavior_tree = ExtResource("5_1b5lg")
 blackboard_plan = SubResource("BlackboardPlan_1b5lg")
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.798833, 1.03995)
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0.781488, 1.4213)
 collision_layer = 4096
 collision_mask = 4
 
