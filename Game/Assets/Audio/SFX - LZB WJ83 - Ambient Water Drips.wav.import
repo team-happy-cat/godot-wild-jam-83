@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cltmwq4btr0y1"
+path="res://.godot/imported/SFX - LZB WJ83 - Ambient Water Drips.wav-aa56790aa0aa6a0850b9908f1afc283a.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX - LZB WJ83 - Ambient Water Drips.wav"
+dest_files=["res://.godot/imported/SFX - LZB WJ83 - Ambient Water Drips.wav-aa56790aa0aa6a0850b9908f1afc283a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

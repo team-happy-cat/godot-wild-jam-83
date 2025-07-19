@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bqnpr8vtsv2f7"
+path="res://.godot/imported/SFX - LZB WJ83 - water move1.wav-fde2d4ef52c4118d7f0e6116ef6f80af.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX - LZB WJ83 - water move1.wav"
+dest_files=["res://.godot/imported/SFX - LZB WJ83 - water move1.wav-fde2d4ef52c4118d7f0e6116ef6f80af.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
