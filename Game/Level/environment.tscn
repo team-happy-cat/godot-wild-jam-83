@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://dpg7c2fxet7nr"]
+[gd_scene load_steps=47 format=4 uid="uid://dpg7c2fxet7nr"]
 
 [ext_resource type="PackedScene" uid="uid://tdj1u7jmhr4l" path="res://Demo/Scene/navigable_dirt_floor.tscn" id="1_1c7fu"]
 [ext_resource type="PackedScene" uid="uid://8tl1ghmq6i1w" path="res://addons/StandardAssets/Scene/Ocean.tscn" id="2_lnont"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://xtaecqywtpf" path="res://Assets/Models/SM_cloud_B.glb" id="10_4xe2f"]
 [ext_resource type="Texture2D" uid="uid://c1t3slsvak2jr" path="res://Assets/Models/Environment/PF_log_1-col_Color_Atlas_A.png" id="10_cix77"]
 [ext_resource type="Material" uid="uid://dmv16q7viwaxg" path="res://Assets/Models/Environment/MI_col_matte_A.tres" id="13_4xe2f"]
+[ext_resource type="PackedScene" uid="uid://nrq3q1fgegl0" path="res://Assets/Models/Environment/SM_mushroom_b_clump.glb" id="14_8da38"]
+[ext_resource type="PackedScene" uid="uid://dst8fwcsk2ta5" path="res://Assets/Models/Environment/SM_mushroom_a_clump.glb" id="15_35b2l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8cl0t"]
 sky_top_color = Color(0.29122, 0.494157, 0.451184, 1)
@@ -493,6 +495,18 @@ multimesh = SubResource("MultiMesh_4xe2f")
 
 [node name="CloudBMultiMesh" type="MultiMeshInstance3D" parent="MultiMeshes"]
 multimesh = SubResource("MultiMesh_aljar")
+
+[node name="SM_mushroom_b_clump2" parent="." instance=ExtResource("14_8da38")]
+transform = Transform3D(7.8302, 0, 0, 0, 7.8302, 0, 0, 0, 7.8302, 8.76881, 1.13116, 35.8204)
+
+[node name="SM_mushroom_b_clump3" parent="." instance=ExtResource("14_8da38")]
+transform = Transform3D(4.1103, 0, 9.42288, 0, 10.2803, 0, -9.42288, 0, 4.1103, 0.727037, 1.73442, 35.8204)
+
+[node name="SM_mushroom_b_clump4" parent="." instance=ExtResource("14_8da38")]
+transform = Transform3D(-10.0742, 0, 2.04816, 0, 10.2803, 0, -2.04816, 0, -10.0742, 4.22968, 1.73442, 39.3754)
+
+[node name="SM_mushroom_a_clump2" parent="." instance=ExtResource("15_35b2l")]
+transform = Transform3D(-1.33237, 0, 7.30766, 0, 7.42813, 0, -7.30766, 0, -1.33237, -3.43544, 1.61153, 33.6033)
 
 [editable path="MultiMeshTargets/outer_environment_plane"]
 [editable path="MultiMeshTargets/inner_environment_plane"]
