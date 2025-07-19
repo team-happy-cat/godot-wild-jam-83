@@ -37,6 +37,7 @@ SaveManager="*res://Demo/Script/SaveManager.cs"
 PlayerSpawner="*res://Demo/Scene/Autoload/PlayerSpawner.tscn"
 Particles="*res://Demo/Scene/Autoload/Particles.tscn"
 Transition="*res://Demo/UI/Autoload/Transition.tscn"
+PauseMenu="*res://Demo/UI/Autoload/PauseMenu.tscn"
 
 [dialogue_manager]
 

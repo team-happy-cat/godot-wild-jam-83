@@ -16,6 +16,8 @@ public partial class MainMenu : Control
 
 	public override void _Ready()
 	{
+		Mouse.SetVisible();
+		
 		PlayButton.Pressed += StartGame;
 		QuitButton.Pressed += () => GetTree().Quit();
 		TeamButton.Pressed += () => OS.ShellOpen("https://team-happy-cat.itch.io/");
