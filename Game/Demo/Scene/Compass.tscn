@@ -62,21 +62,21 @@ stretch_mode = 4
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 24.0
-offset_top = 32.0
+offset_top = 48.0
 offset_right = 264.0
-offset_bottom = 49.0
+offset_bottom = 82.0
 theme_override_colors/font_color = Color(0.968022, 0.870226, 0.747156, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 24
 text = "Edward"
 horizontal_alignment = 1
 
 [node name="LabelDistance" type="Label" parent="."]
 layout_mode = 0
 offset_left = 24.0
-offset_top = 48.0
+offset_top = 80.0
 offset_right = 264.0
-offset_bottom = 65.0
+offset_bottom = 114.0
 theme_override_colors/font_color = Color(0.968627, 0.870588, 0.74902, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 24
 text = "150' (above)"
 horizontal_alignment = 1

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c8alf2ra2jals" path="res://Demo/Scene/Character/PF_Chicken_Friend.glb" id="2_j01ar"]
 [ext_resource type="Material" uid="uid://plut2h25iyeh" path="res://Demo/Material/MI_Chicken_Friend_Red.tres" id="3_j01ar"]
 [ext_resource type="Script" uid="uid://oj1nsgwhibi7" path="res://addons/StandardAssets/Script/Compass/PointOfInterest.cs" id="3_k2dhk"]
-[ext_resource type="Texture2D" uid="uid://cy7w0oprhhtr5" path="res://icon.png" id="4_kwvuf"]
+[ext_resource type="Texture2D" uid="uid://c4pdu7yyph645" path="res://Demo/UI/Images/Compass/compass_chicken_red.png" id="5_j01ar"]
 [ext_resource type="BehaviorTree" uid="uid://cwywabvvlpxq6" path="res://ai/trees/fast_random_walker.tres" id="6_j01ar"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_byfd3"]
@@ -30,7 +30,7 @@ material_override = ExtResource("3_j01ar")
 
 [node name="PointOfInterest" type="Marker3D" parent="."]
 script = ExtResource("3_k2dhk")
-IconTexture = ExtResource("4_kwvuf")
+IconTexture = ExtResource("5_j01ar")
 DisplayName = "Chicken"
 
 [node name="BTPlayer" type="BTPlayer" parent="."]
