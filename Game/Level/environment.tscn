@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://dpg7c2fxet7nr"]
+[gd_scene load_steps=50 format=4 uid="uid://dpg7c2fxet7nr"]
 
 [ext_resource type="PackedScene" uid="uid://tdj1u7jmhr4l" path="res://Demo/Scene/navigable_dirt_floor.tscn" id="1_1c7fu"]
 [ext_resource type="PackedScene" uid="uid://8tl1ghmq6i1w" path="res://addons/StandardAssets/Scene/Ocean.tscn" id="2_lnont"]
@@ -15,6 +15,9 @@
 [ext_resource type="Material" uid="uid://dmv16q7viwaxg" path="res://Assets/Models/Environment/MI_col_matte_A.tres" id="13_4xe2f"]
 [ext_resource type="PackedScene" uid="uid://nrq3q1fgegl0" path="res://Assets/Models/Environment/SM_mushroom_b_clump.glb" id="14_8da38"]
 [ext_resource type="PackedScene" uid="uid://dst8fwcsk2ta5" path="res://Assets/Models/Environment/SM_mushroom_a_clump.glb" id="15_35b2l"]
+[ext_resource type="PackedScene" uid="uid://cic6an076eud" path="res://Assets/Models/Environment/SM_pond_rock_1-convcol.glb" id="16_6jr2q"]
+[ext_resource type="PackedScene" uid="uid://dvj43mtrh7w8g" path="res://Assets/Models/Environment/SM_pond_rock_4-convcol.glb" id="17_83tof"]
+[ext_resource type="PackedScene" uid="uid://b5n2ol7va0vcm" path="res://Assets/Models/Environment/SM_pond_rock_3-convcol.glb" id="18_83tof"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8cl0t"]
 sky_top_color = Color(0.29122, 0.494157, 0.451184, 1)
@@ -496,17 +499,58 @@ multimesh = SubResource("MultiMesh_4xe2f")
 [node name="CloudBMultiMesh" type="MultiMeshInstance3D" parent="MultiMeshes"]
 multimesh = SubResource("MultiMesh_aljar")
 
-[node name="SM_mushroom_b_clump2" parent="." instance=ExtResource("14_8da38")]
+[node name="Mushrooms" type="Node3D" parent="."]
 transform = Transform3D(7.8302, 0, 0, 0, 7.8302, 0, 0, 0, 7.8302, 8.76881, 1.13116, 35.8204)
 
-[node name="SM_mushroom_b_clump3" parent="." instance=ExtResource("14_8da38")]
-transform = Transform3D(4.1103, 0, 9.42288, 0, 10.2803, 0, -9.42288, 0, 4.1103, 0.727037, 1.73442, 35.8204)
+[node name="SM_mushroom_b_clump2" parent="Mushrooms" instance=ExtResource("14_8da38")]
 
-[node name="SM_mushroom_b_clump4" parent="." instance=ExtResource("14_8da38")]
-transform = Transform3D(-10.0742, 0, 2.04816, 0, 10.2803, 0, -2.04816, 0, -10.0742, 4.22968, 1.73442, 39.3754)
+[node name="SM_mushroom_b_clump4" parent="Mushrooms" instance=ExtResource("14_8da38")]
+transform = Transform3D(-1.28658, 0, 0.261572, 0, 1.3129, 0, -0.261572, 0, -1.28658, -0.579695, 0.0770427, 0.454011)
 
-[node name="SM_mushroom_a_clump2" parent="." instance=ExtResource("15_35b2l")]
-transform = Transform3D(-1.33237, 0, 7.30766, 0, 7.42813, 0, -7.30766, 0, -1.33237, -3.43544, 1.61153, 33.6033)
+[node name="SM_mushroom_b_clump5" parent="Mushrooms" instance=ExtResource("14_8da38")]
+transform = Transform3D(0.177201, 0, -0.604414, 0, 0.629852, 0, 0.604414, 0, 0.177201, 3.75229, 0.0770425, -0.295481)
+
+[node name="SM_mushroom_b_clump6" parent="Mushrooms" instance=ExtResource("14_8da38")]
+transform = Transform3D(0.55397, 0, 0.299718, 0, 0.629852, 0, -0.299718, 0, 0.55397, 3.44794, 0.0770425, -0.324882)
+
+[node name="SM_mushroom_b_clump7" parent="Mushrooms" instance=ExtResource("14_8da38")]
+transform = Transform3D(0.626317, 0, 0.0666572, 0, 0.629852, 0, -0.0666572, 0, 0.626317, 6.25427, 0.0770425, -2.73711)
+
+[node name="SM_mushroom_b_clump8" parent="Mushrooms" instance=ExtResource("14_8da38")]
+transform = Transform3D(-0.196202, 0, 0.598513, 0, 0.629852, 0, -0.598513, 0, -0.196202, 6.17111, 0.0770425, -2.44287)
+
+[node name="SM_mushroom_a_clump2" parent="Mushrooms" instance=ExtResource("15_35b2l")]
+transform = Transform3D(0.844313, 0, 0.432521, 0, 0.948651, 0, -0.432521, 0, 0.844313, 1.39074, -0.027406, 0.0283022)
+
+[node name="SM_mushroom_a_clump4" parent="Mushrooms" instance=ExtResource("15_35b2l")]
+transform = Transform3D(0.823034, 0, -0.471757, 0, 0.948651, 0, 0.471757, 0, 0.823034, 2.2459, 0.0463756, 0.564983)
+
+[node name="SM_mushroom_a_clump3" parent="Mushrooms" instance=ExtResource("15_35b2l")]
+transform = Transform3D(-1.43591, 0, -0.44773, 0, 1.5041, 0, 0.44773, 0, -1.43591, -3.98341, 0.0613484, 0.0916886)
+
+[node name="PF_pond_rock_1-n1" parent="." instance=ExtResource("16_6jr2q")]
+transform = Transform3D(-0.000485868, 0, 2.31924, 0, 2.31924, 0, -2.31924, 0, -0.000485868, 5.07964, -0.516725, 31.1262)
+
+[node name="PF_pond_rock_1-n2" parent="." instance=ExtResource("16_6jr2q")]
+transform = Transform3D(1.4274, 0, 1.71205, 0, 2.17092, 0, -2.09973, 0, 1.16386, 1.13373, -0.232087, 31.1988)
+
+[node name="PF_pond_rock_4-n1" parent="." instance=ExtResource("17_83tof")]
+transform = Transform3D(1.26086, -0.00379163, 3.51386, -0.0744954, 3.73236, 0.0307583, -3.51307, -0.0805063, 1.26049, -32.9766, -0.56477, 29.473)
+
+[node name="PF_pond_rock_4-n2" parent="." instance=ExtResource("17_83tof")]
+transform = Transform3D(1.79584, 0.0821363, -5.61736, -0.117693, 5.89663, 0.048594, 5.61673, 0.0972968, 1.79706, -47.9425, -0.56477, 21.6557)
+
+[node name="PF_pond_rock_3-n1" parent="." instance=ExtResource("18_83tof")]
+transform = Transform3D(0.697159, 0, 3.1735, 0, 3.24918, 0, -3.1735, 0, 0.697159, 3.83461, 0.207433, 32.5102)
+
+[node name="PF_pond_rock_1-n3" parent="." instance=ExtResource("16_6jr2q")]
+transform = Transform3D(-0.0540183, 0, -2.64495, 0, 2.64551, 0, 2.64495, 0, -0.0540183, 21.5162, -1.54164, -30.5237)
+
+[node name="PF_pond_rock_1-n4" parent="." instance=ExtResource("16_6jr2q")]
+transform = Transform3D(-2.0054, 0, -2.30171, 0, 2.96077, 0, 2.82291, 0, -1.63514, 30.4481, -1.10907, -31.4862)
+
+[node name="PF_pond_rock_3-n2" parent="." instance=ExtResource("18_83tof")]
+transform = Transform3D(2.31393, 0, -2.89519, 0, 3.84487, 0, 2.89519, 0, 2.31393, 24.7403, -0.295206, -33.5344)
 
 [editable path="MultiMeshTargets/outer_environment_plane"]
 [editable path="MultiMeshTargets/inner_environment_plane"]
