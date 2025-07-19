@@ -29,12 +29,15 @@ namespace Game
 
         public bool InWater { get; set; } = false;
 
+        private LevelManager levelManager;
+
         public override void _Ready()
         {
             gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
             speed = BaseSpeed;
             cameraBridge = GetNode<CameraBridge>("/root/CameraBridge");
             Mouse.SetCaptured("CharacterController");
+            levelManager = GetNode<LevelManager>("/root/LevelManager");
         }
 
         public override void _PhysicsProcess(double delta)
@@ -112,6 +115,11 @@ namespace Game
             MoveAndSlide();
         }
 
+        public void Die()
+        {
+            GD.Print("[Player] Died!");
+            levelManager.ChangeLevel("Main_Menu");
+        }
     }
 
 }

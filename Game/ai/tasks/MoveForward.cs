@@ -19,9 +19,9 @@ public partial class MoveForward : BTAction
         }
 
         Vector3 forward = agentBase.Transform.Basis.Z;
-        float speed = (float)Blackboard.GetVar(SpeedVar, 10.0f);
+        float speed = (float)Blackboard.GetVar(SpeedVar, 3.0f);
         Vector3 targetVelocity = forward * speed;
-        targetVelocity.Y = agentBase.Velocity.Y;
+        targetVelocity.Y = agentBase.Velocity.Y - (float)delta * 9.8f;
 
         agentBase.Move(targetVelocity);
 

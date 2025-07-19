@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://7a645geywot" path="res://Demo/Script/EatAndLungeAbility.cs" id="8_lc2fc"]
 [ext_resource type="Texture2D" uid="uid://ctd1q7pv6jive" path="res://Demo/UI/Images/hud_frog_full.png" id="8_oabsn"]
 [ext_resource type="Texture2D" uid="uid://dm1m7v6qfev7u" path="res://addons/StandardAssets/Texture/Particle/T_FX_Star_04.png" id="9_qrurj"]
-[ext_resource type="Shader" uid="uid://th1fak6vqjt7" path="res://Demo/UI/FrogHUD.gdshader" id="9_wknp7"]
+[ext_resource type="Shader" uid="uid://th1fak6vqjt7" path="res://Demo/UI/Shaders/FrogHUD.gdshader" id="9_wknp7"]
 [ext_resource type="Script" uid="uid://kchvvvrw4k33" path="res://Demo/Script/BellyDisplay.cs" id="10_lc2fc"]
 [ext_resource type="Script" uid="uid://bt2tpfi6a1dhv" path="res://Demo/Script/GobbleAbility.cs" id="15_dobti"]
 
@@ -104,7 +104,7 @@ grow_vertical = 2
 texture = ExtResource("9_qrurj")
 expand_mode = 1
 
-[node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("eatAndLungeAbility")]
+[node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("eatAndLungeAbility") groups=["Player"]]
 collision_layer = 4
 script = ExtResource("2_m3i4r")
 eatAndLungeAbility = NodePath("../EatAndLungeAbility")

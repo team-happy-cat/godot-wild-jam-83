@@ -1,19 +1,8 @@
 [gd_resource type="BehaviorTree" load_steps=11 format=3 uid="uid://bhork3d7aqj7l"]
 
+[ext_resource type="BlackboardPlan" uid="uid://cselmpmw5blem" path="res://blackboard.tres" id="1_3fpfi"]
 [ext_resource type="Script" uid="uid://6w2kh5nowody" path="res://ai/tasks/FaceRandomDirection.cs" id="1_cprs3"]
 [ext_resource type="Script" uid="uid://3ia0ihouvtsf" path="res://ai/tasks/MoveForward.cs" id="2_fi2ie"]
-
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_xeils"]
-var/speed/name = &"speed"
-var/speed/type = 3
-var/speed/value = 0.0
-var/speed/hint = 1
-var/speed/hint_string = "1,100,1"
-var/fast_speed/name = &"fast_speed"
-var/fast_speed/type = 3
-var/fast_speed/value = 5.0
-var/fast_speed/hint = 1
-var/fast_speed/hint_string = "1, 100, 1"
 
 [sub_resource type="BTRandomWait" id="BTRandomWait_3pqyr"]
 min_duration = 2.0
@@ -43,5 +32,5 @@ children = [SubResource("BTAction_fi2ie"), SubResource("BTTimeLimit_fi2ie")]
 children = [SubResource("BTSequence_cprs3"), SubResource("BTSequence_fi2ie")]
 
 [resource]
-blackboard_plan = SubResource("BlackboardPlan_xeils")
+blackboard_plan = ExtResource("1_3fpfi")
 root_task = SubResource("BTSequence_3fpfi")

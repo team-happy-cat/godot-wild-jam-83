@@ -1,0 +1,94 @@
+[gd_resource type="BehaviorTree" load_steps=29 format=3 uid="uid://h4tehm8amfs2"]
+
+[ext_resource type="BlackboardPlan" uid="uid://cselmpmw5blem" path="res://blackboard.tres" id="1_bf4hi"]
+[ext_resource type="Script" uid="uid://bvpavi6rw0xlg" path="res://ai/tasks/GetFirstInGroup.cs" id="1_ls11m"]
+[ext_resource type="Script" uid="uid://j5dxcuwkye3h" path="res://ai/tasks/InRange.cs" id="2_74s65"]
+[ext_resource type="Script" uid="uid://b7dx18luhp6un" path="res://ai/tasks/Pursue.cs" id="2_si5qh"]
+[ext_resource type="Script" uid="uid://6w2kh5nowody" path="res://ai/tasks/FaceRandomDirection.cs" id="4_bf4hi"]
+[ext_resource type="Script" uid="uid://3ia0ihouvtsf" path="res://ai/tasks/MoveForward.cs" id="5_1kj8i"]
+[ext_resource type="Script" uid="uid://dd1h5mtsh1jsm" path="res://ai/tasks/FaceTarget.cs" id="6_6xs6x"]
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_2dg1b"]
+text = "TODO: Play Idle Animation"
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_3pqyr"]
+min_duration = 0.1
+max_duration = 0.5
+
+[sub_resource type="BTSequence" id="BTSequence_cprs3"]
+custom_name = "Pause before action"
+children = [SubResource("BTConsolePrint_2dg1b"), SubResource("BTRandomWait_3pqyr")]
+
+[sub_resource type="BTAction" id="BTAction_pts70"]
+script = ExtResource("4_bf4hi")
+
+[sub_resource type="BTAction" id="BTAction_cb8h1"]
+script = ExtResource("5_1kj8i")
+SpeedVar = &"speed"
+Duration = 1.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_xthh4"]
+children = [SubResource("BTAction_cb8h1")]
+time_limit = 1.0
+
+[sub_resource type="BTSequence" id="BTSequence_in463"]
+custom_name = "Randomly walk"
+children = [SubResource("BTAction_pts70"), SubResource("BTTimeLimit_xthh4")]
+
+[sub_resource type="BTAction" id="BTAction_74s65"]
+script = ExtResource("1_ls11m")
+Group = &"Player"
+OutputVar = &"target"
+
+[sub_resource type="BTCondition" id="BTCondition_vr0o7"]
+script = ExtResource("2_74s65")
+DistanceMin = 0.0
+DistanceMax = 10.0
+TargetVar = &"target"
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_bf4hi"]
+text = "In range..."
+
+[sub_resource type="BTAction" id="BTAction_bf4hi"]
+script = ExtResource("2_si5qh")
+MinDistance = 1.0
+TargetVar = &"target"
+SpeedVar = &"medium_speed"
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_fi2ie"]
+children = [SubResource("BTAction_bf4hi")]
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_6xs6x"]
+text = "Done pursuing"
+
+[sub_resource type="BTSequence" id="BTSequence_fi2ie"]
+custom_name = "Pursue"
+children = [SubResource("BTAction_74s65"), SubResource("BTCondition_vr0o7"), SubResource("BTConsolePrint_bf4hi"), SubResource("BTTimeLimit_fi2ie"), SubResource("BTConsolePrint_6xs6x")]
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_c54jp"]
+text = "TODO: Play Attack Animation"
+
+[sub_resource type="BTAction" id="BTAction_i0i5h"]
+script = ExtResource("6_6xs6x")
+TargetVar = &"target"
+
+[sub_resource type="BTWait" id="BTWait_r5csj"]
+duration = 0.1
+
+[sub_resource type="BBNode" id="BBNode_bf4hi"]
+resource_name = "."
+saved_value = NodePath(".")
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_1kj8i"]
+node = SubResource("BBNode_bf4hi")
+method = &"Strike"
+
+[sub_resource type="BTSequence" id="BTSequence_1kj8i"]
+children = [SubResource("BTConsolePrint_c54jp"), SubResource("BTAction_i0i5h"), SubResource("BTWait_r5csj"), SubResource("BTCallMethod_1kj8i")]
+
+[sub_resource type="BTSequence" id="BTSequence_3fpfi"]
+children = [SubResource("BTSequence_cprs3"), SubResource("BTSequence_in463"), SubResource("BTSequence_fi2ie"), SubResource("BTSequence_1kj8i")]
+
+[resource]
+blackboard_plan = ExtResource("1_bf4hi")
+root_task = SubResource("BTSequence_3fpfi")

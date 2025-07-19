@@ -15,6 +15,7 @@ public partial class FaceRandomDirection : BTAction
             agentBase.FaceRandomDirection();
             return Status.Success;
         }
+
         return Status.Failure;
     }
 
