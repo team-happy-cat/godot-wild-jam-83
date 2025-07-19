@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/Environment/PF_LilyPad.glb" id="1_4m831"]
 [ext_resource type="Script" uid="uid://c4bnyda0v84kt" path="res://Demo/Script/EnemyContainer.cs" id="2_es5q4"]
 [ext_resource type="PackedScene" uid="uid://4pssytbq3qo1" path="res://Demo/Scene/Character/PF_Chicken_Friend_Random_Walker.tscn" id="2_p0tvw"]
-[ext_resource type="PackedScene" uid="uid://dpg7c2fxet7nr" path="res://Demo/Scene/environment.tscn" id="2_u8qrg"]
+[ext_resource type="PackedScene" uid="uid://dpg7c2fxet7nr" path="res://Level/environment.tscn" id="2_u8qrg"]
 [ext_resource type="PackedScene" uid="uid://bwjlg15j8mwjg" path="res://Demo/Scene/Character/PF_Chicken_Friend_Fast_Random_Walker.tscn" id="4_g70j6"]
 [ext_resource type="PackedScene" uid="uid://bycwinetltyo" path="res://Demo/Scene/Character/fly.tscn" id="5_7lje2"]
 [ext_resource type="Script" uid="uid://wxiqiqek0bdu" path="res://Demo/Script/WaterArea.cs" id="5_es5q4"]
@@ -311,22 +311,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.3899, -0.351, -6.09922)
 [node name="PF_Chicken_Friend_Fast_Random_Walker-n5" parent="Enemies" instance=ExtResource("4_g70j6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.1428, -0.351, -14.8583)
 
-[node name="Fly" parent="Enemies" instance=ExtResource("5_7lje2")]
+[node name="Flies" type="Node3D" parent="."]
+
+[node name="Fly" parent="Flies" instance=ExtResource("5_7lje2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5208, 1, 18.0121)
 
-[node name="Fly2" parent="Enemies" instance=ExtResource("5_7lje2")]
+[node name="Fly2" parent="Flies" instance=ExtResource("5_7lje2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6515, 1, 15.8501)
 
-[node name="Fly3" parent="Enemies" instance=ExtResource("5_7lje2")]
+[node name="Fly3" parent="Flies" instance=ExtResource("5_7lje2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.40864, 1, -24.6558)
 
-[node name="Fly4" parent="Enemies" instance=ExtResource("5_7lje2")]
+[node name="Fly4" parent="Flies" instance=ExtResource("5_7lje2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0558, 0.999996, -20.3146)
 
-[node name="Fly5" parent="Enemies" instance=ExtResource("5_7lje2")]
+[node name="Fly5" parent="Flies" instance=ExtResource("5_7lje2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.7824, 0.999996, 20.2835)
 
-[node name="Fly6" parent="Enemies" instance=ExtResource("5_7lje2")]
+[node name="Fly6" parent="Flies" instance=ExtResource("5_7lje2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.0078, 0.999996, -24.4751)
 
 [node name="Environment" parent="." instance=ExtResource("2_u8qrg")]
