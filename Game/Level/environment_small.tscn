@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://c0i6vbtndravs"]
+[gd_scene load_steps=52 format=4 uid="uid://c0i6vbtndravs"]
 
 [ext_resource type="PackedScene" uid="uid://8tl1ghmq6i1w" path="res://addons/StandardAssets/Scene/Ocean.tscn" id="2_pvybb"]
 [ext_resource type="PackedScene" uid="uid://bn85uyhd1vd1k" path="res://Assets/Models/Environment/PF_cattail_1.glb" id="3_dr334"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b1g7wtybftm5y" path="res://Assets/Models/Utils/inner_environment_plane.glb" id="6_0blm4"]
 [ext_resource type="PackedScene" uid="uid://cnyilg2wnjj5a" path="res://Assets/Models/Environment/PF_willow_1-convcol.glb" id="7_8vsih"]
 [ext_resource type="PackedScene" uid="uid://d35qibodwkyg6" path="res://Assets/Models/Environment/PF_log_1-col.glb" id="8_ay58f"]
+[ext_resource type="PackedScene" uid="uid://cs645fiqfk2qd" path="res://Assets/Models/Environment/dirt_patch_30x30-convcol.glb" id="9_64say"]
 [ext_resource type="PackedScene" uid="uid://dh3ag00hfmfkr" path="res://Assets/Models/SM_cloud_A.glb" id="9_xtdf8"]
 [ext_resource type="PackedScene" uid="uid://xtaecqywtpf" path="res://Assets/Models/SM_cloud_B.glb" id="10_bo1ww"]
 [ext_resource type="Texture2D" uid="uid://ccmsm8k4fiuqm" path="res://Assets/Models/Environment/PF_willow_1-convcol_Color_Atlas_A.png" id="11_ckij6"]
@@ -67,6 +68,9 @@ albedo_texture = SubResource("NoiseTexture2D_ku8xw")
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v8bfo"]
+albedo_color = Color(0.16, 0.14144, 0.1136, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvybb"]
 albedo_color = Color(0.16, 0.14144, 0.1136, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_av5t7"]
@@ -293,11 +297,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 use_collision = true
 size = Vector3(200, 2, 200)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="InvisibleWalls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="InvisibleWalls"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -42.8458, 20, 26.1125)
 use_collision = true
 flip_faces = true
-size = Vector3(30, 10, 30)
+polygon = PackedVector2Array(30.7367, 18.0504, 29.0605, 21.9752, 27.8699, 27.6183, 28.5851, 32.9955, 31.9804, 38.7792, 36.7248, 42.6641, 40.3075, 43.9791, 43.8597, 43.4294, 54.5384, 39.2346, 56.7281, 37.523, 57.7137, 33.0795, 56.5593, 21.6877, 55.9385, 18.3308, 54.0152, 16.2998, 49.9702, 14.5034, 42.329, 12.9901, 34.1945, 14.9154)
+depth = 50.0
 
 [node name="Ocean-n1" parent="." instance=ExtResource("2_pvybb")]
 
@@ -464,14 +469,136 @@ transform = Transform3D(-2.0054, 0, -2.30171, 0, 2.96077, 0, 2.82291, 0, -1.6351
 [node name="PF_pond_rock_3-n2" parent="Meshes/Rocks" instance=ExtResource("18_y4aoh")]
 transform = Transform3D(2.31393, 0, -2.89519, 0, 3.84487, 0, 2.89519, 0, 2.31393, 24.7403, -0.295206, -33.5344)
 
-[node name="Dirt" type="CSGBox3D" parent="Meshes"]
+[node name="DirtOutside" type="CSGBox3D" parent="Meshes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 material_override = SubResource("StandardMaterial3D_v8bfo")
 size = Vector3(250, 2.5, 250)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Meshes/Dirt"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Meshes/DirtOutside"]
 operation = 2
-size = Vector3(30, 10, 30)
+size = Vector3(89.9, 10, 90)
+
+[node name="dirt_patch_30x30-convcol2" parent="Meshes" instance=ExtResource("9_64say")]
+
+[node name="dirt_patch_30x30" parent="Meshes/dirt_patch_30x30-convcol2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_pvybb")
+
+[node name="StaticBody3D" parent="Meshes/dirt_patch_30x30-convcol2/dirt_patch_30x30" index="0"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="Mushrooms2" type="Node3D" parent="Meshes"]
+transform = Transform3D(-2.19613, 0, -4.50792, 0, 5.01441, 0, 4.50792, 0, -2.19613, -25.3313, 0.353636, -8.66467)
+
+[node name="SM_mushroom_b_clump2" parent="Meshes/Mushrooms2" instance=ExtResource("14_dij34")]
+
+[node name="SM_mushroom_b_clump4" parent="Meshes/Mushrooms2" instance=ExtResource("14_dij34")]
+transform = Transform3D(-1.28658, 0, 0.261572, 0, 1.3129, 0, -0.261572, 0, -1.28658, -0.579695, 0.0770427, 0.454011)
+
+[node name="SM_mushroom_b_clump5" parent="Meshes/Mushrooms2" instance=ExtResource("14_dij34")]
+transform = Transform3D(0.177201, 0, -0.604414, 0, 0.629852, 0, 0.604414, 0, 0.177201, 3.75229, 0.0770425, -0.295481)
+
+[node name="SM_mushroom_b_clump6" parent="Meshes/Mushrooms2" instance=ExtResource("14_dij34")]
+transform = Transform3D(0.55397, 0, 0.299718, 0, 0.629852, 0, -0.299718, 0, 0.55397, 3.44794, 0.0770425, -0.324882)
+
+[node name="SM_mushroom_b_clump7" parent="Meshes/Mushrooms2" instance=ExtResource("14_dij34")]
+transform = Transform3D(0.626317, 0, 0.0666572, 0, 0.629852, 0, -0.0666572, 0, 0.626317, 6.25427, 0.0770425, -2.73711)
+
+[node name="SM_mushroom_b_clump8" parent="Meshes/Mushrooms2" instance=ExtResource("14_dij34")]
+transform = Transform3D(-0.196202, 0, 0.598513, 0, 0.629852, 0, -0.598513, 0, -0.196202, 6.17111, 0.0770425, -2.44287)
+
+[node name="SM_mushroom_a_clump2" parent="Meshes/Mushrooms2" instance=ExtResource("15_whj1o")]
+transform = Transform3D(0.844313, 0, 0.432521, 0, 0.948651, 0, -0.432521, 0, 0.844313, 1.39074, -0.027406, 0.0283022)
+
+[node name="SM_mushroom_a_clump4" parent="Meshes/Mushrooms2" instance=ExtResource("15_whj1o")]
+transform = Transform3D(0.823034, 0, -0.471757, 0, 0.948651, 0, 0.471757, 0, 0.823034, 2.2459, 0.0463756, 0.564983)
+
+[node name="SM_mushroom_a_clump3" parent="Meshes/Mushrooms2" instance=ExtResource("15_whj1o")]
+transform = Transform3D(-1.43591, 0, -0.44773, 0, 1.5041, 0, 0.44773, 0, -1.43591, -3.98341, 0.0613484, 0.0916886)
+
+[node name="Rocks2" type="Node3D" parent="Meshes"]
+transform = Transform3D(-0.280469, 0, -0.57571, 0, 0.640394, 0, 0.57571, 0, -0.280469, -2.24981, 0.0775239, -3.66644)
+
+[node name="PF_pond_rock_1-n1" parent="Meshes/Rocks2" instance=ExtResource("16_whmqq")]
+transform = Transform3D(-0.000485868, 0, 2.31924, 0, 2.31924, 0, -2.31924, 0, -0.000485868, 5.07964, -0.516725, 31.6327)
+
+[node name="PF_pond_rock_1-n2" parent="Meshes/Rocks2" instance=ExtResource("16_whmqq")]
+transform = Transform3D(1.4274, 0, 1.71205, 0, 2.17092, 0, -2.09973, 0, 1.16386, 1.13373, -0.232087, 31.1988)
+
+[node name="PF_pond_rock_4-n1" parent="Meshes/Rocks2" instance=ExtResource("17_reskg")]
+transform = Transform3D(1.26086, -0.00379163, 3.51386, -0.0744954, 3.73236, 0.0307583, -3.51307, -0.0805063, 1.26049, -32.9766, -0.56477, 31.477)
+
+[node name="PF_pond_rock_4-n2" parent="Meshes/Rocks2" instance=ExtResource("17_reskg")]
+transform = Transform3D(1.79584, 0.0821363, -5.61736, -0.117693, 5.89663, 0.048594, 5.61673, 0.0972968, 1.79706, -49.3337, -0.56477, 21.6936)
+
+[node name="PF_pond_rock_3-n1" parent="Meshes/Rocks2" instance=ExtResource("18_y4aoh")]
+transform = Transform3D(0.697159, 0, 3.1735, 0, 3.24918, 0, -3.1735, 0, 0.697159, 2.75469, 0.207433, 33.9818)
+
+[node name="PF_pond_rock_1-n3" parent="Meshes/Rocks2" instance=ExtResource("16_whmqq")]
+transform = Transform3D(-0.0540183, 0, -2.64495, 0, 2.64551, 0, 2.64495, 0, -0.0540183, 20.1419, -1.54164, -31.9642)
+
+[node name="PF_pond_rock_1-n4" parent="Meshes/Rocks2" instance=ExtResource("16_whmqq")]
+transform = Transform3D(1.41697, 0, -2.57618, 0, 2.96077, 0, 3.15953, 0, 1.15535, 30.4481, -1.10907, -32.469)
+
+[node name="PF_pond_rock_3-n2" parent="Meshes/Rocks2" instance=ExtResource("18_y4aoh")]
+transform = Transform3D(2.31393, 0, -2.89519, 0, 3.84487, 0, 2.89519, 0, 2.31393, 24.7403, -0.295206, -33.5344)
+
+[node name="Mushrooms3" type="Node3D" parent="Meshes"]
+transform = Transform3D(-2.31089, 0, 4.45018, 0, 5.01441, 0, -4.45018, 0, -2.31089, 22.1097, 0.353636, -13.9431)
+
+[node name="SM_mushroom_b_clump2" parent="Meshes/Mushrooms3" instance=ExtResource("14_dij34")]
+
+[node name="SM_mushroom_b_clump4" parent="Meshes/Mushrooms3" instance=ExtResource("14_dij34")]
+transform = Transform3D(-1.28658, 0, 0.261572, 0, 1.3129, 0, -0.261572, 0, -1.28658, -0.579695, 0.0770427, 0.454011)
+
+[node name="SM_mushroom_b_clump5" parent="Meshes/Mushrooms3" instance=ExtResource("14_dij34")]
+transform = Transform3D(0.177201, 0, -0.604414, 0, 0.629852, 0, 0.604414, 0, 0.177201, 3.75229, 0.0770425, -0.295481)
+
+[node name="SM_mushroom_b_clump6" parent="Meshes/Mushrooms3" instance=ExtResource("14_dij34")]
+transform = Transform3D(0.55397, 0, 0.299718, 0, 0.629852, 0, -0.299718, 0, 0.55397, 3.44794, 0.0770425, -0.324882)
+
+[node name="SM_mushroom_b_clump7" parent="Meshes/Mushrooms3" instance=ExtResource("14_dij34")]
+transform = Transform3D(0.626317, 0, 0.0666572, 0, 0.629852, 0, -0.0666572, 0, 0.626317, 6.25427, 0.0770425, -2.73711)
+
+[node name="SM_mushroom_b_clump8" parent="Meshes/Mushrooms3" instance=ExtResource("14_dij34")]
+transform = Transform3D(-0.196202, 0, 0.598513, 0, 0.629852, 0, -0.598513, 0, -0.196202, 6.17111, 0.0770425, -2.44287)
+
+[node name="SM_mushroom_a_clump2" parent="Meshes/Mushrooms3" instance=ExtResource("15_whj1o")]
+transform = Transform3D(0.844313, 0, 0.432521, 0, 0.948651, 0, -0.432521, 0, 0.844313, 1.39074, -0.027406, 0.0283022)
+
+[node name="SM_mushroom_a_clump4" parent="Meshes/Mushrooms3" instance=ExtResource("15_whj1o")]
+transform = Transform3D(0.823034, 0, -0.471757, 0, 0.948651, 0, 0.471757, 0, 0.823034, 2.2459, 0.0463756, 0.564983)
+
+[node name="SM_mushroom_a_clump3" parent="Meshes/Mushrooms3" instance=ExtResource("15_whj1o")]
+transform = Transform3D(-1.43591, 0, -0.44773, 0, 1.5041, 0, 0.44773, 0, -1.43591, -3.98341, 0.0613484, 0.0916886)
+
+[node name="Rocks3" type="Node3D" parent="Meshes"]
+transform = Transform3D(-0.295126, 0, 0.568335, 0, 0.640394, 0, -0.568335, 0, -0.295126, 4.33956, 0.0775239, 1.61202)
+
+[node name="PF_pond_rock_1-n1" parent="Meshes/Rocks3" instance=ExtResource("16_whmqq")]
+transform = Transform3D(-0.000485868, 0, 2.31924, 0, 2.31924, 0, -2.31924, 0, -0.000485868, 5.07964, -0.516725, 31.6327)
+
+[node name="PF_pond_rock_1-n2" parent="Meshes/Rocks3" instance=ExtResource("16_whmqq")]
+transform = Transform3D(1.4274, 0, 1.71205, 0, 2.17092, 0, -2.09973, 0, 1.16386, 1.13373, -0.232087, 31.1988)
+
+[node name="PF_pond_rock_4-n1" parent="Meshes/Rocks3" instance=ExtResource("17_reskg")]
+transform = Transform3D(1.26086, -0.00379163, 3.51386, -0.0744954, 3.73236, 0.0307583, -3.51307, -0.0805063, 1.26049, -32.9766, -0.56477, 31.477)
+
+[node name="PF_pond_rock_4-n2" parent="Meshes/Rocks3" instance=ExtResource("17_reskg")]
+transform = Transform3D(1.79584, 0.0821363, -5.61736, -0.117693, 5.89663, 0.048594, 5.61673, 0.0972968, 1.79706, -49.3337, -0.56477, 21.6936)
+
+[node name="PF_pond_rock_3-n1" parent="Meshes/Rocks3" instance=ExtResource("18_y4aoh")]
+transform = Transform3D(0.697159, 0, 3.1735, 0, 3.24918, 0, -3.1735, 0, 0.697159, 2.75469, 0.207433, 33.9818)
+
+[node name="PF_pond_rock_1-n3" parent="Meshes/Rocks3" instance=ExtResource("16_whmqq")]
+transform = Transform3D(-0.0540183, 0, -2.64495, 0, 2.64551, 0, 2.64495, 0, -0.0540183, 20.1419, -1.54164, -31.9642)
+
+[node name="PF_pond_rock_1-n4" parent="Meshes/Rocks3" instance=ExtResource("16_whmqq")]
+transform = Transform3D(1.41697, 0, -2.57618, 0, 2.96077, 0, 3.15953, 0, 1.15535, 30.4481, -1.10907, -32.469)
+
+[node name="PF_pond_rock_3-n2" parent="Meshes/Rocks3" instance=ExtResource("18_y4aoh")]
+transform = Transform3D(2.31393, 0, -2.89519, 0, 3.84487, 0, 2.89519, 0, 2.31393, 24.7403, -0.295206, -33.5344)
 
 [node name="MultiMeshTargets" type="Node3D" parent="."]
 
@@ -561,6 +688,7 @@ multimesh = SubResource("MultiMesh_4xe2f")
 [node name="CloudBMultiMesh" type="MultiMeshInstance3D" parent="MultiMeshes"]
 multimesh = SubResource("MultiMesh_aljar")
 
+[editable path="Meshes/dirt_patch_30x30-convcol2"]
 [editable path="MultiMeshTargets/outer_environment_plane"]
 [editable path="MultiMeshTargets/inner_environment_plane"]
 [editable path="MultiMeshSources/PF_willow_1-convcol2"]
