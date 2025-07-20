@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://diu6opq2wbtv5"]
+[gd_scene load_steps=12 format=3 uid="uid://diu6opq2wbtv5"]
 
 [ext_resource type="Script" uid="uid://dole3ccq4u5sw" path="res://Level/EndScreen.cs" id="1_gi1ei"]
 [ext_resource type="Texture2D" uid="uid://0ev07ob6tcou" path="res://Demo/UI/Images/end_screen.png" id="2_fhuw8"]
+[ext_resource type="Texture2D" uid="uid://be5cfwnevd40u" path="res://Demo/UI/Images/Logos/azuwo.png" id="3_6fi60"]
 [ext_resource type="Texture2D" uid="uid://nhot22uihx32" path="res://Demo/UI/Images/Logos/brasonite.png" id="3_d3enf"]
 [ext_resource type="FontFile" uid="uid://c2ha02k6sfaij" path="res://Demo/UI/Fonts/Cute Dino.ttf" id="4_6u1ha"]
+[ext_resource type="Texture2D" uid="uid://de7r7xrnulfjr" path="res://Demo/UI/Images/Logos/bemore.png" id="5_o1f84"]
 [ext_resource type="Texture2D" uid="uid://lxyf0wtro5o5" path="res://Demo/UI/Images/Logos/lazybones.png" id="5_sl8nb"]
 [ext_resource type="Texture2D" uid="uid://dljntn21kgggh" path="res://Demo/UI/Images/Logos/madmoth.png" id="6_bblhd"]
 [ext_resource type="Script" uid="uid://cr05f2g78pvlt" path="res://Demo/UI/Components/SquishyTextureButton.cs" id="8_g2h5y"]
@@ -53,7 +55,7 @@ theme_override_constants/separation = 16
 [node name="icon" type="TextureRect" parent="End_Screen/Credits/azuwo"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture = ExtResource("6_bblhd")
+texture = ExtResource("3_6fi60")
 expand_mode = 1
 stretch_mode = 5
 
@@ -81,7 +83,7 @@ theme_override_constants/separation = 16
 [node name="icon" type="TextureRect" parent="End_Screen/Credits/bemore"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture = ExtResource("6_bblhd")
+texture = ExtResource("5_o1f84")
 expand_mode = 1
 stretch_mode = 5
 
