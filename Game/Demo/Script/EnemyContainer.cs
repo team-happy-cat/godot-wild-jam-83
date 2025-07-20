@@ -35,7 +35,8 @@ public partial class EnemyContainer : Node
 		if (GetChildCount() == 0)
 		{
 			GD.Print("[EnemyContainer] All enemies have been destoyed! Changing level to: ", NextLevel);
-			levelManager.ChangeLevel(NextLevel, "SP_" + NextLevel);
+			LevelCompletion.Open(NextLevel);
+			// levelManager.ChangeLevel(NextLevel, "SP_" + NextLevel);
 		}
 	}
 }

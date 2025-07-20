@@ -16,6 +16,8 @@ public partial class SquishyTextureButton : TextureButton
 	public override void _Ready()
 	{
 		base._Ready();
+
+		FocusMode = FocusModeEnum.None;
 		
 		MouseEntered += OnMouseEntered;
 		MouseExited += OnMouseExited;
