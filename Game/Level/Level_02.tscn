@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c03xokj410jth"]
+[gd_scene load_steps=20 format=3 uid="uid://c03xokj410jth"]
 
 [ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/Environment/PF_LilyPad.glb" id="1_8oik3"]
 [ext_resource type="PackedScene" uid="uid://dpg7c2fxet7nr" path="res://Level/environment.tscn" id="2_0khoh"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://c4bnyda0v84kt" path="res://Demo/Script/EnemyContainer.cs" id="2_hmuci"]
 [ext_resource type="PackedScene" uid="uid://b4l24viypyk5a" path="res://Assets/Models/Rocks/PF_RockA-convcol.glb" id="2_wdx0b"]
 [ext_resource type="PackedScene" uid="uid://bif2a7oi7swah" path="res://Assets/Models/Rocks/PF_RockB-convcol.glb" id="3_j0d7i"]
-[ext_resource type="PackedScene" uid="uid://bycwinetltyo" path="res://Demo/Scene/Character/fly.tscn" id="4_8x7d7"]
 [ext_resource type="PackedScene" uid="uid://tgmgx7f5rybx" path="res://Assets/Models/Rocks/PF_RockC-convcol.glb" id="4_rne3y"]
 [ext_resource type="PackedScene" uid="uid://bwjlg15j8mwjg" path="res://Demo/Scene/Character/PF_Chicken_Friend_Fast_Random_Walker.tscn" id="5_6utp8"]
 [ext_resource type="Script" uid="uid://wxiqiqek0bdu" path="res://Demo/Script/WaterArea.cs" id="5_hmuci"]
@@ -19,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://cqkpoo1c7fpv3" path="res://Assets/Models/Rocks/PF_RockK-convcol.glb" id="11_j7bm6"]
 [ext_resource type="PackedScene" uid="uid://ddqb32u6rmjsy" path="res://Demo/Scene/Character/goose.tscn" id="15_3f5or"]
 [ext_resource type="PackedScene" uid="uid://dlpn7xunst5t7" path="res://Demo/fly_spawner.tscn" id="16_pfx8k"]
-[ext_resource type="Script" uid="uid://38ivonkrroth" path="res://Demo/Script/AgentSpawner.cs" id="17_0yb8g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8x7d7"]
 size = Vector3(100, 2, 100)
@@ -350,40 +348,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.6635, -0.490211, -17.9263)
 
 [node name="Flies" type="Node3D" parent="."]
 
-[node name="fly_spawner-n1" type="Node3D" parent="Flies" instance=ExtResource("16_pfx8k")]
+[node name="fly_spawner-n1" parent="Flies" instance=ExtResource("16_pfx8k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4193, 1, 9.56523)
-script = ExtResource("17_0yb8g")
-AgentScene = ExtResource("4_8x7d7")
 
-[node name="fly_spawner-n2" type="Node3D" parent="Flies" instance=ExtResource("16_pfx8k")]
+[node name="fly_spawner-n2" parent="Flies" instance=ExtResource("16_pfx8k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.3504, 1, 23.1639)
-script = ExtResource("17_0yb8g")
-AgentScene = ExtResource("4_8x7d7")
 
-[node name="fly_spawner-n3" type="Node3D" parent="Flies" instance=ExtResource("16_pfx8k")]
+[node name="fly_spawner-n3" parent="Flies" instance=ExtResource("16_pfx8k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.029, 1, -10.4801)
-script = ExtResource("17_0yb8g")
-AgentScene = ExtResource("4_8x7d7")
 
-[node name="fly_spawner-n4" type="Node3D" parent="Flies" instance=ExtResource("16_pfx8k")]
+[node name="fly_spawner-n4" parent="Flies" instance=ExtResource("16_pfx8k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.0936, 1, -20.5594)
-script = ExtResource("17_0yb8g")
-AgentScene = ExtResource("4_8x7d7")
 
-[node name="fly_spawner-n5" type="Node3D" parent="Flies" instance=ExtResource("16_pfx8k")]
+[node name="fly_spawner-n5" parent="Flies" instance=ExtResource("16_pfx8k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0549965, 0.999998, 21.8965)
-script = ExtResource("17_0yb8g")
-AgentScene = ExtResource("4_8x7d7")
 
-[node name="fly_spawner-n6" type="Node3D" parent="Flies" instance=ExtResource("16_pfx8k")]
+[node name="fly_spawner-n6" parent="Flies" instance=ExtResource("16_pfx8k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.475, 0.999998, 17.3236)
-script = ExtResource("17_0yb8g")
-AgentScene = ExtResource("4_8x7d7")
 
-[node name="fly_spawner-n7" type="Node3D" parent="Flies" instance=ExtResource("16_pfx8k")]
+[node name="fly_spawner-n7" parent="Flies" instance=ExtResource("16_pfx8k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5578, 0.999998, 18.0104)
-script = ExtResource("17_0yb8g")
-AgentScene = ExtResource("4_8x7d7")
 
 [node name="Environment" parent="." instance=ExtResource("2_0khoh")]
 transform = Transform3D(0.999999, -0.0013584, -0.000846874, 0.0013576, 0.999999, -0.000962392, 0.000848169, 0.000961252, 0.999999, 0, 0, 0)

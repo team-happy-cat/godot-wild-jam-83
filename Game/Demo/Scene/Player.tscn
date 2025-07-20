@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cc1m2a1obsyn4"]
+[gd_scene load_steps=25 format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" uid="uid://hdsvtpxi0o2d" path="res://Demo/Script/CharacterHub.cs" id="1_p8ic4"]
 [ext_resource type="Script" uid="uid://coaqcn4leqqcd" path="res://Demo/Script/CharacterController.cs" id="2_m3i4r"]
@@ -8,9 +8,10 @@
 [ext_resource type="Script" uid="uid://cv6lmtmyabh3g" path="res://addons/StandardAssets/Script/Dialogue/CameraAngles.cs" id="4_oabsn"]
 [ext_resource type="PackedScene" uid="uid://voiq5jjerjsw" path="res://Demo/Scene/Compass.tscn" id="6_cljnr"]
 [ext_resource type="Texture2D" uid="uid://bf457c8stsvon" path="res://Demo/UI/Images/hud_frog_full_mask.png" id="6_ep717"]
-[ext_resource type="Texture2D" uid="uid://cy7w0oprhhtr5" path="res://icon.png" id="6_uapvr"]
+[ext_resource type="Texture2D" uid="uid://corpfd6cpmya7" path="res://Demo/UI/Images/Stomach/hud_frog_chicken.png" id="8_5j7mb"]
 [ext_resource type="Script" uid="uid://7a645geywot" path="res://Demo/Script/EatAndLungeAbility.cs" id="8_lc2fc"]
 [ext_resource type="Texture2D" uid="uid://ctd1q7pv6jive" path="res://Demo/UI/Images/hud_frog_full.png" id="8_oabsn"]
+[ext_resource type="Texture2D" uid="uid://bi561ntn4cxo7" path="res://Demo/UI/Images/Stomach/hud_frog_fly.png" id="9_k6d0l"]
 [ext_resource type="Texture2D" uid="uid://dm1m7v6qfev7u" path="res://addons/StandardAssets/Texture/Particle/T_FX_Star_04.png" id="9_qrurj"]
 [ext_resource type="Shader" uid="uid://th1fak6vqjt7" path="res://Demo/UI/Shaders/FrogHUD.gdshader" id="9_wknp7"]
 [ext_resource type="Script" uid="uid://kchvvvrw4k33" path="res://Demo/Script/BellyDisplay.cs" id="10_lc2fc"]
@@ -61,7 +62,7 @@ characterController = NodePath("../Player")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Stomach" type="TextureRect" parent="HUD" node_paths=PackedStringArray("FoodTexture")]
+[node name="Stomach" type="TextureRect" parent="HUD" node_paths=PackedStringArray("ChickenTexture", "MosquitoTexture")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -76,9 +77,10 @@ grow_vertical = 0
 texture = ExtResource("8_oabsn")
 expand_mode = 1
 script = ExtResource("10_lc2fc")
-FoodTexture = NodePath("Food")
+ChickenTexture = NodePath("Chicken")
+MosquitoTexture = NodePath("Fly")
 
-[node name="Food" type="TextureRect" parent="HUD/Stomach"]
+[node name="Chicken" type="TextureRect" parent="HUD/Stomach"]
 material = SubResource("ShaderMaterial_lc2fc")
 layout_mode = 1
 anchors_preset = 15
@@ -86,7 +88,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_uapvr")
+texture = ExtResource("8_5j7mb")
+expand_mode = 1
+
+[node name="Fly" type="TextureRect" parent="HUD/Stomach"]
+material = SubResource("ShaderMaterial_lc2fc")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_k6d0l")
 expand_mode = 1
 
 [node name="Reticle" type="TextureRect" parent="HUD"]

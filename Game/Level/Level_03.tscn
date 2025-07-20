@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c7i1ufn52g7to"]
+[gd_scene load_steps=21 format=3 uid="uid://c7i1ufn52g7to"]
 
 [ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/Environment/PF_LilyPad.glb" id="1_4m831"]
 [ext_resource type="Script" uid="uid://c4bnyda0v84kt" path="res://Demo/Script/EnemyContainer.cs" id="2_es5q4"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bif2a7oi7swah" path="res://Assets/Models/Rocks/PF_RockB-convcol.glb" id="3_77fch"]
 [ext_resource type="PackedScene" uid="uid://bwjlg15j8mwjg" path="res://Demo/Scene/Character/PF_Chicken_Friend_Fast_Random_Walker.tscn" id="4_g70j6"]
 [ext_resource type="PackedScene" uid="uid://tgmgx7f5rybx" path="res://Assets/Models/Rocks/PF_RockC-convcol.glb" id="4_rdelg"]
-[ext_resource type="PackedScene" uid="uid://bycwinetltyo" path="res://Demo/Scene/Character/fly.tscn" id="5_7lje2"]
 [ext_resource type="Script" uid="uid://wxiqiqek0bdu" path="res://Demo/Script/WaterArea.cs" id="5_es5q4"]
 [ext_resource type="PackedScene" uid="uid://cjhwj7oqysobp" path="res://Assets/Models/Rocks/PF_RockD-convcol.glb" id="5_gxayn"]
 [ext_resource type="PackedScene" uid="uid://eeoxboyxvnor" path="res://Assets/Models/Rocks/PF_RockE-convcol.glb" id="6_6b76s"]
@@ -19,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://cqkpoo1c7fpv3" path="res://Assets/Models/Rocks/PF_RockK-convcol.glb" id="11_rx4xp"]
 [ext_resource type="PackedScene" uid="uid://ddqb32u6rmjsy" path="res://Demo/Scene/Character/goose.tscn" id="15_77fch"]
 [ext_resource type="PackedScene" uid="uid://dlpn7xunst5t7" path="res://Demo/fly_spawner.tscn" id="16_gxayn"]
-[ext_resource type="Script" uid="uid://38ivonkrroth" path="res://Demo/Script/AgentSpawner.cs" id="17_6b76s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ht6ow"]
 albedo_color = Color(0.35, 0.27125, 0.1925, 1)
@@ -481,35 +479,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.55053, -0.490211, -17.26)
 
 [node name="Flies" type="Node3D" parent="."]
 
-[node name="fly_spawner-n1" type="Node3D" parent="Flies" instance=ExtResource("16_gxayn")]
+[node name="fly_spawner-n1" parent="Flies" instance=ExtResource("16_gxayn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5208, 1, 18.0121)
-script = ExtResource("17_6b76s")
-AgentScene = ExtResource("5_7lje2")
 
-[node name="fly_spawner-n2" type="Node3D" parent="Flies" instance=ExtResource("16_gxayn")]
+[node name="fly_spawner-n2" parent="Flies" instance=ExtResource("16_gxayn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6515, 1, 15.8501)
-script = ExtResource("17_6b76s")
-AgentScene = ExtResource("5_7lje2")
 
-[node name="fly_spawner-n3" type="Node3D" parent="Flies" instance=ExtResource("16_gxayn")]
+[node name="fly_spawner-n3" parent="Flies" instance=ExtResource("16_gxayn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.40864, 1, -24.6558)
-script = ExtResource("17_6b76s")
-AgentScene = ExtResource("5_7lje2")
 
-[node name="fly_spawner-n4" type="Node3D" parent="Flies" instance=ExtResource("16_gxayn")]
+[node name="fly_spawner-n4" parent="Flies" instance=ExtResource("16_gxayn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0558, 0.999996, -20.3146)
-script = ExtResource("17_6b76s")
-AgentScene = ExtResource("5_7lje2")
 
-[node name="fly_spawner-n5" type="Node3D" parent="Flies" instance=ExtResource("16_gxayn")]
+[node name="fly_spawner-n5" parent="Flies" instance=ExtResource("16_gxayn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.1969, 0.999996, 24.5992)
-script = ExtResource("17_6b76s")
-AgentScene = ExtResource("5_7lje2")
 
-[node name="fly_spawner-n6" type="Node3D" parent="Flies" instance=ExtResource("16_gxayn")]
+[node name="fly_spawner-n6" parent="Flies" instance=ExtResource("16_gxayn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.3019, 0.999997, -22.5781)
-script = ExtResource("17_6b76s")
-AgentScene = ExtResource("5_7lje2")
 
 [node name="Environment" parent="." instance=ExtResource("2_u8qrg")]
 

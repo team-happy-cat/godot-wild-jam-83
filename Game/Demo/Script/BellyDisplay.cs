@@ -1,24 +1,46 @@
 using Godot;
 
+public enum FoodType
+{
+    Chicken,
+    Mosquito
+}
+
 public partial class BellyDisplay : TextureRect
 {
-    [Export] public TextureRect FoodTexture;
+    [Export] public TextureRect ChickenTexture;
+    [Export] public TextureRect MosquitoTexture;
 
     public override void _Ready()
     {
-        FoodTexture.Visible = false;
+        ChickenTexture.Visible = false;
+        MosquitoTexture.Visible = false;
     }
 
-    public void Full()
+    public void Full(FoodType foodType)
     {
-        FoodTexture.Visible = true;
+        ChickenTexture.Visible = false;
+        MosquitoTexture.Visible = false;
+
+        switch (foodType)
+        {
+            case FoodType.Chicken:
+                ChickenTexture.Visible = true;
+                break;
+            case FoodType.Mosquito:
+                MosquitoTexture.Visible = true;
+                break;
+        }
+
         GD.Print("[BellyDisplay] Set to full");
     }
 
     public void Empty()
     {
-        FoodTexture.Visible = false;
+        ChickenTexture.Visible = false;
+        MosquitoTexture.Visible = false;
         GD.Print("[BellyDisplay] Set to empty");
     }
 
 }
+

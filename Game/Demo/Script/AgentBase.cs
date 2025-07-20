@@ -9,6 +9,7 @@ public partial class AgentBase : CharacterBody3D
 	private int framesSinceFacingUpdate = 0;
 
 	[Export] public Area3D strikeArea;
+	[Export] public FoodType foodType = FoodType.Chicken;
 
 	public virtual void Move(Vector3 velocity)
 	{

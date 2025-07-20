@@ -80,7 +80,7 @@ public partial class EatAndLungeAbility : Node
 					if (hitBody != null && hitBody is AgentBase agentBase)
 					{
 						agentBase.Die();
-						BellyDisplay.Full();
+						BellyDisplay.Full(agentBase.foodType);
 						bellyIsFull = true;
 						return;
 					}
