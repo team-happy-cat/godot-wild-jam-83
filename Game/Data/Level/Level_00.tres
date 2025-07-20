@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://chfdewtvuidb4"]
+
+[ext_resource type="PackedScene" uid="uid://ccte1qj8j7omh" path="res://Level/Level_00.tscn" id="1_vepid"]
+[ext_resource type="Script" uid="uid://c56kgadb3fuil" path="res://addons/StandardAssets/Script/Level/LevelInfo.cs" id="2_1n6xj"]
+
+[resource]
+script = ExtResource("2_1n6xj")
+AllowMenu = true
+FadeLevelTitleInOut = false
+HasEpigraph = false
+PlayerExistsInLevel = true
+AmbientVFX = ""
+Environment = "wind"
+LevelName = "Level_00"
+LevelID = "Level_00"
+Level = ExtResource("1_vepid")
+Epigraph = ""
