@@ -3,4 +3,5 @@
 [ext_resource type="Texture2D" uid="uid://dgj4ax2k5xv41" path="res://Assets/Models/Color_Atlas_A.png" id="1_ctjhh"]
 
 [resource]
+cull_mode = 2
 albedo_texture = ExtResource("1_ctjhh")
