@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cc1m2a1obsyn4"]
+[gd_scene load_steps=31 format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" uid="uid://hdsvtpxi0o2d" path="res://Demo/Script/CharacterHub.cs" id="1_p8ic4"]
 [ext_resource type="Script" uid="uid://coaqcn4leqqcd" path="res://Demo/Script/CharacterController.cs" id="2_m3i4r"]
@@ -16,6 +16,11 @@
 [ext_resource type="Shader" uid="uid://th1fak6vqjt7" path="res://Demo/UI/Shaders/FrogHUD.gdshader" id="9_wknp7"]
 [ext_resource type="Script" uid="uid://kchvvvrw4k33" path="res://Demo/Script/BellyDisplay.cs" id="10_lc2fc"]
 [ext_resource type="Script" uid="uid://bt2tpfi6a1dhv" path="res://Demo/Script/GobbleAbility.cs" id="15_dobti"]
+[ext_resource type="AudioStream" uid="uid://dsd5ww3xet1vd" path="res://Assets/Audio/SFX - LZB WJ83 - Small jump.wav" id="17_rdy27"]
+[ext_resource type="AudioStream" uid="uid://bdub06doc4ct6" path="res://Assets/Audio/SFX - LZB WJ83 - bounce sound.wav" id="18_mq11f"]
+[ext_resource type="AudioStream" uid="uid://bqnpr8vtsv2f7" path="res://Assets/Audio/SFX - LZB WJ83 - water move1.wav" id="19_ome0b"]
+[ext_resource type="AudioStream" uid="uid://cyums8cnodf8x" path="res://Assets/Audio/SFX - LZB WJ83 - Water move 2.wav" id="20_mn2kr"]
+[ext_resource type="AudioStream" uid="uid://bp8euh8ivus01" path="res://Assets/Audio/tongue.wav" id="21_mq11f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lc2fc"]
 shader = ExtResource("9_wknp7")
@@ -47,6 +52,11 @@ height = 1.8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5j7mb"]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hca7a"]
+streams_count = 2
+stream_0/stream = ExtResource("19_ome0b")
+stream_1/stream = ExtResource("20_mn2kr")
+
 [node name="CharacterHub" type="Node" node_paths=PackedStringArray("CameraAngles", "LookAt")]
 script = ExtResource("1_p8ic4")
 CameraAngles = NodePath("Player/CameraAngles")
@@ -54,11 +64,13 @@ LookAt = NodePath("Player")
 
 [node name="Compass" parent="." instance=ExtResource("6_cljnr")]
 
-[node name="EatAndLungeAbility" type="Node" parent="." node_paths=PackedStringArray("BellyDisplay", "characterController")]
+[node name="EatAndLungeAbility" type="Node" parent="." node_paths=PackedStringArray("BellyDisplay", "characterController", "LungeAudio", "EatAudio")]
 script = ExtResource("8_lc2fc")
 RayLength = 10.0
 BellyDisplay = NodePath("../HUD/Stomach")
 characterController = NodePath("../Player")
+LungeAudio = NodePath("../Audio/LungeAudio")
+EatAudio = NodePath("../Audio/EatAudio")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -118,10 +130,12 @@ grow_vertical = 2
 texture = ExtResource("9_qrurj")
 expand_mode = 1
 
-[node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("eatAndLungeAbility") groups=["Player"]]
+[node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("eatAndLungeAbility", "JumpAudio", "WaterMoveAudio") groups=["Player"]]
 collision_layer = 4
 script = ExtResource("2_m3i4r")
 eatAndLungeAbility = NodePath("../EatAndLungeAbility")
+JumpAudio = NodePath("../Audio/JumpAudio")
+WaterMoveAudio = NodePath("../Audio/WaterMoveAudio")
 
 [node name="CameraAngles" type="Node3D" parent="Player" node_paths=PackedStringArray("Angles")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -337,3 +351,19 @@ eatAndLungeAbility = NodePath("../../EatAndLungeAbility")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/GobbleAbility"]
 shape = SubResource("SphereShape3D_5j7mb")
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="JumpAudio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("17_rdy27")
+
+[node name="LungeAudio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("18_mq11f")
+
+[node name="WaterMoveAudio" type="AudioStreamPlayer" parent="Audio"]
+stream = SubResource("AudioStreamRandomizer_hca7a")
+volume_db = -6.0
+
+[node name="EatAudio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("21_mq11f")
+volume_db = -1.0

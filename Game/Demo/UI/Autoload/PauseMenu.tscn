@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cejmwp8icuj3x" path="res://Demo/UI/Images/pause_sign.png" id="1_uicf3"]
 [ext_resource type="Script" uid="uid://bp8k6ni7e4yb4" path="res://Demo/UI/Autoload/PauseMenu.cs" id="2_mxaxn"]
 [ext_resource type="Texture2D" uid="uid://m6ls3ytsbsu0" path="res://Demo/UI/Images/pause_sign_exit.png" id="4_21ljx"]
-[ext_resource type="AudioStream" uid="uid://bb4rnfcr1k2l5" path="res://Demo/UI/Audio/goofy.mp3" id="4_w8iaa"]
 [ext_resource type="Script" uid="uid://cr05f2g78pvlt" path="res://Demo/UI/Components/SquishyTextureButton.cs" id="5_t15cu"]
 [ext_resource type="Texture2D" uid="uid://dhftwquoplpue" path="res://Demo/UI/Images/pause_sign_resume.png" id="6_0yv82"]
+[ext_resource type="AudioStream" uid="uid://bggrhlft1ccmc" path="res://Assets/Audio/SFX - LZB WJ83 - Pause Strike.wav" id="7_21ljx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mxaxn"]
 shader = ExtResource("1_j0gad")
@@ -230,8 +230,7 @@ soundClick = "Select"
 metadata/_custom_type_script = "uid://cr05f2g78pvlt"
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_w8iaa")
-volume_db = -8.0
+stream = ExtResource("7_21ljx")
 
 [node name="Animations" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Background")

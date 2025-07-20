@@ -23,6 +23,10 @@ namespace Game
 
 		[Export] public EatAndLungeAbility eatAndLungeAbility;
 
+		[ExportGroup("Audio")]
+		[Export] public AudioStreamPlayer JumpAudio;
+		[Export] public AudioStreamPlayer WaterMoveAudio;
+
 		private float gravity;
 		private float speed;
 		private CameraBridge cameraBridge;
@@ -95,6 +99,7 @@ namespace Game
 			if (Input.IsActionJustPressed(Jump) && IsOnFloor())
 			{
 				Velocity = new Vector3(Velocity.X, JumpVelocity, Velocity.Z);
+				JumpAudio.Play();
 			}
 
 			if (IsOnFloor())
@@ -110,6 +115,10 @@ namespace Game
 				if (InWater)
 				{
 					speed *= 0.5f;
+					if (!WaterMoveAudio.IsPlaying())
+					{
+						WaterMoveAudio.Play();
+					}
 				}
 
 				Vector2 inputDir = Input.GetVector(Left, Right, Forward, Backward);

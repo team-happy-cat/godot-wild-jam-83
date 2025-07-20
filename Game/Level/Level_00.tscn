@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckyt8etojlxcx"]
+[gd_scene load_steps=8 format=3 uid="uid://ckyt8etojlxcx"]
 
 [ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/Environment/PF_LilyPad.glb" id="1_sutdf"]
 [ext_resource type="PackedScene" uid="uid://dlpn7xunst5t7" path="res://Demo/fly_spawner.tscn" id="5_daf62"]
 [ext_resource type="PackedScene" uid="uid://c0i6vbtndravs" path="res://Level/environment_small.tscn" id="7_8venk"]
-[ext_resource type="PackedScene" uid="uid://ddqb32u6rmjsy" path="res://Demo/Scene/Character/goose.tscn" id="9_mvmpv"]
 [ext_resource type="Script" uid="uid://c4bnyda0v84kt" path="res://Demo/Script/EnemyContainer.cs" id="12_0xl2u"]
 [ext_resource type="PackedScene" uid="uid://4pssytbq3qo1" path="res://Demo/Scene/Character/PF_Chicken_Friend_Random_Walker.tscn" id="13_2txvy"]
 [ext_resource type="Script" uid="uid://wxiqiqek0bdu" path="res://Demo/Script/WaterArea.cs" id="16_8bnd4"]
@@ -32,7 +31,7 @@ height = 1.0
 sides = 16
 
 [node name="PF_LilyPad6" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
-transform = Transform3D(-3.64238, 0, 2.14947, 0, 1.39972, 0, -2.14947, 0, -3.64238, 10.7619, -0.034001, -10.9004)
+transform = Transform3D(-3.64238, 0, 2.14947, 0, 1.39972, 0, -2.14947, 0, -3.64238, 10.1941, -0.034001, -9.89027)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad6"]
 transform = Transform3D(0.330957, 0, 0, 0, 1, 0, 0, 0, 0.330957, 0, -0.5, 0)
@@ -43,7 +42,7 @@ height = 1.0
 sides = 16
 
 [node name="PF_LilyPad7" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
-transform = Transform3D(0.989886, 0, 1.57893, 0, 0.616763, 0, -1.57893, 0, 0.989886, 12.9528, -0.034, 10.7824)
+transform = Transform3D(0.989886, 0, 1.57893, 0, 0.616763, 0, -1.57893, 0, 0.989886, 8.68123, -0.034, 2.75867)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad7"]
 transform = Transform3D(0.330957, 0, 0, 0, 1, 0, 0, 0, 0.330957, 0, -0.5, 0)
@@ -54,7 +53,7 @@ height = 1.0
 sides = 16
 
 [node name="PF_LilyPad8" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
-transform = Transform3D(-0.667996, 0, 1.73974, 0, 0.616763, 0, -1.73974, 0, -0.667996, 10.0604, -0.034, 12.873)
+transform = Transform3D(-0.667996, 0, 1.73974, 0, 0.616763, 0, -1.73974, 0, -0.667996, 6.04716, -0.034, 5.60543)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad8"]
 transform = Transform3D(0.330957, 0, 0, 0, 1, 0, 0, 0, 0.330957, 0, -0.5, 0)
@@ -65,7 +64,7 @@ height = 1.0
 sides = 16
 
 [node name="PF_LilyPad9" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
-transform = Transform3D(-1.06981, 0, 2.78622, 0, 0.987757, 0, -2.78622, 0, -1.06981, 9.54465, -0.034, 8.75404)
+transform = Transform3D(-1.06981, 0, 2.78622, 0, 0.987757, 0, -2.78622, 0, -1.06981, 10.6726, -0.034, 6.39523)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad9"]
 transform = Transform3D(0.330957, 0, 0, 0, 1, 0, 0, 0, 0.330957, 0, -0.5, 0)
@@ -76,7 +75,7 @@ height = 1.0
 sides = 16
 
 [node name="PF_LilyPad10" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
-transform = Transform3D(-2.6923, 0, 1.28803, 0, 0.987757, 0, -1.28803, 0, -2.6923, -12.2173, -0.034, -12.0601)
+transform = Transform3D(-2.6923, 0, 1.28803, 0, 0.987757, 0, -1.28803, 0, -2.6923, -11.1045, -0.034, -7.21806)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad10"]
 transform = Transform3D(0.330957, 0, 0, 0, 1, 0, 0, 0, 0.330957, 0, -0.5, 0)
@@ -98,7 +97,7 @@ height = 1.0
 sides = 16
 
 [node name="PF_LilyPad3" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
-transform = Transform3D(2.77326, 0, 1.19946, 0, 1, 0, -1.19946, 0, 2.77326, -10.8623, -0.034, 12.6405)
+transform = Transform3D(2.77326, 0, 1.19946, 0, 1, 0, -1.19946, 0, 2.77326, -6.4427, -0.034, 9.52667)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad3"]
 transform = Transform3D(0.330957, 0, 0, 0, 1, 0, 0, 0, 0.330957, 0, -0.5, 0)
@@ -109,7 +108,7 @@ height = 1.0
 sides = 16
 
 [node name="PF_LilyPad4" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
-transform = Transform3D(0.773583, 0, -1.86061, 0, 0.666885, 0, 1.86061, 0, 0.773583, -13.044, -0.034, 9.20202)
+transform = Transform3D(0.773583, 0, -1.86061, 0, 0.666885, 0, 1.86061, 0, 0.773583, -9.85202, -0.034, 6.58282)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad4"]
 transform = Transform3D(0.330957, 0, 0, 0, 1, 0, 0, 0, 0.330957, 0, -0.5, 0)
@@ -120,7 +119,7 @@ height = 1.0
 sides = 16
 
 [node name="PF_LilyPad5" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
-transform = Transform3D(-1.42468, 0, 1.42498, 0, 0.666885, 0, -1.42498, 0, -1.42468, -3.07913, -0.034, -2.56436)
+transform = Transform3D(-1.42468, 0, 1.42498, 0, 0.666885, 0, -1.42498, 0, -1.42468, -2.64322, -0.034, -4.43597)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad5"]
 transform = Transform3D(0.330957, 0, 0, 0, 1, 0, 0, 0, 0.330957, 0, -0.5, 0)
@@ -138,16 +137,16 @@ NextLevel = "Level_01"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89286, -0.350846, 3.19346)
 
 [node name="PF_Chicken_Friend_Random_Walker-n2" parent="Enemies" instance=ExtResource("13_2txvy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2411, -0.350846, 9.24577)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.64182, -0.350846, 7.35218)
 
 [node name="PF_Chicken_Friend_Random_Walker-n3" parent="Enemies" instance=ExtResource("13_2txvy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94443, -0.350846, 11.4649)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.66985, -0.350846, 9.56115)
 
 [node name="PF_Chicken_Friend_Random_Walker-n4" parent="Enemies" instance=ExtResource("13_2txvy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.26576, -0.350845, -7.26065)
 
 [node name="PF_Chicken_Friend_Random_Walker-n5" parent="Enemies" instance=ExtResource("13_2txvy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0397, -0.350844, -7.93346)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2166, -0.350844, -4.12912)
 
 [node name="PF_Chicken_Friend_Random_Walker-n6" parent="Enemies" instance=ExtResource("13_2txvy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.82852, -0.350844, -7.87863)
@@ -165,15 +164,12 @@ shape = SubResource("BoxShape3D_h1rqx")
 [node name="Flies" type="Node3D" parent="."]
 
 [node name="fly_spawner-n1" parent="Flies" instance=ExtResource("5_daf62")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.28849, -1.90735e-06, 8.53937)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6131, -1.90735e-06, 6.31732)
 
 [node name="fly_spawner-n2" parent="Flies" instance=ExtResource("5_daf62")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71868, -1.90735e-06, -7.64777)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19094, 2.77225, -7.64777)
 
 [node name="fly_spawner-n3" parent="Flies" instance=ExtResource("5_daf62")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8874, -1.90735e-06, 12.7489)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2789, -1.90735e-06, -7.11547)
 
 [node name="EnvironmentSmall" parent="." instance=ExtResource("7_8venk")]
-
-[node name="Goose" parent="." instance=ExtResource("9_mvmpv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7849, -0.5, -10.3119)
