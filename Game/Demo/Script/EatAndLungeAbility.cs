@@ -7,6 +7,9 @@ public partial class EatAndLungeAbility : Node
 	[Export(PropertyHint.None, "suffix:m")] public float RayLength = 30.0f;
 	[Export] public BellyDisplay BellyDisplay;
 	[Export] public CharacterController characterController;
+	
+	[Export] public AudioStreamPlayer LungeAudio;
+	[Export] public AudioStreamPlayer EatAudio;
 
 	public bool Gobbling { get; set; } = false;
 
@@ -52,7 +55,8 @@ public partial class EatAndLungeAbility : Node
 			if (bellyIsFull)
 			{
 				GD.Print("Launch!!");
-
+				
+				LungeAudio.Play();
 				Vector3 launchDirection = -cameraBridge.MainCamera.GlobalTransform.Basis.Z;
 				float launchForce = 20.0f;
 				characterController.Velocity += launchDirection * launchForce;
@@ -63,6 +67,7 @@ public partial class EatAndLungeAbility : Node
 			}
 			else
 			{
+				EatAudio.Play();
 				PhysicsDirectSpaceState3D spaceState = GetViewport().GetWorld3D().DirectSpaceState;
 				Vector2 mousePos = GetViewport().GetMousePosition();
 				Vector3 origin = cameraBridge.MainCamera.ProjectRayOrigin(mousePos);
