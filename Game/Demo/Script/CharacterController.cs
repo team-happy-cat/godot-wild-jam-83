@@ -118,7 +118,8 @@ namespace Game
         public void Die()
         {
             GD.Print("[Player] Died!");
-            levelManager.ChangeLevel("Main_Menu");
+            GameOver.Open();
+            // levelManager.ChangeLevel("Main_Menu");
         }
     }
 

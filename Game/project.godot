@@ -38,6 +38,7 @@ PlayerSpawner="*res://Demo/Scene/Autoload/PlayerSpawner.tscn"
 Particles="*res://Demo/Scene/Autoload/Particles.tscn"
 Transition="*res://Demo/UI/Autoload/Transition.tscn"
 PauseMenu="*res://Demo/UI/Autoload/PauseMenu.tscn"
+GameOver="*res://Demo/UI/Autoload/GameOver.tscn"
 
 [dialogue_manager]
 
