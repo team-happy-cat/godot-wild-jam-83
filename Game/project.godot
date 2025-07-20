@@ -39,6 +39,7 @@ Particles="*res://Demo/Scene/Autoload/Particles.tscn"
 Transition="*res://Demo/UI/Autoload/Transition.tscn"
 PauseMenu="*res://Demo/UI/Autoload/PauseMenu.tscn"
 GameOver="*res://Demo/UI/Autoload/GameOver.tscn"
+JukeBox="*res://Demo/Script/JukeBox.gd"
 
 [dialogue_manager]
 
@@ -73,7 +74,6 @@ folder_colors={
 "res://Demo/Script/": "pink",
 "res://Demo/Texture/": "yellow",
 "res://Demo/VFX/": "orange",
-"res://LZB Temp/": "red",
 "res://Level/": "green",
 "res://Todo/": "red"
 }

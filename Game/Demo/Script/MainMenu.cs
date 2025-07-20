@@ -20,7 +20,8 @@ public partial class MainMenu : Control
 	public override void _Ready()
 	{
 		Mouse.SetVisible();
-		
+		var jukebox = GetNode<Node>("/root/JukeBox");
+		jukebox.Call("stop_music");
 		PlayButton.Pressed += () => TutorialAnimations.Play("open");
 		QuitButton.Pressed += () => GetTree().Quit();
 		TeamButton.Pressed += () => OS.ShellOpen("https://team-happy-cat.itch.io/");
@@ -37,6 +38,8 @@ public partial class MainMenu : Control
 	private void StartGame()
 	{
 		levelManager.ChangeLevel("Level_00", "SP_Level_00");
+		var jukebox = GetNode<Node>("/root/JukeBox");
+		jukebox.Call("play_level1_song");
 	}
 
 	private void OnLevelButton1Pressed()

@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://c77b57d84r0rb" path="res://Data/Level/Level_02.tres" id="7_q8osh"]
 [ext_resource type="Resource" uid="uid://dg0pomn3l8tsk" path="res://Data/Level/Level_03.tres" id="8_jegmh"]
 [ext_resource type="Resource" uid="uid://h7rkid76jdtq" path="res://Data/Level/End_Screen.tres" id="9_v8k1l"]
-[ext_resource type="Resource" uid="uid://chfdewtvuidb4" path="res://Data/Level/Level_00.tres" id="10_o8m34"]
+[ext_resource type="Resource" path="res://Data/Level/Level_00.tres" id="10_o8m34"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5mrsu"]
 shader = ExtResource("3_4lg3s")
