@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bay0vfel1y8nb" path="res://Demo/UI/Images/sign_play.png" id="7_urqk6"]
 [ext_resource type="Script" uid="uid://cr05f2g78pvlt" path="res://Demo/UI/Components/SquishyTextureButton.cs" id="8_8exua"]
 [ext_resource type="Texture2D" uid="uid://4twrmcdlggwa" path="res://Demo/UI/Images/sign_quit.png" id="9_04a0p"]
-[ext_resource type="Shader" path="res://Demo/UI/Shaders/Blur.gdshader" id="11_3xcul"]
+[ext_resource type="Shader" uid="uid://g7p7p0bxd6k3" path="res://Demo/UI/Shaders/Blur.gdshader" id="11_3xcul"]
 [ext_resource type="Texture2D" uid="uid://5pwkkcvu5oe3" path="res://Demo/UI/Images/tutorial_sign.png" id="12_fd2lg"]
 [ext_resource type="Texture2D" uid="uid://dhftwquoplpue" path="res://Demo/UI/Images/pause_sign_resume.png" id="13_fjxyp"]
 

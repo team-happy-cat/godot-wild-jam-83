@@ -11,6 +11,8 @@ public partial class EatAndLungeAbility : Node
 	[Export] public AudioStreamPlayer LungeAudio;
 	[Export] public AudioStreamPlayer EatAudio;
 
+	[Export] public AnimationPlayer TongueAnimation;
+	
 	public bool Gobbling { get; set; } = false;
 
 	private bool bellyIsFull = false;
@@ -68,6 +70,11 @@ public partial class EatAndLungeAbility : Node
 			else
 			{
 				EatAudio.Play();
+				if (TongueAnimation.IsPlaying())
+				{
+					TongueAnimation.Stop();
+				}
+				TongueAnimation.Play("eat");
 				PhysicsDirectSpaceState3D spaceState = GetViewport().GetWorld3D().DirectSpaceState;
 				Vector2 mousePos = GetViewport().GetMousePosition();
 				Vector3 origin = cameraBridge.MainCamera.ProjectRayOrigin(mousePos);

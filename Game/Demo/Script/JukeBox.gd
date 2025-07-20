@@ -12,7 +12,7 @@ func _ready() -> void:
 	jukebox_audio_player.bus = "Music"
 	jukebox_audio_player.process_mode = Node.PROCESS_MODE_ALWAYS
 
-func play_music(stream: AudioStream, volume_db: float = 0.0):
+func play_music(stream: AudioStream, volume_db: float = -10.0):
 	if jukebox_audio_player.stream == stream and jukebox_audio_player.playing:
 		return
 	
