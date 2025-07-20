@@ -39,15 +39,19 @@ metadata/_custom_type_script = "uid://bn1obed5dlkv6"
 
 [node name="Squeak001" type="AudioStreamPlayer" parent="UI/Squeak"]
 stream = ExtResource("5_foioq")
+volume_db = -6.0
 
 [node name="Squeak002" type="AudioStreamPlayer" parent="UI/Squeak"]
 stream = ExtResource("6_cifoq")
+volume_db = -6.0
 
 [node name="Squeak003" type="AudioStreamPlayer" parent="UI/Squeak"]
 stream = ExtResource("7_6835m")
+volume_db = -6.0
 
 [node name="Squeak004" type="AudioStreamPlayer" parent="UI/Squeak"]
 stream = ExtResource("8_nkfwd")
+volume_db = -6.0
 
 [node name="Meow" type="Node" parent="UI"]
 script = ExtResource("2_ve4wk")

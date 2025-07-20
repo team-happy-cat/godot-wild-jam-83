@@ -351,15 +351,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.1242, -0.495984, -14.4802)
 
 [node name="Goose4" parent="Enemies" instance=ExtResource("8_k2iqv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3305, -0.49021, -1.88739)
+collision_layer = 1
 
 [node name="Goose" parent="Enemies" instance=ExtResource("8_k2iqv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5772, -0.490211, -21.1457)
+collision_layer = 1
 
 [node name="Goose2" parent="Enemies" instance=ExtResource("8_k2iqv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2577, -0.490209, 0.0539322)
+collision_layer = 1
 
 [node name="Goose3" parent="Enemies" instance=ExtResource("8_k2iqv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.8734, -0.490211, -9.88763)
+collision_layer = 1
 
 [node name="Environment" parent="." instance=ExtResource("2_t7ms4")]
 
