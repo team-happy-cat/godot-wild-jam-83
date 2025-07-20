@@ -36,7 +36,7 @@ public partial class MainMenu : Control
 
 	private void StartGame()
 	{
-		levelManager.ChangeLevel("Level_01", "SP_Level_01");
+		levelManager.ChangeLevel("Level_00", "SP_Level_00");
 	}
 
 	private void OnLevelButton1Pressed()

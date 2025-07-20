@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ds2fwa44aferr" path="res://Demo/Script/AgentBase.cs" id="1_1b5lg"]
 [ext_resource type="PackedScene" uid="uid://c8alf2ra2jals" path="res://Demo/Scene/Character/PF_Chicken_Friend.glb" id="2_m2bqd"]
 [ext_resource type="Script" uid="uid://oj1nsgwhibi7" path="res://addons/StandardAssets/Script/Compass/PointOfInterest.cs" id="3_lroav"]
-[ext_resource type="Texture2D" uid="uid://cy7w0oprhhtr5" path="res://icon.png" id="4_s87yi"]
+[ext_resource type="Texture2D" uid="uid://wbj1onemc3r1" path="res://Demo/UI/Images/Compass/compass_goose.png" id="4_1b5lg"]
 [ext_resource type="BehaviorTree" uid="uid://h4tehm8amfs2" path="res://ai/trees/goose.tres" id="5_1b5lg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_byfd3"]
@@ -21,6 +21,7 @@ albedo_color = Color(1, 0, 0, 0.360784)
 
 [node name="Goose" type="CharacterBody3D" node_paths=PackedStringArray("strikeArea")]
 collision_layer = 16385
+axis_lock_linear_y = true
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 safe_margin = 0.01
@@ -36,8 +37,8 @@ transform = Transform3D(2.43754, 0, 0, 0, 2.43754, 0, 0, 0, 2.43754, 0, 0, 0)
 
 [node name="PointOfInterest" type="Marker3D" parent="."]
 script = ExtResource("3_lroav")
-IconTexture = ExtResource("4_s87yi")
-DisplayName = "Chicken"
+IconTexture = ExtResource("4_1b5lg")
+DisplayName = "Goose"
 
 [node name="BTPlayer" type="BTPlayer" parent="."]
 behavior_tree = ExtResource("5_1b5lg")
