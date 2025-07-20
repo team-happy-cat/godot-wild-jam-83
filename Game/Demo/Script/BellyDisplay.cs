@@ -14,6 +14,8 @@ public partial class BellyDisplay : TextureRect
 	
 	[Export] public TextureRect ChickenTexture;
 	[Export] public TextureRect MosquitoTexture;
+	
+	[Export] public GpuParticles2D JuiceParticles;
 
 	public override void _Ready()
 	{
@@ -40,6 +42,8 @@ public partial class BellyDisplay : TextureRect
 				MosquitoTexture.Visible = true;
 				break;
 		}
+		
+		Animate(true);
 
 		GD.Print("[BellyDisplay] Set to full");
 	}
@@ -49,7 +53,19 @@ public partial class BellyDisplay : TextureRect
 		Texture = EmptyTexture;
 		ChickenTexture.Visible = false;
 		MosquitoTexture.Visible = false;
+		Animate(false);
 		GD.Print("[BellyDisplay] Set to empty");
 	}
 
+	private void Animate(bool full)
+	{
+		PivotOffset = Size / 2f;
+		Scale = Vector2.One * 0.9f;
+		
+		Tween tween = CreateTween();
+		tween.TweenProperty(this, "scale", Vector2.One, 0.1);
+		tween.Play();
+		
+		if (full) JuiceParticles.Restart();
+	}
 }
