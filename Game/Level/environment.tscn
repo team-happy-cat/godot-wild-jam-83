@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://dpg7c2fxet7nr"]
+[gd_scene load_steps=58 format=4 uid="uid://dpg7c2fxet7nr"]
 
 [ext_resource type="PackedScene" uid="uid://8tl1ghmq6i1w" path="res://addons/StandardAssets/Scene/Ocean.tscn" id="2_lnont"]
 [ext_resource type="PackedScene" uid="uid://bn85uyhd1vd1k" path="res://Assets/Models/Environment/PF_cattail_1.glb" id="3_jiqlp"]
@@ -7,12 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://csr3w3h7xlgjn" path="res://Assets/Models/Utils/outer_environment_plane.glb" id="5_aljar"]
 [ext_resource type="PackedScene" uid="uid://b1g7wtybftm5y" path="res://Assets/Models/Utils/inner_environment_plane.glb" id="6_8da38"]
 [ext_resource type="PackedScene" uid="uid://cnyilg2wnjj5a" path="res://Assets/Models/Environment/PF_willow_1-convcol.glb" id="7_35b2l"]
+[ext_resource type="PackedScene" uid="uid://didn8ap57jb1g" path="res://Assets/Models/Environment/SM_mushroom_b.glb" id="7_crhl6"]
 [ext_resource type="PackedScene" uid="uid://d35qibodwkyg6" path="res://Assets/Models/Environment/PF_log_1-col.glb" id="8_6jr2q"]
+[ext_resource type="PackedScene" uid="uid://bs2s1qngqe5ir" path="res://Assets/Models/Environment/SM_mushroom_a.glb" id="8_rfob5"]
 [ext_resource type="Texture2D" uid="uid://ccmsm8k4fiuqm" path="res://Assets/Models/Environment/PF_willow_1-convcol_Color_Atlas_A.png" id="9_83tof"]
 [ext_resource type="PackedScene" uid="uid://dh3ag00hfmfkr" path="res://Assets/Models/SM_cloud_A.glb" id="9_jiqlp"]
+[ext_resource type="PackedScene" uid="uid://cknrk4nciy45t" path="res://Assets/Models/Environment/SM_stump_1-col.glb" id="9_ko8d4"]
 [ext_resource type="PackedScene" uid="uid://xtaecqywtpf" path="res://Assets/Models/SM_cloud_B.glb" id="10_4xe2f"]
 [ext_resource type="Texture2D" uid="uid://c1t3slsvak2jr" path="res://Assets/Models/Environment/PF_log_1-col_Color_Atlas_A.png" id="10_cix77"]
+[ext_resource type="PackedScene" uid="uid://ofcpwirtwrky" path="res://Assets/Models/Environment/PF_water_lily_1.glb" id="10_rfob5"]
 [ext_resource type="Material" uid="uid://dmv16q7viwaxg" path="res://Assets/Models/Environment/MI_col_matte_A.tres" id="13_4xe2f"]
+[ext_resource type="PackedScene" uid="uid://bvobhho1ydsxj" path="res://Assets/Models/Environment/SM_pond_rock_2-convcol.glb" id="13_bi607"]
 [ext_resource type="PackedScene" uid="uid://nrq3q1fgegl0" path="res://Assets/Models/Environment/SM_mushroom_b_clump.glb" id="14_8da38"]
 [ext_resource type="PackedScene" uid="uid://dst8fwcsk2ta5" path="res://Assets/Models/Environment/SM_mushroom_a_clump.glb" id="15_35b2l"]
 [ext_resource type="PackedScene" uid="uid://cic6an076eud" path="res://Assets/Models/Environment/SM_pond_rock_1-convcol.glb" id="16_6jr2q"]
@@ -428,6 +433,18 @@ transform = Transform3D(2.02495, 0, -0.807462, 0, 2.18, 0, 0.807462, 0, 2.02495,
 [node name="PF_tall_grass_clump_16" parent="Meshes/TallGrass" instance=ExtResource("4_4xe2f")]
 transform = Transform3D(2.17275, 0, 0.177602, 0, 2.18, 0, -0.177602, 0, 2.17275, 7.25042, -0.495163, -28.3638)
 
+[node name="PF_tall_grass_clump_22" parent="Meshes/TallGrass" instance=ExtResource("4_4xe2f")]
+transform = Transform3D(2.17275, 0, 0.177602, 0.0517657, 2.08534, -0.633292, -0.16989, 0.635405, 2.07841, 24.7361, -0.495163, -29.6907)
+
+[node name="PF_tall_grass_clump_25" parent="Meshes/TallGrass" instance=ExtResource("4_4xe2f")]
+transform = Transform3D(0.407968, 0, -2.14148, -0.624179, 2.08534, -0.11891, 2.0485, 0.635405, 0.390254, 24.7174, -0.466581, -29.2435)
+
+[node name="PF_tall_grass_clump_23" parent="Meshes/TallGrass" instance=ExtResource("4_4xe2f")]
+transform = Transform3D(1.98133, 0.413911, 1.48728, -0.269685, 2.47541, -0.329635, -1.52006, 0.100336, 1.99709, 25.2174, -0.495163, -29.6907)
+
+[node name="PF_tall_grass_clump_24" parent="Meshes/TallGrass" instance=ExtResource("4_4xe2f")]
+transform = Transform3D(1.25797, -0.392, 0.977186, 0.350709, 1.59157, 0.186977, -0.992753, 0.0655295, 1.3043, 24.4038, -0.495163, -29.5125)
+
 [node name="PF_tall_grass_clump_17" parent="Meshes/TallGrass" instance=ExtResource("4_4xe2f")]
 transform = Transform3D(1.95727, 0, -0.959955, 0, 2.18, 0, 0.959955, 0, 1.95727, -39.3641, -0.495163, -24.3695)
 
@@ -480,7 +497,96 @@ transform = Transform3D(0.844313, 0, 0.432521, 0, 0.948651, 0, -0.432521, 0, 0.8
 transform = Transform3D(0.823034, 0, -0.471757, 0, 0.948651, 0, 0.471757, 0, 0.823034, 2.2459, 0.0463756, 0.564983)
 
 [node name="SM_mushroom_a_clump3" parent="Meshes/Mushrooms" instance=ExtResource("15_35b2l")]
-transform = Transform3D(-1.43591, 0, -0.44773, 0, 1.5041, 0, 0.44773, 0, -1.43591, -3.98341, 0.0613484, 0.0916886)
+transform = Transform3D(-1.10099, 0, -0.343299, 0, 1.15328, 0, 0.343299, 0, -1.10099, -3.98341, -0.135348, 0.0916886)
+
+[node name="SM_mushroom_a_clump7" parent="Meshes/Mushrooms" instance=ExtResource("15_35b2l")]
+transform = Transform3D(-0.808952, 0.560159, -0.252239, 0.534764, 0.847368, 0.166744, 0.302371, 0, -0.96973, -7.70944, 0.260207, 0.0916886)
+
+[node name="SM_mushroom_a_clump5" parent="Meshes/Mushrooms" instance=ExtResource("15_35b2l")]
+transform = Transform3D(-0.218854, -6.82142e-16, -0.719157, -0.274212, 0.694932, 0.083448, 0.664826, 0.286629, -0.20232, -6.07916, 0.243916, -9.1945)
+
+[node name="SM_mushroom_a_clump6" parent="Meshes/Mushrooms" instance=ExtResource("15_35b2l")]
+transform = Transform3D(-0.127491, 0.306984, 0.422637, 0.418175, 0.320689, -0.106787, -0.313034, 0.303375, -0.314784, -7.83475, 0.473126, -7.31428)
+
+[node name="SM_mushroom_b_clump3" parent="Meshes/Mushrooms" instance=ExtResource("14_8da38")]
+transform = Transform3D(-0.603116, 0, 0.317664, 0, 0.68166, 0, -0.317664, 0, -0.603116, -1.5658, 0.0122629, -9.04793)
+
+[node name="SM_mushroom_b_clump9" parent="Meshes/Mushrooms" instance=ExtResource("14_8da38")]
+transform = Transform3D(0.374292, 0.213776, -0.306006, -0.165504, 0.483461, 0.13531, 0.334587, 4.78429e-09, 0.409251, -1.58251, 0.61442, -9.48011)
+
+[node name="SM_mushroom_b2" parent="Meshes/Mushrooms" instance=ExtResource("7_crhl6")]
+transform = Transform3D(0.555772, -0.0880858, 0.00140884, 0.0880873, 0.555774, -0.000504844, -0.00131245, 0.000719156, 0.562709, -5.70168, -0.0528791, -8.35797)
+
+[node name="SM_mushroom_b3" parent="Meshes/Mushrooms" instance=ExtResource("7_crhl6")]
+transform = Transform3D(0.790958, 0.0909913, 0.00232059, -0.071984, 0.988584, -0.0726134, -0.00892916, 0.0904905, 0.790947, -5.70113, -0.066683, -8.44937)
+
+[node name="SM_mushroom_b4" parent="Meshes/Mushrooms" instance=ExtResource("7_crhl6")]
+transform = Transform3D(0.555772, -0.0880858, 0.00140884, 0.0880873, 0.555774, -0.000504844, -0.00131245, 0.000719156, 0.562709, -7.74939, 0.0485367, -6.87073)
+
+[node name="SM_mushroom_b6" parent="Meshes/Mushrooms" instance=ExtResource("7_crhl6")]
+transform = Transform3D(0.396929, 0.0674134, 0.000839628, -0.067412, 0.39693, -0.000664518, -0.00093904, 0.000514548, 0.402612, -7.69346, 0.0338891, -6.87073)
+
+[node name="SM_mushroom_b5" parent="Meshes/Mushrooms" instance=ExtResource("7_crhl6")]
+transform = Transform3D(0.790958, 0.0909913, 0.00232059, -0.071984, 0.988584, -0.0726134, -0.00892916, 0.0904905, 0.790947, -7.74884, 0.0347327, -6.96213)
+
+[node name="SM_mushroom_b7" parent="Meshes/Mushrooms" instance=ExtResource("7_crhl6")]
+transform = Transform3D(0.538493, -0.1633, 0.00146467, 0.163301, 0.538495, -0.000307335, -0.00131244, 0.000719155, 0.562709, -7.27296, 0.663784, -1.75767)
+
+[node name="SM_mushroom_b8" parent="Meshes/Mushrooms" instance=ExtResource("7_crhl6")]
+transform = Transform3D(0.40242, 0.0124706, 0.000922652, -0.0124694, 0.40242, -0.000543389, -0.00093904, 0.000514548, 0.402612, -7.21555, 0.656927, -1.75767)
+
+[node name="SM_mushroom_b9" parent="Meshes/Mushrooms" instance=ExtResource("7_crhl6")]
+transform = Transform3D(0.793368, -0.0451246, 0.0122339, 0.0369134, 0.991736, -0.071613, -0.00892916, 0.0904905, 0.790947, -7.27053, 0.650185, -1.84907)
+
+[node name="SM_mushroom_a2" parent="Meshes/Mushrooms" instance=ExtResource("8_rfob5")]
+transform = Transform3D(1, 0, 0, 0, 0.957556, -0.288246, 0, 0.288246, 0.957556, -6.05479, 0.0267607, -8.93713)
+
+[node name="Stumps" type="Node3D" parent="Meshes"]
+transform = Transform3D(3.23503, -0.483305, 0.177605, 0.484017, 3.23979, -1.82473e-08, -0.175656, 0.0262426, 3.27093, 50.3549, 1.50849, -9.90766)
+
+[node name="PF_stump_1-n1" parent="Meshes/Stumps" instance=ExtResource("9_ko8d4")]
+transform = Transform3D(0.979504, -0.201423, 0.000515316, 0.201405, 0.979447, 0.0109808, -0.00271643, -0.010652, 0.999939, -1.14254, -0.0845909, 4.08825)
+
+[node name="PF_stump_1-n6" parent="Meshes/Stumps" instance=ExtResource("9_ko8d4")]
+transform = Transform3D(1.38882, 0.329239, -0.0233272, -0.330023, 1.38357, -0.120745, -0.00523924, 0.122866, 1.4222, -19.4092, 3.07109, 14.7741)
+
+[node name="PF_stump_1-n2" parent="Meshes/Stumps" instance=ExtResource("9_ko8d4")]
+transform = Transform3D(-0.0933827, 0.200008, 0.676536, 0.0327784, 0.682931, -0.197374, -0.70472, 0.00526177, -0.0988284, -3.4712, 0.51863, -10.6987)
+
+[node name="PF_stump_1-n3" parent="Meshes/Stumps" instance=ExtResource("9_ko8d4")]
+transform = Transform3D(0.567699, 0.156481, 0.880222, -0.0848129, 1.04741, -0.131503, -0.88999, -4.29626e-09, 0.573999, -16.1264, 2.44272, -9.62934)
+
+[node name="PF_stump_1-n5" parent="Meshes/Stumps" instance=ExtResource("9_ko8d4")]
+transform = Transform3D(0.514446, 0.3816, 0.843377, -0.348723, 0.973674, -0.22784, -0.857493, -0.167032, 0.598634, -31.4952, 4.51426, -5.27684)
+
+[node name="PF_stump_1-n4" parent="Meshes/Stumps" instance=ExtResource("9_ko8d4")]
+transform = Transform3D(1.51313, 0.226077, -0.0195965, -0.226058, 1.51326, 0.00292767, 0.0198142, 1.69979e-08, 1.52992, -7.3883, 1.13728, 16.1775)
+
+[node name="Waterlilys" type="Node3D" parent="Meshes/Stumps"]
+
+[node name="PF_water_lily_12" parent="Meshes/Stumps/Waterlilys" instance=ExtResource("10_rfob5")]
+transform = Transform3D(0.698801, 0.104553, -0.0379435, -0.104399, 0.699831, 0.00566867, 0.0383647, -1.10747e-08, 0.706557, -3.46273, 0.0336472, -4.49123)
+
+[node name="PF_water_lily_13" parent="Meshes/Stumps/Waterlilys" instance=ExtResource("10_rfob5")]
+transform = Transform3D(0.360888, 0.071438, -0.313704, -0.0539158, 0.478174, 0.0468666, 0.317185, -7.07275e-08, 0.364893, -2.88641, -0.0524528, -4.01358)
+
+[node name="PF_water_lily_14" parent="Meshes/Stumps/Waterlilys" instance=ExtResource("10_rfob5")]
+transform = Transform3D(0.360887, 0.071438, -0.313704, -0.0539158, 0.478174, 0.0468666, 0.317185, -7.07603e-08, 0.364893, -2.5423, -0.103863, -5.00144)
+
+[node name="PF_water_lily_15" parent="Meshes/Stumps/Waterlilys" instance=ExtResource("10_rfob5")]
+transform = Transform3D(0.698801, 0.104553, -0.0379435, -0.104399, 0.699831, 0.00566867, 0.0383647, -1.06005e-08, 0.706557, -12.3134, 1.35592, 11.2121)
+
+[node name="PF_water_lily_16" parent="Meshes/Stumps/Waterlilys" instance=ExtResource("10_rfob5")]
+transform = Transform3D(0.360887, 0.071438, -0.313704, -0.0539158, 0.478174, 0.0468666, 0.317185, -7.07603e-08, 0.364893, -11.7371, 1.26982, 11.6898)
+
+[node name="PF_water_lily_17" parent="Meshes/Stumps/Waterlilys" instance=ExtResource("10_rfob5")]
+transform = Transform3D(0.360887, 0.071438, -0.313704, -0.0539157, 0.478174, 0.0468666, 0.317185, -7.10026e-08, 0.364893, -11.393, 1.21841, 10.7019)
+
+[node name="PF_water_lily_18" parent="Meshes/Stumps/Waterlilys" instance=ExtResource("10_rfob5")]
+transform = Transform3D(-0.407067, 0.0714381, -0.250891, 0.0608149, 0.478174, 0.0374825, 0.253675, -7.85756e-08, -0.411586, -27.6844, 3.65231, 8.25637)
+
+[node name="PF_water_lily_19" parent="Meshes/Stumps/Waterlilys" instance=ExtResource("10_rfob5")]
+transform = Transform3D(-0.407067, 0.0714381, -0.25089, 0.0608149, 0.478174, 0.0374825, 0.253675, -9.20551e-08, -0.411585, -26.8545, 3.52833, 8.88312)
 
 [node name="Rocks" type="Node3D" parent="Meshes"]
 
@@ -499,6 +605,15 @@ transform = Transform3D(1.79584, 0.0821363, -5.61736, -0.117693, 5.89663, 0.0485
 [node name="PF_pond_rock_3-n1" parent="Meshes/Rocks" instance=ExtResource("18_83tof")]
 transform = Transform3D(0.697159, 0, 3.1735, 0, 3.24918, 0, -3.1735, 0, 0.697159, 2.75469, 0.207433, 33.9818)
 
+[node name="PF_pond_rock_1-n6" parent="Meshes/Rocks" instance=ExtResource("16_6jr2q")]
+transform = Transform3D(-1.92006, 0, 1.30086, 0, 2.31924, 0, -1.30086, 0, -1.92006, 15.8337, -0.846374, -45.2099)
+
+[node name="PF_pond_rock_1-n7" parent="Meshes/Rocks" instance=ExtResource("16_6jr2q")]
+transform = Transform3D(-0.937212, 0, 1.92399, 0, 2.17092, 0, -2.35965, 0, -0.764168, 13.2606, -0.561736, -42.187)
+
+[node name="PF_pond_rock_3-n3" parent="Meshes/Rocks" instance=ExtResource("18_83tof")]
+transform = Transform3D(-2.23576, 0, 2.35765, 0, 3.24918, 0, -2.35765, 0, -2.23576, 16.4737, -0.122216, -41.9673)
+
 [node name="PF_pond_rock_1-n3" parent="Meshes/Rocks" instance=ExtResource("16_6jr2q")]
 transform = Transform3D(-0.0540183, 0, -2.64495, 0, 2.64551, 0, 2.64495, 0, -0.0540183, 20.1419, -1.54164, -31.9642)
 
@@ -506,7 +621,16 @@ transform = Transform3D(-0.0540183, 0, -2.64495, 0, 2.64551, 0, 2.64495, 0, -0.0
 transform = Transform3D(1.41697, 0, -2.57618, 0, 2.96077, 0, 3.15953, 0, 1.15535, 30.4481, -1.10907, -32.469)
 
 [node name="PF_pond_rock_3-n2" parent="Meshes/Rocks" instance=ExtResource("18_83tof")]
-transform = Transform3D(2.31393, 0, -2.89519, 0, 3.84487, 0, 2.89519, 0, 2.31393, 24.7403, -0.295206, -33.5344)
+transform = Transform3D(-0.837193, 0, 3.61047, 0, 3.84487, 0, -3.61047, 0, -0.837193, 25.3341, -0.258416, -33.5344)
+
+[node name="PF_pond_rock_2-n1" parent="Meshes/Rocks" instance=ExtResource("13_bi607")]
+transform = Transform3D(2.99186, 0, 0, 0, 5.81297, 0, 0, 0, 2.99186, -15.6927, -0.890359, -33.1729)
+
+[node name="PF_pond_rock_2-n2" parent="Meshes/Rocks" instance=ExtResource("13_bi607")]
+transform = Transform3D(1.66812, 0, 0.93852, 0, 2.58544, 0, -0.93852, 0, 1.66812, -19.0288, -1.13808, -31.3141)
+
+[node name="PF_pond_rock_1-n5" parent="Meshes/Rocks" instance=ExtResource("16_6jr2q")]
+transform = Transform3D(1, 0, 0, 0, 2.48221, 0, 0, 0, 1, -13.586, -1.25951, -30.668)
 
 [node name="MultiMeshTargets" type="Node3D" parent="."]
 

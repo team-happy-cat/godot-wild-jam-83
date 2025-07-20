@@ -1,5 +1,6 @@
-[gd_scene load_steps=52 format=4 uid="uid://c0i6vbtndravs"]
+[gd_scene load_steps=53 format=4 uid="uid://c0i6vbtndravs"]
 
+[ext_resource type="PackedScene" uid="uid://cknrk4nciy45t" path="res://Assets/Models/Environment/SM_stump_1-col.glb" id="2_dr334"]
 [ext_resource type="PackedScene" uid="uid://8tl1ghmq6i1w" path="res://addons/StandardAssets/Scene/Ocean.tscn" id="2_pvybb"]
 [ext_resource type="PackedScene" uid="uid://bn85uyhd1vd1k" path="res://Assets/Models/Environment/PF_cattail_1.glb" id="3_dr334"]
 [ext_resource type="PackedScene" uid="uid://qxyyi1spfn5h" path="res://Assets/Models/Environment/PF_tall_grass_clump_1.glb" id="4_0ymfh"]
@@ -337,6 +338,21 @@ operation = 2
 radius = 75.0
 height = 10.0
 sides = 32
+
+[node name="Stumps" type="Node3D" parent="Meshes"]
+transform = Transform3D(2.42222, -0.361874, -2.17541, 0.484017, 3.23979, 0, 2.15153, -0.321434, 2.4491, 20.3644, 1.50849, 14.1808)
+
+[node name="PF_stump_1-n1" parent="Meshes/Stumps" instance=ExtResource("2_dr334")]
+transform = Transform3D(1, 2.98023e-08, -2.98023e-08, -1.49012e-08, 1, 0, 5.96046e-08, -7.45058e-09, 1, 0, 0, 0)
+
+[node name="PF_stump_1-n2" parent="Meshes/Stumps" instance=ExtResource("2_dr334")]
+transform = Transform3D(-0.0973938, 0.10515, 0.697053, 0.0145504, 0.703824, -0.104138, -0.704789, 7.90582e-09, -0.0984747, -0.761591, 0.147265, -7.09293)
+
+[node name="PF_stump_1-n3" parent="Meshes/Stumps" instance=ExtResource("2_dr334")]
+transform = Transform3D(1.04732, 0.156481, -0.0135639, -0.156468, 1.04741, 0.00202642, 0.0137146, 1.17652e-08, 1.05895, -11.0193, 1.67974, -9.70428)
+
+[node name="PF_stump_1-n4" parent="Meshes/Stumps" instance=ExtResource("2_dr334")]
+transform = Transform3D(1.51313, 0.226077, -0.0195965, -0.226058, 1.51326, 0.00292767, 0.0198142, 1.69979e-08, 1.52992, -7.3883, 1.13728, 16.1775)
 
 [node name="Cattails" type="Node3D" parent="Meshes"]
 
