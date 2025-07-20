@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5xi2ovpx7shv"]
+[gd_scene load_steps=13 format=3 uid="uid://bv417n4kp7foq"]
 
-[ext_resource type="Shader" path="res://Demo/UI/Shaders/Blur.gdshader" id="1_2u3oo"]
+[ext_resource type="Shader" uid="uid://g7p7p0bxd6k3" path="res://Demo/UI/Shaders/Blur.gdshader" id="1_2u3oo"]
 [ext_resource type="Script" uid="uid://cdap1q0uda2m2" path="res://Demo/UI/Autoload/GameOver.cs" id="1_mlwqr"]
 [ext_resource type="Texture2D" uid="uid://m6ls3ytsbsu0" path="res://Demo/UI/Images/pause_sign_exit.png" id="2_1e30c"]
 [ext_resource type="Texture2D" uid="uid://cq7uuf4xa26i8" path="res://Demo/UI/Images/game_over.png" id="2_l7gvf"]
