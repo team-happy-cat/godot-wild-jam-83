@@ -89,12 +89,16 @@ public partial class EatAndLungeAbility : Node
 
 					CharacterBody3D hitBody = (CharacterBody3D)result["collider"];
 
-					if (hitBody != null && hitBody is AgentBase agentBase)
+					if (hitBody is AgentBase agentBase)
 					{
-						agentBase.Die();
-						BellyDisplay.Full(agentBase.foodType);
-						bellyIsFull = true;
-						return;
+						if (agentBase.foodType is FoodType.Chicken or FoodType.Mosquito)
+						{
+
+							agentBase.Die();
+							BellyDisplay.Full(agentBase.foodType);
+							bellyIsFull = true;
+							return;
+						}
 					}
 					else
 					{
