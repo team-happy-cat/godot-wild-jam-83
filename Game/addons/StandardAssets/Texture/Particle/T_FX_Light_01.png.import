@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0rypj5vkfj2d"
 path.s3tc="res://.godot/imported/T_FX_Light_01.png-8b58abdd5004e18e6a0ce2f2277ddb4e.s3tc.ctex"
+path.etc2="res://.godot/imported/T_FX_Light_01.png-8b58abdd5004e18e6a0ce2f2277ddb4e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/StandardAssets/Texture/Particle/T_FX_Light_01.png"
-dest_files=["res://.godot/imported/T_FX_Light_01.png-8b58abdd5004e18e6a0ce2f2277ddb4e.s3tc.ctex"]
+dest_files=["res://.godot/imported/T_FX_Light_01.png-8b58abdd5004e18e6a0ce2f2277ddb4e.s3tc.ctex", "res://.godot/imported/T_FX_Light_01.png-8b58abdd5004e18e6a0ce2f2277ddb4e.etc2.ctex"]
 
 [params]
 

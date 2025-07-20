@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dd8rvttvfgf72"
 path.s3tc="res://.godot/imported/PF_LilyPad_Color_Atlas_A.png-eaaa0e6c28de93099213bd545e399d34.s3tc.ctex"
+path.etc2="res://.godot/imported/PF_LilyPad_Color_Atlas_A.png-eaaa0e6c28de93099213bd545e399d34.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/Environment/PF_LilyPad_Color_Atlas_A.png"
-dest_files=["res://.godot/imported/PF_LilyPad_Color_Atlas_A.png-eaaa0e6c28de93099213bd545e399d34.s3tc.ctex"]
+dest_files=["res://.godot/imported/PF_LilyPad_Color_Atlas_A.png-eaaa0e6c28de93099213bd545e399d34.s3tc.ctex", "res://.godot/imported/PF_LilyPad_Color_Atlas_A.png-eaaa0e6c28de93099213bd545e399d34.etc2.ctex"]
 
 [params]
 

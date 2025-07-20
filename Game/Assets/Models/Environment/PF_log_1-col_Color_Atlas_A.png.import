@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1t3slsvak2jr"
 path.s3tc="res://.godot/imported/PF_log_1-col_Color_Atlas_A.png-c1c1efb20b19270217508651f0217058.s3tc.ctex"
+path.etc2="res://.godot/imported/PF_log_1-col_Color_Atlas_A.png-c1c1efb20b19270217508651f0217058.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/Environment/PF_log_1-col_Color_Atlas_A.png"
-dest_files=["res://.godot/imported/PF_log_1-col_Color_Atlas_A.png-c1c1efb20b19270217508651f0217058.s3tc.ctex"]
+dest_files=["res://.godot/imported/PF_log_1-col_Color_Atlas_A.png-c1c1efb20b19270217508651f0217058.s3tc.ctex", "res://.godot/imported/PF_log_1-col_Color_Atlas_A.png-c1c1efb20b19270217508651f0217058.etc2.ctex"]
 
 [params]
 

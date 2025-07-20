@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccmsm8k4fiuqm"
 path.s3tc="res://.godot/imported/PF_willow_1-convcol_Color_Atlas_A.png-00b8eb8197d1b7edac4f477a7a3c3366.s3tc.ctex"
+path.etc2="res://.godot/imported/PF_willow_1-convcol_Color_Atlas_A.png-00b8eb8197d1b7edac4f477a7a3c3366.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/Environment/PF_willow_1-convcol_Color_Atlas_A.png"
-dest_files=["res://.godot/imported/PF_willow_1-convcol_Color_Atlas_A.png-00b8eb8197d1b7edac4f477a7a3c3366.s3tc.ctex"]
+dest_files=["res://.godot/imported/PF_willow_1-convcol_Color_Atlas_A.png-00b8eb8197d1b7edac4f477a7a3c3366.s3tc.ctex", "res://.godot/imported/PF_willow_1-convcol_Color_Atlas_A.png-00b8eb8197d1b7edac4f477a7a3c3366.etc2.ctex"]
 
 [params]
 
