@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://4twrmcdlggwa" path="res://Demo/UI/Images/sign_quit.png" id="9_04a0p"]
 [ext_resource type="Shader" uid="uid://g7p7p0bxd6k3" path="res://Demo/UI/Shaders/Blur.gdshader" id="11_3xcul"]
 [ext_resource type="Texture2D" uid="uid://5pwkkcvu5oe3" path="res://Demo/UI/Images/tutorial_sign.png" id="12_fd2lg"]
-[ext_resource type="Texture2D" uid="uid://dhftwquoplpue" path="res://Demo/UI/Images/pause_sign_resume.png" id="13_fjxyp"]
+[ext_resource type="Texture2D" uid="uid://bgnnll1nh7sxa" path="res://Demo/UI/Images/start_button.png" id="13_fjxyp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fd2lg"]
 shader = ExtResource("11_3xcul")
@@ -277,10 +277,10 @@ tracks/6/path = NodePath("../Main_Menu/Sign:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(1.7, 2.5),
-"transitions": PackedFloat32Array(0.2, 1),
+"times": PackedFloat32Array(0, 1.7, 2.5),
+"transitions": PackedFloat32Array(1, 0.333, 1),
 "update": 0,
-"values": [Vector2(448, 572), Vector2(448, 316)]
+"values": [Vector2(32, 1200), Vector2(32, 1200), Vector2(32, 380)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3xcul"]
@@ -291,7 +291,7 @@ _data = {
 
 [node name="Main_Menu" type="Node3D"]
 
-[node name="Main_Menu" type="Control" parent="." node_paths=PackedStringArray("PlayButton", "QuitButton", "TeamButton", "StartButton", "TutorialAnimations", "LevelButton1", "LevelButton2", "LevelButton3")]
+[node name="Main_Menu" type="Control" parent="." node_paths=PackedStringArray("PlayButton", "QuitButton", "TeamButton", "StartButton", "TutorialAnimations")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -304,9 +304,6 @@ QuitButton = NodePath("Sign/QuitButton")
 TeamButton = NodePath("TeamLogo")
 StartButton = NodePath("Tutorial/Sign/StartButton")
 TutorialAnimations = NodePath("Tutorial/Animations")
-LevelButton1 = NodePath("DebugLevelSelector/LevelButton1")
-LevelButton2 = NodePath("DebugLevelSelector/LevelButton2")
-LevelButton3 = NodePath("DebugLevelSelector/LevelButton3")
 
 [node name="Background" type="TextureRect" parent="Main_Menu"]
 layout_mode = 1
@@ -325,9 +322,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -512.0
-offset_top = 64.0
+offset_top = 17.0
 offset_right = 512.0
-offset_bottom = 320.0
+offset_bottom = 401.0
 grow_horizontal = 2
 texture = ExtResource("2_qfmni")
 expand_mode = 1
@@ -406,33 +403,6 @@ texture_normal = ExtResource("9_04a0p")
 script = ExtResource("8_8exua")
 soundHover = "Hover"
 metadata/_custom_type_script = "uid://cr05f2g78pvlt"
-
-[node name="DebugLevelSelector" type="HBoxContainer" parent="Main_Menu"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -100.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="LevelButton1" type="Button" parent="Main_Menu/DebugLevelSelector"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-text = "Level 1"
-
-[node name="LevelButton2" type="Button" parent="Main_Menu/DebugLevelSelector"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-text = "Level 2"
-
-[node name="LevelButton3" type="Button" parent="Main_Menu/DebugLevelSelector"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-text = "Level 3"
 
 [node name="TeamLogo" type="TextureButton" parent="Main_Menu"]
 layout_mode = 1
