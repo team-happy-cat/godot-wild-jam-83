@@ -29,21 +29,19 @@ public partial class EnemyContainer : Node
 		AgentBase.Destroyed -= OnDestroyed;
 	}
 
-	private void OnDestroyed()
-	{
-		GD.Print("[EnemyContainer] Enemy remaining: ", GetChildCount());
+    private void OnDestroyed()
+    {
+        CallDeferred(nameof(CheckForLevelComplete));
+    }
 
-		if (NextLevel == "")
-		{
-			GD.PrintErr("[EnemyContainer] NextLevel is an empty string");
-			return;
-		}
+    private void CheckForLevelComplete()
+    {
+        GD.Print("[EnemyContainer] Enemy remaining: ", GetChildCount());
 
-		if (GetChildCount() - 1 == 0)
-		{
-			GD.Print("[EnemyContainer] All enemies have been destoyed! Changing level to: ", NextLevel);
-			levelManager.ChangeLevel(NextLevel, "SP_" + NextLevel);
-		}
-
-	}
+        if (GetChildCount() == 0)
+        {
+            GD.Print("[EnemyContainer] All enemies have been destoyed! Changing level to: ", NextLevel);
+            levelManager.ChangeLevel(NextLevel, "SP_" + NextLevel);
+        }
+    }
 }
