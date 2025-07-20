@@ -230,6 +230,7 @@ height = 1.0
 sides = 16
 
 [node name="Obstacles" type="Node3D" parent="Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
 
 [node name="PF_RockA-n1" parent="Layout/Obstacles" instance=ExtResource("2_leaji")]
 transform = Transform3D(2.81529, 0, 1.85542, 0, 3.37171, 0, -1.85542, 0, 2.81529, 1.80806, -0.772044, 30.9342)

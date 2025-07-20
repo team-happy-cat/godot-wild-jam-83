@@ -88,4 +88,4 @@ metadata/_custom_type_script = "uid://bn1obed5dlkv6"
 
 [node name="FlyDeath" type="AudioStreamPlayer" parent="DeathSounds/FlyDeath"]
 stream = ExtResource("13_sdemp")
-volume_db = -36.0
+volume_db = 6.0

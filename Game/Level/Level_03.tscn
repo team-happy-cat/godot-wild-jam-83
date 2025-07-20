@@ -253,6 +253,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5329, 0.25, 2.08734)
 size = Vector3(2.94462, 1.5, 98.5076)
 
 [node name="Obstacles" type="Node3D" parent="Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
 
 [node name="PF_RockA-n1" parent="Layout/Obstacles" instance=ExtResource("2_s3r0f")]
 transform = Transform3D(2.81529, 0, 1.85542, 0, 3.37171, 0, -1.85542, 0, 2.81529, 14.3261, -0.772044, 30.9342)
