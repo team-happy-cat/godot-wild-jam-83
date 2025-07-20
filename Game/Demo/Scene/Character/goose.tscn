@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cu0810lkorv6y" path="res://Assets/Audio/goose_hiss.wav" id="6_m2bqd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_byfd3"]
-height = 1.0
+height = 1.5
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_1b5lg"]
 
@@ -21,7 +21,7 @@ transparency = 1
 albedo_color = Color(1, 0, 0, 0.360784)
 
 [node name="Goose" type="CharacterBody3D" node_paths=PackedStringArray("strikeArea", "AttackAudio")]
-collision_layer = 4097
+collision_layer = 16385
 axis_lock_linear_y = true
 axis_lock_angular_x = true
 axis_lock_angular_z = true
@@ -57,7 +57,7 @@ bones/15/rotation = Quaternion(-0.615527, 0.348031, 0.615528, -0.348031)
 bones/16/rotation = Quaternion(-0.5, 0.5, 0.5, -0.5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.752716, 0)
 shape = SubResource("CapsuleShape3D_byfd3")
 
 [node name="PointOfInterest" type="Marker3D" parent="."]
