@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cc1m2a1obsyn4"]
+[gd_scene load_steps=40 format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" uid="uid://hdsvtpxi0o2d" path="res://Demo/Script/CharacterHub.cs" id="1_p8ic4"]
 [ext_resource type="Script" uid="uid://coaqcn4leqqcd" path="res://Demo/Script/CharacterController.cs" id="2_m3i4r"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dm1m7v6qfev7u" path="res://addons/StandardAssets/Texture/Particle/T_FX_Star_04.png" id="9_qrurj"]
 [ext_resource type="Shader" uid="uid://th1fak6vqjt7" path="res://Demo/UI/Shaders/FrogHUD.gdshader" id="9_wknp7"]
 [ext_resource type="Script" uid="uid://kchvvvrw4k33" path="res://Demo/Script/BellyDisplay.cs" id="10_lc2fc"]
+[ext_resource type="Texture2D" uid="uid://2i6nrqsr8dv" path="res://Demo/UI/Images/juice_particle.svg" id="11_hca7a"]
 [ext_resource type="Script" uid="uid://bt2tpfi6a1dhv" path="res://Demo/Script/GobbleAbility.cs" id="15_dobti"]
 [ext_resource type="AudioStream" uid="uid://dsd5ww3xet1vd" path="res://Assets/Audio/SFX - LZB WJ83 - Small jump.wav" id="17_rdy27"]
 [ext_resource type="AudioStream" uid="uid://bdub06doc4ct6" path="res://Assets/Audio/SFX - LZB WJ83 - bounce sound.wav" id="18_mq11f"]
@@ -27,6 +28,25 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lc2fc"]
 shader = ExtResource("9_wknp7")
 shader_parameter/mask = ExtResource("6_ep717")
+
+[sub_resource type="Curve" id="Curve_gr4i3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.32895, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rukby"]
+curve = SubResource("Curve_gr4i3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pf1tx"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 662.65
+initial_velocity_max = 1000.0
+gravity = Vector3(0, 0, 0)
+damping_min = 1000.0
+damping_max = 1000.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_rukby")
+color = Color(1, 0, 0, 0.580392)
 
 [sub_resource type="Resource" id="Resource_ujvtr"]
 script = ExtResource("4_fx7e7")
@@ -138,7 +158,7 @@ TongueAnimation = NodePath("../SubViewportContainer/SubViewport/TongueAnimation"
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Stomach" type="TextureRect" parent="HUD" node_paths=PackedStringArray("ChickenTexture", "MosquitoTexture")]
+[node name="Stomach" type="TextureRect" parent="HUD" node_paths=PackedStringArray("ChickenTexture", "MosquitoTexture", "JuiceParticles")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -157,6 +177,7 @@ EmptyTexture = ExtResource("6_mn2kr")
 FullTexture = ExtResource("8_oabsn")
 ChickenTexture = NodePath("Chicken")
 MosquitoTexture = NodePath("Fly")
+JuiceParticles = NodePath("JuiceParticles")
 
 [node name="Chicken" type="TextureRect" parent="HUD/Stomach"]
 material = SubResource("ShaderMaterial_lc2fc")
@@ -179,6 +200,17 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_k6d0l")
 expand_mode = 1
+
+[node name="JuiceParticles" type="GPUParticles2D" parent="HUD/Stomach"]
+show_behind_parent = true
+position = Vector2(192, 192)
+emitting = false
+amount = 32
+texture = ExtResource("11_hca7a")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_pf1tx")
 
 [node name="Reticle" type="TextureRect" parent="HUD"]
 self_modulate = Color(1, 0.968, 0.36, 1)
