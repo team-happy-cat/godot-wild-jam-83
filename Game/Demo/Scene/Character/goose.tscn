@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddqb32u6rmjsy"]
+[gd_scene load_steps=12 format=3 uid="uid://ddqb32u6rmjsy"]
 
 [ext_resource type="Script" uid="uid://ds2fwa44aferr" path="res://Demo/Script/AgentBase.cs" id="1_1b5lg"]
 [ext_resource type="PackedScene" uid="uid://bonicsy05j8s7" path="res://Assets/Models/SK_goose.glb" id="2_1b5lg"]
 [ext_resource type="Script" uid="uid://oj1nsgwhibi7" path="res://addons/StandardAssets/Script/Compass/PointOfInterest.cs" id="3_lroav"]
 [ext_resource type="Texture2D" uid="uid://wbj1onemc3r1" path="res://Demo/UI/Images/Compass/compass_goose.png" id="4_1b5lg"]
 [ext_resource type="BehaviorTree" uid="uid://h4tehm8amfs2" path="res://ai/trees/goose.tres" id="5_1b5lg"]
+[ext_resource type="AudioStream" uid="uid://cu0810lkorv6y" path="res://Assets/Audio/goose_hiss.wav" id="6_m2bqd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_byfd3"]
 height = 1.0
@@ -19,7 +20,7 @@ height = 1.0
 transparency = 1
 albedo_color = Color(1, 0, 0, 0.360784)
 
-[node name="Goose" type="CharacterBody3D" node_paths=PackedStringArray("strikeArea")]
+[node name="Goose" type="CharacterBody3D" node_paths=PackedStringArray("strikeArea", "AttackAudio")]
 collision_layer = 4097
 axis_lock_linear_y = true
 axis_lock_angular_x = true
@@ -27,6 +28,8 @@ axis_lock_angular_z = true
 safe_margin = 0.01
 script = ExtResource("1_1b5lg")
 strikeArea = NodePath("Area3D")
+foodType = 2
+AttackAudio = NodePath("AttackAudio")
 
 [node name="SK_goose2" parent="." instance=ExtResource("2_1b5lg")]
 transform = Transform3D(2.24838, 0, 0, 0, 2.24838, 0, 0, 0, 2.24838, 0, 0, 0)
@@ -38,19 +41,19 @@ bones/3/rotation = Quaternion(-0.280754, 4.95723e-14, 3.34685e-07, 0.95978)
 bones/4/rotation = Quaternion(0.111337, -1.95615e-14, -1.32724e-07, 0.993783)
 bones/5/rotation = Quaternion(0.271572, -1.10805e-13, -3.23739e-07, 0.962418)
 bones/6/rotation = Quaternion(0.529361, -6.40521e-08, -6.71014e-07, 0.848396)
-bones/7/rotation = Quaternion(-0.538857, 0.457856, 0.538859, -0.457857)
-bones/8/rotation = Quaternion(2.21326e-06, -1.36611e-08, 0.783288, 0.621659)
-bones/9/rotation = Quaternion(0.680744, 0.191282, 0.680743, 0.191282)
-bones/10/rotation = Quaternion(3.7018e-07, 3.28759e-08, -0.230861, 0.972987)
+bones/7/rotation = Quaternion(-0.659908, 0.254007, 0.65991, -0.254009)
+bones/8/rotation = Quaternion(1.77883e-06, -2.26724e-08, 0.628375, 0.77791)
+bones/9/rotation = Quaternion(0.659909, 0.254008, 0.659909, 0.254008)
+bones/10/rotation = Quaternion(1.0041e-06, 2.42672e-08, -0.628375, 0.77791)
 bones/11/rotation = Quaternion(0.971818, -1.78912e-07, -7.37578e-07, -0.235731)
-bones/12/position = Vector3(0.173795, 0.19289, 0.13748)
-bones/12/rotation = Quaternion(0.599466, 0.37502, -0.599467, -0.375019)
-bones/13/position = Vector3(-0.173795, 0.157659, -0.25958)
-bones/13/rotation = Quaternion(-0.0229997, -0.706733, -0.0229999, -0.706732)
-bones/14/position = Vector3(-0.173795, 0.157655, -0.259584)
-bones/14/rotation = Quaternion(0.706732, -0.023, 0.706733, -0.0229995)
-bones/15/position = Vector3(0.173795, 0.192883, 0.137483)
-bones/15/rotation = Quaternion(-0.375019, 0.599467, 0.37502, -0.599466)
+bones/12/position = Vector3(0.173795, 0.120479, -0.0737784)
+bones/12/rotation = Quaternion(0.348031, 0.615529, -0.348031, -0.615527)
+bones/13/position = Vector3(-0.173795, 0.120479, -0.0737785)
+bones/13/rotation = Quaternion(0.348031, -0.615528, 0.348031, -0.615527)
+bones/14/position = Vector3(-0.173795, 0.120468, -0.0737819)
+bones/14/rotation = Quaternion(0.615527, 0.348031, 0.615528, 0.348031)
+bones/15/position = Vector3(0.173795, 0.120468, -0.0737819)
+bones/15/rotation = Quaternion(-0.615527, 0.348031, 0.615528, -0.348031)
 bones/16/rotation = Quaternion(-0.5, 0.5, 0.5, -0.5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -78,5 +81,9 @@ shape = SubResource("BoxShape3D_1b5lg")
 visible = false
 mesh = SubResource("BoxMesh_m2bqd")
 surface_material_override/0 = SubResource("StandardMaterial3D_lroav")
+
+[node name="AttackAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_m2bqd")
+volume_db = -18.0
 
 [editable path="SK_goose2"]

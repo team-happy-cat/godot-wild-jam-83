@@ -1,4 +1,4 @@
-[gd_resource type="BehaviorTree" load_steps=33 format=3 uid="uid://h4tehm8amfs2"]
+[gd_resource type="BehaviorTree" load_steps=35 format=3 uid="uid://h4tehm8amfs2"]
 
 [ext_resource type="BlackboardPlan" uid="uid://cselmpmw5blem" path="res://blackboard.tres" id="1_bf4hi"]
 [ext_resource type="Script" uid="uid://bvpavi6rw0xlg" path="res://ai/tasks/GetFirstInGroup.cs" id="1_ls11m"]
@@ -84,6 +84,14 @@ children = [SubResource("BTAction_74s65"), SubResource("BTCondition_vr0o7"), Sub
 script = ExtResource("6_6xs6x")
 TargetVar = &"target"
 
+[sub_resource type="BBNode" id="BBNode_6xs6x"]
+resource_name = "."
+saved_value = NodePath(".")
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_vr0o7"]
+node = SubResource("BBNode_6xs6x")
+method = &"PlayAttackAudio"
+
 [sub_resource type="BBNode" id="BBNode_cb8h1"]
 resource_name = "SK_goose2/AnimationPlayer"
 saved_value = NodePath("SK_goose2/AnimationPlayer")
@@ -104,7 +112,7 @@ node = SubResource("BBNode_bf4hi")
 method = &"Strike"
 
 [sub_resource type="BTSequence" id="BTSequence_1kj8i"]
-children = [SubResource("BTAction_i0i5h"), SubResource("BTPlayAnimation_xthh4"), SubResource("BTWait_r5csj"), SubResource("BTCallMethod_1kj8i")]
+children = [SubResource("BTAction_i0i5h"), SubResource("BTCallMethod_vr0o7"), SubResource("BTPlayAnimation_xthh4"), SubResource("BTWait_r5csj"), SubResource("BTCallMethod_1kj8i")]
 
 [sub_resource type="BTSequence" id="BTSequence_3fpfi"]
 children = [SubResource("BTSequence_cprs3"), SubResource("BTSequence_in463"), SubResource("BTSequence_fi2ie"), SubResource("BTSequence_1kj8i")]

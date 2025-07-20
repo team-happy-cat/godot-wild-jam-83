@@ -10,6 +10,7 @@ public partial class AgentBase : CharacterBody3D
 
 	[Export] public Area3D strikeArea;
 	[Export] public FoodType foodType = FoodType.Chicken;
+	[Export] public AudioStreamPlayer3D AttackAudio;
 
 	public virtual void Move(Vector3 velocity)
 	{
@@ -41,6 +42,9 @@ public partial class AgentBase : CharacterBody3D
 		{
 			case FoodType.Mosquito:
 				SFX2D.PlaySound("FlyDeath");
+				break;
+			case FoodType.Goose:
+				SFX2D.PlaySound("GooseDeath");
 				break;
 			default:
 				SFX2D.PlaySound("ChickenDeath");
@@ -78,5 +82,9 @@ public partial class AgentBase : CharacterBody3D
 			}
 		}
 	}
-
+	
+	public void PlayAttackAudio()
+	{
+		AttackAudio.Play();
+	}
 }
