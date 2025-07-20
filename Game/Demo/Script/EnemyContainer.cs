@@ -15,18 +15,12 @@ public partial class EnemyContainer : Node
 		
 		foreach (var child in GetChildren())
 		{
-			if (child != null && child is AgentBase agentBase) 
+			if (child is AgentBase agentBase)
 			{
 				enemies.Add(agentBase);
+				agentBase.TreeExited += OnDestroyed;
 			}
 		}
-
-		AgentBase.Destroyed += OnDestroyed;
-	}
-
-	public override void _ExitTree()
-	{
-		AgentBase.Destroyed -= OnDestroyed;
 	}
 
 	private void OnDestroyed()
