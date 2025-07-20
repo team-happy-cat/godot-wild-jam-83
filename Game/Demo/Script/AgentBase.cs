@@ -36,6 +36,17 @@ public partial class AgentBase : CharacterBody3D
 	public void Die()
 	{
 		GD.Print("Destroyed: ", Name);
+		
+		switch(foodType)
+		{
+			case FoodType.Mosquito:
+				SFX2D.PlaySound("FlyDeath");
+				break;
+			default:
+				SFX2D.PlaySound("ChickenDeath");
+				break;
+		}
+		
 		Destroyed?.Invoke();
 		QueueFree();
 	}

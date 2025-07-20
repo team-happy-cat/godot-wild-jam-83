@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cpkjv6b1e07ap"]
+[gd_scene load_steps=14 format=3 uid="uid://cpkjv6b1e07ap"]
 
 [ext_resource type="Script" uid="uid://bgqtuv4wokfqb" path="res://addons/StandardAssets/Script/Audio/SFX2D.cs" id="1_1odp3"]
 [ext_resource type="Script" uid="uid://bn1obed5dlkv6" path="res://addons/StandardAssets/Script/Audio/SoundGroup2D.cs" id="2_ve4wk"]
@@ -9,6 +9,10 @@
 [ext_resource type="AudioStream" uid="uid://cav2ax3ftcxx5" path="res://Demo/UI/Audio/squeak_003.mp3" id="7_6835m"]
 [ext_resource type="AudioStream" uid="uid://phig5i6qeira" path="res://Demo/UI/Audio/squeak_004.mp3" id="8_nkfwd"]
 [ext_resource type="AudioStream" uid="uid://uc53r46vwf0m" path="res://Demo/UI/Audio/meow.mp3" id="9_cifoq"]
+[ext_resource type="AudioStream" uid="uid://brlv655ms2sc2" path="res://Assets/Audio/SFX - LZB WJ83 - Chicken dead.wav" id="11_dnenk"]
+[ext_resource type="AudioStream" uid="uid://bmmh8k5vncayi" path="res://Assets/Audio/goose_1.wav" id="11_wlvlq"]
+[ext_resource type="AudioStream" uid="uid://45tgx4bt3qwk" path="res://Assets/Audio/goose_2.wav" id="12_oqqnf"]
+[ext_resource type="AudioStream" uid="uid://dwae0boafuby7" path="res://Assets/Audio/fly.wav" id="13_sdemp"]
 
 [node name="SFX2D" type="Node"]
 script = ExtResource("1_1odp3")
@@ -51,3 +55,33 @@ metadata/_custom_type_script = "uid://bn1obed5dlkv6"
 
 [node name="Meow" type="AudioStreamPlayer" parent="UI/Meow"]
 stream = ExtResource("9_cifoq")
+
+[node name="DeathSounds" type="Node" parent="."]
+
+[node name="ChickenDeath" type="Node" parent="DeathSounds"]
+script = ExtResource("2_ve4wk")
+metadata/_custom_type_script = "uid://bn1obed5dlkv6"
+
+[node name="ChickenDeath" type="AudioStreamPlayer" parent="DeathSounds/ChickenDeath"]
+stream = ExtResource("11_dnenk")
+volume_db = -18.0
+
+[node name="GooseDeath" type="Node" parent="DeathSounds"]
+script = ExtResource("2_ve4wk")
+metadata/_custom_type_script = "uid://bn1obed5dlkv6"
+
+[node name="GooseDeath1" type="AudioStreamPlayer" parent="DeathSounds/GooseDeath"]
+stream = ExtResource("11_wlvlq")
+volume_db = -12.0
+
+[node name="GooseDeath2" type="AudioStreamPlayer" parent="DeathSounds/GooseDeath"]
+stream = ExtResource("12_oqqnf")
+volume_db = -12.0
+
+[node name="FlyDeath" type="Node" parent="DeathSounds"]
+script = ExtResource("2_ve4wk")
+metadata/_custom_type_script = "uid://bn1obed5dlkv6"
+
+[node name="FlyDeath" type="AudioStreamPlayer" parent="DeathSounds/FlyDeath"]
+stream = ExtResource("13_sdemp")
+volume_db = -24.0

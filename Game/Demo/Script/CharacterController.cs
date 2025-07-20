@@ -115,10 +115,6 @@ namespace Game
 				if (InWater)
 				{
 					speed *= 0.5f;
-					if (!WaterMoveAudio.IsPlaying())
-					{
-						WaterMoveAudio.Play();
-					}
 				}
 
 				Vector2 inputDir = Input.GetVector(Left, Right, Forward, Backward);
@@ -138,6 +134,14 @@ namespace Game
 
 					float targetAngle = Mathf.Atan2(direction.X, direction.Z);
 					Rotation = new Vector3(0, targetAngle, 0);
+					
+					if (InWater)
+					{
+						if (!WaterMoveAudio.IsPlaying())
+						{
+							WaterMoveAudio.Play();
+						}
+					}
 				}
 				else
 				{

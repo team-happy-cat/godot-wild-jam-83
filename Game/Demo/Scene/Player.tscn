@@ -362,7 +362,7 @@ stream = ExtResource("18_mq11f")
 
 [node name="WaterMoveAudio" type="AudioStreamPlayer" parent="Audio"]
 stream = SubResource("AudioStreamRandomizer_hca7a")
-volume_db = -6.0
+volume_db = -12.0
 
 [node name="EatAudio" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("21_mq11f")
