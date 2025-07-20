@@ -115,6 +115,10 @@ namespace Game
 				if (InWater)
 				{
 					speed *= 0.5f;
+					if (!WaterMoveAudio.IsPlaying())
+					{
+						WaterMoveAudio.Play();
+					}
 				}
 
 				Vector2 inputDir = Input.GetVector(Left, Right, Forward, Backward);
