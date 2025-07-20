@@ -21,6 +21,7 @@ albedo_color = Color(1, 0, 0, 0.360784)
 
 [node name="Goose" type="CharacterBody3D" node_paths=PackedStringArray("strikeArea")]
 collision_layer = 16385
+axis_lock_linear_y = true
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 safe_margin = 0.01

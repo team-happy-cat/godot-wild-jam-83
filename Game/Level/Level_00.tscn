@@ -1,0 +1,310 @@
+[gd_scene load_steps=9 format=3 uid="uid://ccte1qj8j7omh"]
+
+[ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/Environment/PF_LilyPad.glb" id="1_sutdf"]
+[ext_resource type="Script" uid="uid://c4bnyda0v84kt" path="res://Demo/Script/EnemyContainer.cs" id="12_0xl2u"]
+[ext_resource type="PackedScene" uid="uid://4pssytbq3qo1" path="res://Demo/Scene/Character/PF_Chicken_Friend_Random_Walker.tscn" id="13_2txvy"]
+[ext_resource type="PackedScene" uid="uid://bwjlg15j8mwjg" path="res://Demo/Scene/Character/PF_Chicken_Friend_Fast_Random_Walker.tscn" id="14_y8kvo"]
+[ext_resource type="PackedScene" uid="uid://dpg7c2fxet7nr" path="res://Level/environment.tscn" id="15_ovf26"]
+[ext_resource type="Script" uid="uid://wxiqiqek0bdu" path="res://Demo/Script/WaterArea.cs" id="16_8bnd4"]
+[ext_resource type="PackedScene" uid="uid://bycwinetltyo" path="res://Demo/Scene/Character/fly.tscn" id="17_bsvec"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h1rqx"]
+size = Vector3(100, 2, 100)
+
+[node name="Level_00" type="Node3D"]
+
+[node name="SP_Level_00" type="Marker3D" parent="." groups=["Spawnpoint"]]
+transform = Transform3D(-0.998318, 0, -0.0579822, 0, 1, 0, 0.0579822, 0, -0.998318, -22.4994, 1, -20.1943)
+
+[node name="Layout" type="Node3D" parent="."]
+
+[node name="LilyPads" type="Node3D" parent="Layout"]
+
+[node name="PF_LilyPad2" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(-0.145547, 0, 3.01803, 0, 1, 0, -3.01803, 0, -0.145547, -6.37897, -0.034, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad2"]
+transform = Transform3D(0.330957, 0, 0, 0, 1, 0, 0, 0, 0.330957, 0, -0.034, 0)
+visible = false
+use_collision = true
+radius = 2.0
+height = 1.0
+sides = 16
+
+[node name="PF_LilyPad3" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(2.02822, 0, -0.959603, 0, 1, 0, 0.959603, 0, 2.02822, 9.21203, -0.034, -9.74796)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad3"]
+transform = Transform3D(0.445678, 0, 0, 0, 1, 0, 0, 0, 0.445678, 0, -0.034, 0)
+visible = false
+use_collision = true
+radius = 1.5
+height = 1.0
+sides = 16
+
+[node name="PF_LilyPad4" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(-1.96598, 0, -1.05437, 0, 1, 0, 1.05437, 0, -1.96598, -22.5505, -0.034, -20.1819)
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad4"]
+transform = Transform3D(0.448256, 0, 0, 0, 1, 0, 0, 0, 0.448256, 0, -0.034, 0)
+visible = false
+use_collision = true
+radius = 1.5
+height = 1.0
+sides = 16
+
+[node name="PF_LilyPad5" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(0.943895, 0, -3.16724, 0, 1, 0, 3.16724, 0, 0.943895, -25.3055, -0.034, -15.5418)
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad5"]
+transform = Transform3D(0.302581, 0, 0, 0, 1, 0, 0, 0, 0.302581, 0, -0.034, 0)
+visible = false
+use_collision = true
+radius = 2.17773
+height = 1.0
+sides = 16
+
+[node name="PF_LilyPad6" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(-2.12854, 0, 1.48688, 0, 1, 0, -1.48688, 0, -2.12854, -20.0855, -0.034, -15.8318)
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad6"]
+transform = Transform3D(0.385144, 0, 0, 0, 1, 0, 0, 0, 0.385144, 0, -0.034, 0)
+visible = false
+use_collision = true
+radius = 1.74268
+height = 1.0
+sides = 16
+
+[node name="PF_LilyPad7" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(1.49484, -0.014669, 2.15422, 0, 0.999841, 0.0468188, -2.15457, -0.0101774, 1.4946, -33.2589, -0.034, 12.4653)
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad7"]
+transform = Transform3D(0.381338, 0, 0, 0, 1, 0, 0, 0, 0.381338, 0, -0.034, 0)
+visible = false
+use_collision = true
+radius = 1.74268
+height = 1.0
+sides = 16
+
+[node name="PF_LilyPad8" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(-3.22719, 0, 0.36176, 0, 1, 0, -0.36176, 0, -3.22719, -30.3588, -0.034, 16.3881)
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad8"]
+transform = Transform3D(0.307938, 0, 0, 0, 1, 0, 0, 0, 0.307938, 0, -0.034, 0)
+visible = false
+use_collision = true
+radius = 2.17773
+height = 1.0
+sides = 16
+
+[node name="PF_LilyPad9" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(0.634252, 0.0171331, -2.16372, 0, 0.99984, 0.040262, 2.16407, -0.00502142, 0.634151, -28.7638, -0.034, 11.8853)
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad9"]
+transform = Transform3D(0.44344, 0, 0, 0, 1, 1.86265e-09, 0, 0, 0.44344, 0, -0.034, -4.76837e-07)
+visible = false
+use_collision = true
+radius = 1.5
+height = 1.0
+sides = 16
+
+[node name="PF_LilyPad10" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(0.203618, 1.10579e-16, -2.27298, 0, 1, 3.72529e-09, 2.27298, 1.01116e-16, 0.203618, -4.73246, -0.034, 22.4341)
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad10"]
+transform = Transform3D(0.438196, 0, 0, 0, 1, -1.63241e-09, 0, 0, 0.438196, 8.34465e-07, -0.034, 1.90735e-06)
+visible = false
+use_collision = true
+radius = 1.5
+height = 1.0
+sides = 16
+
+[node name="PF_LilyPad11" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(-0.518744, 0, -3.39715, 0, 1, 0, 3.39715, 0, -0.518744, 9.50844, -0.034, 19.244)
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad11"]
+transform = Transform3D(0.290992, 0, 0, 0, 1, 0, 0, 0, 0.290992, 0, -0.034, 0)
+visible = false
+use_collision = true
+radius = 2.32275
+height = 1.0
+sides = 16
+
+[node name="PF_LilyPad12" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(1.37189, 0, -2.22171, 0, 1, 0, 2.22171, 0, 1.37189, 8.76187, -0.034, 23.7391)
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad12"]
+transform = Transform3D(0.382975, 0, 0, 0, 1, 0, 0, 0, 0.382975, 0, -0.034, 0)
+visible = false
+use_collision = true
+radius = 1.74268
+height = 1.0
+sides = 16
+
+[node name="PF_LilyPad13" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(-2.28666, 0, 1.23361, 0, 1, 0, -1.23361, 0, -2.28666, 36.4247, -0.034, 16.7119)
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad13"]
+transform = Transform3D(0.384883, 0, 0, 0, 1, 0, 0, 0, 0.384883, 0, -0.034, 0)
+visible = false
+use_collision = true
+radius = 1.74268
+height = 1.0
+sides = 16
+
+[node name="PF_LilyPad14" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(0.477795, 0, -3.42965, 0, 1, 0, 3.42965, 0, 0.477795, 33.2346, -0.034, 11.7818)
+
+[node name="CSGCylinder3D13" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad14"]
+transform = Transform3D(0.288786, 0, 0, 0, 1, 0, 0, 0, 0.288786, 0, -0.034, 0)
+visible = false
+use_collision = true
+radius = 2.32275
+height = 1.0
+sides = 16
+
+[node name="PF_LilyPad15" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(0.811583, 0, -2.68149, 0, 1, 0, 2.68149, 0, 0.811583, 37.8747, -0.034, 4.38671)
+
+[node name="CSGCylinder3D14" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad15"]
+transform = Transform3D(0.356936, 0, 0, 0, 1, 0, 0, 0, 0.356936, 0, -0.034, 0)
+visible = false
+use_collision = true
+radius = 1.8877
+height = 1.0
+sides = 16
+
+[node name="PF_LilyPad16" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(1.38755, 0, -3.37161, 0, 1, 0, 3.37161, 0, 1.38755, 35.9897, -0.034, -10.5485)
+
+[node name="CSGCylinder3D15" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad16"]
+transform = Transform3D(0.274276, 0, 0, 0, 1, 0, 0, 0, 0.274276, 0, -0.034, 0)
+visible = false
+use_collision = true
+radius = 2.46777
+height = 1.0
+sides = 16
+
+[node name="PF_LilyPad17" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(0.58055, 0, 2.51865, 0, 1, 0, -2.51865, 0, 0.58055, 33.5246, -0.034, -17.0737)
+
+[node name="CSGCylinder3D16" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad17"]
+transform = Transform3D(0.386893, 0, 0, 0, 1, 0, 0, 0, 0.386893, 0, -0.034, 0)
+visible = false
+use_collision = true
+radius = 1.74268
+height = 1.0
+sides = 16
+
+[node name="PF_LilyPad18" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(1.25003, 0, -1.98924, 0, 1, 0, 1.98924, 0, 1.25003, 30.6246, -0.034, -13.7386)
+
+[node name="CSGCylinder3D17" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad18"]
+transform = Transform3D(0.425641, 0, 0, 0, 1, 0, 0, 0, 0.425641, 0, -0.034, 0)
+visible = false
+use_collision = true
+radius = 1.59766
+height = 1.0
+sides = 16
+
+[node name="PF_LilyPad19" parent="Layout/LilyPads" instance=ExtResource("1_sutdf")]
+transform = Transform3D(3.29498, 0, 1.47033, 0, 1, 0, -1.47033, 0, 3.29498, 27.7245, -0.034, -19.3937)
+
+[node name="CSGCylinder3D18" type="CSGCylinder3D" parent="Layout/LilyPads/PF_LilyPad19"]
+transform = Transform3D(0.27715, 0, 0, 0, 1, 0, 0, 0, 0.27715, 0, -0.431234, 0)
+visible = false
+use_collision = true
+radius = 2.46777
+height = 1.0
+sides = 16
+
+[node name="Enemies" type="Node" parent="."]
+script = ExtResource("12_0xl2u")
+NextLevel = "Level_02"
+
+[node name="PF_Chicken_Friend_Random_Walker-n1" parent="Enemies" instance=ExtResource("13_2txvy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.2567, -0.350846, -8.69838)
+
+[node name="PF_Chicken_Friend_Random_Walker-n3" parent="Enemies" instance=ExtResource("13_2txvy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6264, -0.350846, -20.0496)
+
+[node name="PF_Chicken_Friend_Random_Walker-n4" parent="Enemies" instance=ExtResource("13_2txvy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.8418, -0.350846, -12.4628)
+
+[node name="PF_Chicken_Friend_Random_Walker-n6" parent="Enemies" instance=ExtResource("13_2txvy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.3373, -0.350847, 14.4912)
+
+[node name="PF_Chicken_Friend_Random_Walker-n9" parent="Enemies" instance=ExtResource("13_2txvy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65216, -0.350848, 2.76492)
+
+[node name="PF_Chicken_Friend_Random_Walker-n10" parent="Enemies" instance=ExtResource("13_2txvy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.12112, -0.350848, -0.41773)
+
+[node name="PF_Chicken_Friend_Random_Walker-n11" parent="Enemies" instance=ExtResource("13_2txvy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5249, -0.350848, -18.3715)
+
+[node name="PF_Chicken_Friend_Random_Walker-n13" parent="Enemies" instance=ExtResource("13_2txvy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.9796, -0.350848, 16.4791)
+
+[node name="PF_Chicken_Friend_Random_Walker-n14" parent="Enemies" instance=ExtResource("13_2txvy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.0193, -0.350848, 2.10675)
+
+[node name="PF_Chicken_Friend_Fast_Random_Walker-n1" parent="Enemies" instance=ExtResource("14_y8kvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.0905, -0.495984, 9.10126)
+
+[node name="PF_Chicken_Friend_Fast_Random_Walker-n5" parent="Enemies" instance=ExtResource("14_y8kvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.4957, -0.495984, -18.9871)
+
+[node name="PF_Chicken_Friend_Fast_Random_Walker-n2" parent="Enemies" instance=ExtResource("14_y8kvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.00356, -0.495984, 17.1398)
+
+[node name="PF_Chicken_Friend_Fast_Random_Walker-n3" parent="Enemies" instance=ExtResource("14_y8kvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.4705, -0.495984, 7.07851)
+
+[node name="PF_Chicken_Friend_Fast_Random_Walker-n4" parent="Enemies" instance=ExtResource("14_y8kvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.1242, -0.495984, -14.4802)
+
+[node name="Environment" parent="." instance=ExtResource("15_ovf26")]
+
+[node name="WaterArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815, 0)
+visible = false
+collision_layer = 32
+collision_mask = 4
+script = ExtResource("16_8bnd4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WaterArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+shape = SubResource("BoxShape3D_h1rqx")
+
+[node name="Flies" type="Node3D" parent="."]
+
+[node name="Fly" parent="Flies" instance=ExtResource("17_bsvec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.1478, -1.90735e-06, 11.8517)
+
+[node name="Fly5" parent="Flies" instance=ExtResource("17_bsvec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.6931, -1.90735e-06, 4.19891)
+
+[node name="Fly2" parent="Flies" instance=ExtResource("17_bsvec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.06709, 1.43051e-06, 18.823)
+
+[node name="Fly6" parent="Flies" instance=ExtResource("17_bsvec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.73347, 1.43051e-06, 20.6534)
+
+[node name="Fly3" parent="Flies" instance=ExtResource("17_bsvec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.0126, 0, 12.455)
+
+[node name="Fly4" parent="Flies" instance=ExtResource("17_bsvec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.7206, 3.8147e-06, -16.3428)
+
+[node name="Fly7" parent="Flies" instance=ExtResource("17_bsvec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2356, 3.8147e-06, -19.0004)
+
+[node name="Fly8" parent="Flies" instance=ExtResource("17_bsvec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5451, 3.8147e-06, -16.9339)
+
+[node name="Fly9" parent="Flies" instance=ExtResource("17_bsvec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.4769, 3.8147e-06, -10.4669)
+
+[node name="Fly10" parent="Flies" instance=ExtResource("17_bsvec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.01871, 3.8147e-06, -9.66287)
