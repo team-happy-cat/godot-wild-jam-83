@@ -18,8 +18,7 @@ public partial class AgentBase : CharacterBody3D
 
 	public virtual void FaceDirection(float direction)
 	{
-		Vector3 targetRotation = new(0, direction, 0);
-		Rotation = Rotation.Lerp(targetRotation, 0.1f);
+		Rotation = new(0, direction, 0);
 	}
 	
 	public virtual void FaceRandomDirection()

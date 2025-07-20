@@ -154,4 +154,4 @@ libraries = {
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_tnuc3")
-volume_db = -5.0
+volume_db = -15.623

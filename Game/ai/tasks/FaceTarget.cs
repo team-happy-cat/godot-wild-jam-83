@@ -23,8 +23,8 @@ public partial class FaceTarget : BTAction
             return Status.Failure;
         }
 
-        Vector3 direction = agentBase.GlobalPosition - target.GlobalPosition;
-        float yaw = Mathf.Atan2(direction.X, -direction.Z);
+        Vector3 direction = target.GlobalPosition- agentBase.GlobalPosition;
+        float yaw = Mathf.Atan2(direction.X, direction.Z);
 
         agentBase.Velocity = Vector3.Zero;
         agentBase.FaceDirection(yaw);

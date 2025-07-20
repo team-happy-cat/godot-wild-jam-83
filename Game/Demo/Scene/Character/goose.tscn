@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://ddqb32u6rmjsy"]
 
 [ext_resource type="Script" uid="uid://ds2fwa44aferr" path="res://Demo/Script/AgentBase.cs" id="1_1b5lg"]
-[ext_resource type="PackedScene" uid="uid://c8alf2ra2jals" path="res://Demo/Scene/Character/PF_Chicken_Friend.glb" id="2_m2bqd"]
+[ext_resource type="PackedScene" uid="uid://bonicsy05j8s7" path="res://Assets/Models/SK_goose.glb" id="2_1b5lg"]
 [ext_resource type="Script" uid="uid://oj1nsgwhibi7" path="res://addons/StandardAssets/Script/Compass/PointOfInterest.cs" id="3_lroav"]
 [ext_resource type="Texture2D" uid="uid://wbj1onemc3r1" path="res://Demo/UI/Images/Compass/compass_goose.png" id="4_1b5lg"]
 [ext_resource type="BehaviorTree" uid="uid://h4tehm8amfs2" path="res://ai/trees/goose.tres" id="5_1b5lg"]
@@ -27,12 +27,34 @@ safe_margin = 0.01
 script = ExtResource("1_1b5lg")
 strikeArea = NodePath("Area3D")
 
+[node name="SK_goose2" parent="." instance=ExtResource("2_1b5lg")]
+transform = Transform3D(2.24838, 0, 0, 0, 2.24838, 0, 0, 0, 2.24838, 0, 0, 0)
+
+[node name="Skeleton3D" parent="SK_goose2/SK_goose" index="0"]
+bones/1/position = Vector3(7.27503e-08, 0.479586, -0.305137)
+bones/1/rotation = Quaternion(0.707107, -6.20964e-07, -4.52377e-07, 0.707107)
+bones/3/rotation = Quaternion(-0.280754, 4.95723e-14, 3.34685e-07, 0.95978)
+bones/4/rotation = Quaternion(0.111337, -1.95615e-14, -1.32724e-07, 0.993783)
+bones/5/rotation = Quaternion(0.271572, -1.10805e-13, -3.23739e-07, 0.962418)
+bones/6/rotation = Quaternion(0.529361, -6.40521e-08, -6.71014e-07, 0.848396)
+bones/7/rotation = Quaternion(-0.538857, 0.457856, 0.538859, -0.457857)
+bones/8/rotation = Quaternion(2.21326e-06, -1.36611e-08, 0.783288, 0.621659)
+bones/9/rotation = Quaternion(0.680744, 0.191282, 0.680743, 0.191282)
+bones/10/rotation = Quaternion(3.7018e-07, 3.28759e-08, -0.230861, 0.972987)
+bones/11/rotation = Quaternion(0.971818, -1.78912e-07, -7.37578e-07, -0.235731)
+bones/12/position = Vector3(0.173795, 0.19289, 0.13748)
+bones/12/rotation = Quaternion(0.599466, 0.37502, -0.599467, -0.375019)
+bones/13/position = Vector3(-0.173795, 0.157659, -0.25958)
+bones/13/rotation = Quaternion(-0.0229997, -0.706733, -0.0229999, -0.706732)
+bones/14/position = Vector3(-0.173795, 0.157655, -0.259584)
+bones/14/rotation = Quaternion(0.706732, -0.023, 0.706733, -0.0229995)
+bones/15/position = Vector3(0.173795, 0.192883, 0.137483)
+bones/15/rotation = Quaternion(-0.375019, 0.599467, 0.37502, -0.599466)
+bones/16/rotation = Quaternion(-0.5, 0.5, 0.5, -0.5)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CapsuleShape3D_byfd3")
-
-[node name="PF_Chicken_Friend" parent="." instance=ExtResource("2_m2bqd")]
-transform = Transform3D(2.43754, 0, 0, 0, 2.43754, 0, 0, 0, 2.43754, 0, 0, 0)
 
 [node name="PointOfInterest" type="Marker3D" parent="."]
 script = ExtResource("3_lroav")
@@ -48,9 +70,12 @@ transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0.781488, 1.4213)
 collision_layer = 4096
 collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="Hurtbox" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_1b5lg")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+[node name="HurtboxDebugView" type="MeshInstance3D" parent="Area3D"]
+visible = false
 mesh = SubResource("BoxMesh_m2bqd")
 surface_material_override/0 = SubResource("StandardMaterial3D_lroav")
+
+[editable path="SK_goose2"]

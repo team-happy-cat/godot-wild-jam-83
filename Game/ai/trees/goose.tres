@@ -1,4 +1,4 @@
-[gd_resource type="BehaviorTree" load_steps=29 format=3 uid="uid://h4tehm8amfs2"]
+[gd_resource type="BehaviorTree" load_steps=33 format=3 uid="uid://h4tehm8amfs2"]
 
 [ext_resource type="BlackboardPlan" uid="uid://cselmpmw5blem" path="res://blackboard.tres" id="1_bf4hi"]
 [ext_resource type="Script" uid="uid://bvpavi6rw0xlg" path="res://ai/tasks/GetFirstInGroup.cs" id="1_ls11m"]
@@ -8,8 +8,14 @@
 [ext_resource type="Script" uid="uid://3ia0ihouvtsf" path="res://ai/tasks/MoveForward.cs" id="5_1kj8i"]
 [ext_resource type="Script" uid="uid://dd1h5mtsh1jsm" path="res://ai/tasks/FaceTarget.cs" id="6_6xs6x"]
 
-[sub_resource type="BTConsolePrint" id="BTConsolePrint_2dg1b"]
-text = "TODO: Play Idle Animation"
+[sub_resource type="BBNode" id="BBNode_1kj8i"]
+resource_name = "SK_goose2/AnimationPlayer"
+saved_value = NodePath("SK_goose2/AnimationPlayer")
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_6xs6x"]
+custom_name = "Idle"
+animation_player = SubResource("BBNode_1kj8i")
+animation_name = &"default"
 
 [sub_resource type="BTRandomWait" id="BTRandomWait_3pqyr"]
 min_duration = 0.1
@@ -17,10 +23,19 @@ max_duration = 0.5
 
 [sub_resource type="BTSequence" id="BTSequence_cprs3"]
 custom_name = "Pause before action"
-children = [SubResource("BTConsolePrint_2dg1b"), SubResource("BTRandomWait_3pqyr")]
+children = [SubResource("BTPlayAnimation_6xs6x"), SubResource("BTRandomWait_3pqyr")]
 
 [sub_resource type="BTAction" id="BTAction_pts70"]
 script = ExtResource("4_bf4hi")
+
+[sub_resource type="BBNode" id="BBNode_vr0o7"]
+resource_name = "SK_goose2/AnimationPlayer"
+saved_value = NodePath("SK_goose2/AnimationPlayer")
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_pts70"]
+custom_name = "Swim"
+animation_player = SubResource("BBNode_vr0o7")
+animation_name = &"swim"
 
 [sub_resource type="BTAction" id="BTAction_cb8h1"]
 script = ExtResource("5_1kj8i")
@@ -33,7 +48,7 @@ time_limit = 1.0
 
 [sub_resource type="BTSequence" id="BTSequence_in463"]
 custom_name = "Randomly walk"
-children = [SubResource("BTAction_pts70"), SubResource("BTTimeLimit_xthh4")]
+children = [SubResource("BTAction_pts70"), SubResource("BTPlayAnimation_pts70"), SubResource("BTTimeLimit_xthh4")]
 
 [sub_resource type="BTAction" id="BTAction_74s65"]
 script = ExtResource("1_ls11m")
@@ -65,15 +80,20 @@ text = "Done pursuing"
 custom_name = "Pursue"
 children = [SubResource("BTAction_74s65"), SubResource("BTCondition_vr0o7"), SubResource("BTConsolePrint_bf4hi"), SubResource("BTTimeLimit_fi2ie"), SubResource("BTConsolePrint_6xs6x")]
 
-[sub_resource type="BTConsolePrint" id="BTConsolePrint_c54jp"]
-text = "TODO: Play Attack Animation"
-
 [sub_resource type="BTAction" id="BTAction_i0i5h"]
 script = ExtResource("6_6xs6x")
 TargetVar = &"target"
 
+[sub_resource type="BBNode" id="BBNode_cb8h1"]
+resource_name = "SK_goose2/AnimationPlayer"
+saved_value = NodePath("SK_goose2/AnimationPlayer")
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_xthh4"]
+custom_name = "Attack"
+animation_player = SubResource("BBNode_cb8h1")
+animation_name = &"attack"
+
 [sub_resource type="BTWait" id="BTWait_r5csj"]
-duration = 0.1
 
 [sub_resource type="BBNode" id="BBNode_bf4hi"]
 resource_name = "."
@@ -84,7 +104,7 @@ node = SubResource("BBNode_bf4hi")
 method = &"Strike"
 
 [sub_resource type="BTSequence" id="BTSequence_1kj8i"]
-children = [SubResource("BTConsolePrint_c54jp"), SubResource("BTAction_i0i5h"), SubResource("BTWait_r5csj"), SubResource("BTCallMethod_1kj8i")]
+children = [SubResource("BTAction_i0i5h"), SubResource("BTPlayAnimation_xthh4"), SubResource("BTWait_r5csj"), SubResource("BTCallMethod_1kj8i")]
 
 [sub_resource type="BTSequence" id="BTSequence_3fpfi"]
 children = [SubResource("BTSequence_cprs3"), SubResource("BTSequence_in463"), SubResource("BTSequence_fi2ie"), SubResource("BTSequence_1kj8i")]

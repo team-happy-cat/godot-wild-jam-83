@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckyt8etojlxcx"]
+[gd_scene load_steps=11 format=3 uid="uid://ckyt8etojlxcx"]
 
 [ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/Environment/PF_LilyPad.glb" id="1_sutdf"]
 [ext_resource type="PackedScene" uid="uid://dlpn7xunst5t7" path="res://Demo/fly_spawner.tscn" id="5_daf62"]
 [ext_resource type="Script" uid="uid://38ivonkrroth" path="res://Demo/Script/AgentSpawner.cs" id="6_mvmpv"]
 [ext_resource type="PackedScene" uid="uid://c0i6vbtndravs" path="res://Level/environment_small.tscn" id="7_8venk"]
+[ext_resource type="PackedScene" uid="uid://ddqb32u6rmjsy" path="res://Demo/Scene/Character/goose.tscn" id="9_mvmpv"]
 [ext_resource type="Script" uid="uid://c4bnyda0v84kt" path="res://Demo/Script/EnemyContainer.cs" id="12_0xl2u"]
 [ext_resource type="PackedScene" uid="uid://4pssytbq3qo1" path="res://Demo/Scene/Character/PF_Chicken_Friend_Random_Walker.tscn" id="13_2txvy"]
 [ext_resource type="Script" uid="uid://wxiqiqek0bdu" path="res://Demo/Script/WaterArea.cs" id="16_8bnd4"]
@@ -181,3 +182,6 @@ script = ExtResource("6_mvmpv")
 AgentScene = ExtResource("17_bsvec")
 
 [node name="EnvironmentSmall" parent="." instance=ExtResource("7_8venk")]
+
+[node name="Goose" parent="." instance=ExtResource("9_mvmpv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7849, -0.5, -10.3119)
