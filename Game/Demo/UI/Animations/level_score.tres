@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://bly6p4vf2srbk"]
+
+[ext_resource type="Texture2D" uid="uid://c12xtc0ew8hi3" path="res://Demo/UI/Images/LevelCompletion/score_001.png" id="1_cl47l"]
+[ext_resource type="Texture2D" uid="uid://b1ijp5788wsyc" path="res://Demo/UI/Images/LevelCompletion/score_002.png" id="2_qnhlt"]
+[ext_resource type="Texture2D" uid="uid://e7q7d6s515n1" path="res://Demo/UI/Images/LevelCompletion/score_003.png" id="3_pw0wn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wji3p"]
+atlas = ExtResource("1_cl47l")
+region = Rect2(0, 0, 369, 142)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stope"]
+atlas = ExtResource("2_qnhlt")
+region = Rect2(0, 0, 369, 142)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_614qk"]
+atlas = ExtResource("3_pw0wn")
+region = Rect2(0, 0, 369, 142)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wji3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stope")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_614qk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
