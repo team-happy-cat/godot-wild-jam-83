@@ -1,6 +1,7 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://c7wx7hws2xoig"]
 
 [resource]
+bus/0/volume_db = -5.93425
 bus/1/name = &"Ambient"
 bus/1/solo = false
 bus/1/mute = false
