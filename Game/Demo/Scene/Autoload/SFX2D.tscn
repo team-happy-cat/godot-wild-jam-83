@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://dwae0boafuby7" path="res://Assets/Audio/fly.wav" id="13_sdemp"]
 
 [node name="SFX2D" type="Node"]
+process_mode = 3
 script = ExtResource("1_1odp3")
 
 [node name="UI" type="Node" parent="."]

@@ -156,7 +156,7 @@ _data = {
 
 [node name="PauseMenu" type="CanvasLayer" node_paths=PackedStringArray("_animations", "_buttonExit", "_buttonResume")]
 process_mode = 3
-layer = 20
+layer = 10
 visible = false
 script = ExtResource("2_mxaxn")
 _animations = NodePath("Animations")

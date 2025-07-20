@@ -21,15 +21,11 @@ public partial class GameOver : CanvasLayer
 		_levelManager = GetNode<LevelManager>("/root/LevelManager");
 		
 		_buttonExit.Pressed += () =>
-		{
 			_levelManager.ChangeLevel("Main_Menu");
-			Close();
-		};
 		_buttonRestart.Pressed += () =>
-		{
 			_levelManager.ChangeLevel(_levelManager.CurrentLevelID, "SP_" + _levelManager.CurrentLevelID);
-			Close();
-		};
+
+		GetNode<Transition>("/root/Transition").OnCleanup += CloseWithoutAnimations;
 	}
 
 	public static void Open()
@@ -44,5 +40,10 @@ public partial class GameOver : CanvasLayer
 	{
 		_instance.Animations.Play("close");
 		_instance.GetTree().Paused = false;
+	}
+
+	private static void CloseWithoutAnimations()
+	{
+		_instance.Animations.Play("RESET");
 	}
 }
