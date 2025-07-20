@@ -352,6 +352,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.6635, -0.490211, -17.9263)
 [node name="fly_spawner-n1" parent="Flies" instance=ExtResource("16_pfx8k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4193, 1, 9.56523)
 
+[node name="fly_spawner-n8" parent="Flies" instance=ExtResource("16_pfx8k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4193, 1, -14.1687)
+
+[node name="fly_spawner-n9" parent="Flies" instance=ExtResource("16_pfx8k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3658, 1, -18.3189)
+
+[node name="fly_spawner-n10" parent="Flies" instance=ExtResource("16_pfx8k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.36632, 1, -25.8514)
+
 [node name="fly_spawner-n2" parent="Flies" instance=ExtResource("16_pfx8k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.3504, 1, 23.1639)
 

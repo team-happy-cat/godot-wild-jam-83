@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cc1m2a1obsyn4"]
+[gd_scene load_steps=42 format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" uid="uid://hdsvtpxi0o2d" path="res://Demo/Script/CharacterHub.cs" id="1_p8ic4"]
 [ext_resource type="Script" uid="uid://coaqcn4leqqcd" path="res://Demo/Script/CharacterController.cs" id="2_m3i4r"]
@@ -78,6 +78,14 @@ height = 1.8
 streams_count = 2
 stream_0/stream = ExtResource("19_ome0b")
 stream_1/stream = ExtResource("20_mn2kr")
+
+[sub_resource type="Environment" id="Environment_hca7a"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.5
+
+[sub_resource type="World3D" id="World3D_gr4i3"]
+environment = SubResource("Environment_hca7a")
 
 [sub_resource type="Animation" id="Animation_mn2kr"]
 length = 0.001
@@ -476,6 +484,8 @@ mouse_filter = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+own_world_3d = true
+world_3d = SubResource("World3D_gr4i3")
 transparent_bg = true
 handle_input_locally = false
 canvas_cull_mask = 4294966288
