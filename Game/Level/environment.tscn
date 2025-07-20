@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://dpg7c2fxet7nr"]
+[gd_scene load_steps=58 format=4 uid="uid://dpg7c2fxet7nr"]
 
 [ext_resource type="PackedScene" uid="uid://8tl1ghmq6i1w" path="res://addons/StandardAssets/Scene/Ocean.tscn" id="2_lnont"]
 [ext_resource type="PackedScene" uid="uid://bn85uyhd1vd1k" path="res://Assets/Models/Environment/PF_cattail_1.glb" id="3_jiqlp"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cknrk4nciy45t" path="res://Assets/Models/Environment/SM_stump_1-col.glb" id="9_ko8d4"]
 [ext_resource type="PackedScene" uid="uid://xtaecqywtpf" path="res://Assets/Models/SM_cloud_B.glb" id="10_4xe2f"]
 [ext_resource type="Texture2D" uid="uid://c1t3slsvak2jr" path="res://Assets/Models/Environment/PF_log_1-col_Color_Atlas_A.png" id="10_cix77"]
+[ext_resource type="PackedScene" uid="uid://ofcpwirtwrky" path="res://Assets/Models/Environment/PF_water_lily_1.glb" id="10_rfob5"]
 [ext_resource type="Material" uid="uid://dmv16q7viwaxg" path="res://Assets/Models/Environment/MI_col_matte_A.tres" id="13_4xe2f"]
 [ext_resource type="PackedScene" uid="uid://bvobhho1ydsxj" path="res://Assets/Models/Environment/SM_pond_rock_2-convcol.glb" id="13_bi607"]
 [ext_resource type="PackedScene" uid="uid://nrq3q1fgegl0" path="res://Assets/Models/Environment/SM_mushroom_b_clump.glb" id="14_8da38"]
@@ -546,6 +547,9 @@ transform = Transform3D(3.23503, -0.483305, 0.177605, 0.484017, 3.23979, -1.8247
 [node name="PF_stump_1-n1" parent="Meshes/Stumps" instance=ExtResource("9_ko8d4")]
 transform = Transform3D(0.979504, -0.201423, 0.000515316, 0.201405, 0.979447, 0.0109808, -0.00271643, -0.010652, 0.999939, -1.14254, -0.0845909, 4.08825)
 
+[node name="PF_stump_1-n6" parent="Meshes/Stumps" instance=ExtResource("9_ko8d4")]
+transform = Transform3D(1.38882, 0.329239, -0.0233272, -0.330023, 1.38357, -0.120745, -0.00523924, 0.122866, 1.4222, -19.4092, 3.07109, 14.7741)
+
 [node name="PF_stump_1-n2" parent="Meshes/Stumps" instance=ExtResource("9_ko8d4")]
 transform = Transform3D(-0.0933827, 0.200008, 0.676536, 0.0327784, 0.682931, -0.197374, -0.70472, 0.00526177, -0.0988284, -3.4712, 0.51863, -10.6987)
 
@@ -557,6 +561,32 @@ transform = Transform3D(0.514446, 0.3816, 0.843377, -0.348723, 0.973674, -0.2278
 
 [node name="PF_stump_1-n4" parent="Meshes/Stumps" instance=ExtResource("9_ko8d4")]
 transform = Transform3D(1.51313, 0.226077, -0.0195965, -0.226058, 1.51326, 0.00292767, 0.0198142, 1.69979e-08, 1.52992, -7.3883, 1.13728, 16.1775)
+
+[node name="Waterlilys" type="Node3D" parent="Meshes/Stumps"]
+
+[node name="PF_water_lily_12" parent="Meshes/Stumps/Waterlilys" instance=ExtResource("10_rfob5")]
+transform = Transform3D(0.698801, 0.104553, -0.0379435, -0.104399, 0.699831, 0.00566867, 0.0383647, -1.10747e-08, 0.706557, -3.46273, 0.0336472, -4.49123)
+
+[node name="PF_water_lily_13" parent="Meshes/Stumps/Waterlilys" instance=ExtResource("10_rfob5")]
+transform = Transform3D(0.360888, 0.071438, -0.313704, -0.0539158, 0.478174, 0.0468666, 0.317185, -7.07275e-08, 0.364893, -2.88641, -0.0524528, -4.01358)
+
+[node name="PF_water_lily_14" parent="Meshes/Stumps/Waterlilys" instance=ExtResource("10_rfob5")]
+transform = Transform3D(0.360887, 0.071438, -0.313704, -0.0539158, 0.478174, 0.0468666, 0.317185, -7.07603e-08, 0.364893, -2.5423, -0.103863, -5.00144)
+
+[node name="PF_water_lily_15" parent="Meshes/Stumps/Waterlilys" instance=ExtResource("10_rfob5")]
+transform = Transform3D(0.698801, 0.104553, -0.0379435, -0.104399, 0.699831, 0.00566867, 0.0383647, -1.06005e-08, 0.706557, -12.3134, 1.35592, 11.2121)
+
+[node name="PF_water_lily_16" parent="Meshes/Stumps/Waterlilys" instance=ExtResource("10_rfob5")]
+transform = Transform3D(0.360887, 0.071438, -0.313704, -0.0539158, 0.478174, 0.0468666, 0.317185, -7.07603e-08, 0.364893, -11.7371, 1.26982, 11.6898)
+
+[node name="PF_water_lily_17" parent="Meshes/Stumps/Waterlilys" instance=ExtResource("10_rfob5")]
+transform = Transform3D(0.360887, 0.071438, -0.313704, -0.0539157, 0.478174, 0.0468666, 0.317185, -7.10026e-08, 0.364893, -11.393, 1.21841, 10.7019)
+
+[node name="PF_water_lily_18" parent="Meshes/Stumps/Waterlilys" instance=ExtResource("10_rfob5")]
+transform = Transform3D(-0.407067, 0.0714381, -0.250891, 0.0608149, 0.478174, 0.0374825, 0.253675, -7.85756e-08, -0.411586, -27.6844, 3.65231, 8.25637)
+
+[node name="PF_water_lily_19" parent="Meshes/Stumps/Waterlilys" instance=ExtResource("10_rfob5")]
+transform = Transform3D(-0.407067, 0.0714381, -0.25089, 0.0608149, 0.478174, 0.0374825, 0.253675, -9.20551e-08, -0.411585, -26.8545, 3.52833, 8.88312)
 
 [node name="Rocks" type="Node3D" parent="Meshes"]
 
