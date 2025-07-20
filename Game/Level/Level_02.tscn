@@ -292,9 +292,6 @@ NextLevel = "Level_03"
 [node name="PF_Chicken_Friend_Random_Walker-n1" parent="Enemies" instance=ExtResource("2_cx2d6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.9329, -0.351, -2.86709)
 
-[node name="PF_Chicken_Friend_Random_Walker-n2" parent="Enemies" instance=ExtResource("2_cx2d6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.3341, -3.88786, -14.3367)
-
 [node name="PF_Chicken_Friend_Random_Walker-n3" parent="Enemies" instance=ExtResource("2_cx2d6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3125, -0.351, -14.3138)
 
@@ -353,6 +350,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.6635, -0.490211, -17.9263)
 
 [node name="Fly" parent="Flies" instance=ExtResource("4_8x7d7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4193, 1, 9.56523)
+
+[node name="Fly5" parent="Flies" instance=ExtResource("4_8x7d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.3504, 1, 23.1639)
+
+[node name="Fly6" parent="Flies" instance=ExtResource("4_8x7d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.029, 1, -10.4801)
+
+[node name="Fly7" parent="Flies" instance=ExtResource("4_8x7d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.0936, 1, -20.5594)
 
 [node name="Fly2" parent="Flies" instance=ExtResource("4_8x7d7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0549965, 0.999998, 21.8965)

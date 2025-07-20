@@ -582,6 +582,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 multimesh = SubResource("MultiMesh_ca7yp")
 
 [node name="InnerTreeMultiMesh" type="MultiMeshInstance3D" parent="MultiMeshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 multimesh = SubResource("MultiMesh_yqc2w")
 
 [node name="LogMultiMesh" type="MultiMeshInstance3D" parent="MultiMeshes"]

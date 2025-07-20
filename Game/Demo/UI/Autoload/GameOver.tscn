@@ -475,4 +475,4 @@ autoplay = "RESET"
 
 [node name="GameOverAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_mm0o2")
-volume_db = -6.0
+volume_db = -3.0

@@ -259,10 +259,12 @@ shape = SubResource("CapsuleShape3D_uy03j")
 
 [node name="Body" type="MeshInstance3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0.162336, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_jw1de")
 
 [node name="Hat" type="MeshInstance3D" parent="Player/Body"]
 transform = Transform3D(0.248288, 0, 0, 0, 0.0248288, 0, 0, 0, 0.347603, 0, 0.76485, 0.0606878)
+visible = false
 mesh = SubResource("BoxMesh_fx7e7")
 skeleton = NodePath("../..")
 
