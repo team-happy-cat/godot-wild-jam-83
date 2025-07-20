@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccte1qj8j7omh"]
+[gd_scene load_steps=10 format=3 uid="uid://ckyt8etojlxcx"]
 
 [ext_resource type="PackedScene" uid="uid://c51a5gydq6yds" path="res://Assets/Models/Environment/PF_LilyPad.glb" id="1_sutdf"]
+[ext_resource type="PackedScene" uid="uid://dlpn7xunst5t7" path="res://Demo/fly_spawner.tscn" id="5_daf62"]
+[ext_resource type="Script" uid="uid://38ivonkrroth" path="res://Demo/Script/AgentSpawner.cs" id="6_mvmpv"]
 [ext_resource type="PackedScene" uid="uid://c0i6vbtndravs" path="res://Level/environment_small.tscn" id="7_8venk"]
 [ext_resource type="Script" uid="uid://c4bnyda0v84kt" path="res://Demo/Script/EnemyContainer.cs" id="12_0xl2u"]
 [ext_resource type="PackedScene" uid="uid://4pssytbq3qo1" path="res://Demo/Scene/Character/PF_Chicken_Friend_Random_Walker.tscn" id="13_2txvy"]
@@ -153,7 +155,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.82852, -0.350844, -7.87863
 
 [node name="WaterArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815, 0)
-visible = false
 collision_layer = 32
 collision_mask = 4
 script = ExtResource("16_8bnd4")
@@ -164,13 +165,19 @@ shape = SubResource("BoxShape3D_h1rqx")
 
 [node name="Flies" type="Node3D" parent="."]
 
-[node name="Fly" parent="Flies" instance=ExtResource("17_bsvec")]
+[node name="fly_spawner-n1" type="Node3D" parent="Flies" instance=ExtResource("5_daf62")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.28849, -1.90735e-06, 8.53937)
+script = ExtResource("6_mvmpv")
+AgentScene = ExtResource("17_bsvec")
 
-[node name="Fly3" parent="Flies" instance=ExtResource("17_bsvec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8946, -1.90735e-06, -12.0993)
+[node name="fly_spawner-n2" type="Node3D" parent="Flies" instance=ExtResource("5_daf62")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71868, -1.90735e-06, -7.64777)
+script = ExtResource("6_mvmpv")
+AgentScene = ExtResource("17_bsvec")
 
-[node name="Fly4" parent="Flies" instance=ExtResource("17_bsvec")]
+[node name="fly_spawner-n3" type="Node3D" parent="Flies" instance=ExtResource("5_daf62")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8874, -1.90735e-06, 12.7489)
+script = ExtResource("6_mvmpv")
+AgentScene = ExtResource("17_bsvec")
 
 [node name="EnvironmentSmall" parent="." instance=ExtResource("7_8venk")]

@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cjhwj7oqysobp" path="res://Assets/Models/Rocks/PF_RockD-convcol.glb" id="5_2uycx"]
 [ext_resource type="Script" uid="uid://wxiqiqek0bdu" path="res://Demo/Script/WaterArea.cs" id="5_rrpac"]
 [ext_resource type="PackedScene" uid="uid://eeoxboyxvnor" path="res://Assets/Models/Rocks/PF_RockE-convcol.glb" id="6_uaa84"]
-[ext_resource type="PackedScene" uid="uid://bycwinetltyo" path="res://Demo/Scene/Character/fly.tscn" id="7_000dt"]
 [ext_resource type="PackedScene" uid="uid://c525n4myuok4v" path="res://Assets/Models/Rocks/PF_RockF-convcol.glb" id="7_6n1nk"]
+[ext_resource type="PackedScene" uid="uid://dlpn7xunst5t7" path="res://Demo/fly_spawner.tscn" id="7_s2vkn"]
 [ext_resource type="PackedScene" uid="uid://ddqb32u6rmjsy" path="res://Demo/Scene/Character/goose.tscn" id="8_k2iqv"]
 [ext_resource type="PackedScene" uid="uid://mjmdsksovbht" path="res://Assets/Models/Rocks/PF_RockG-convcol.glb" id="8_s0341"]
 [ext_resource type="PackedScene" uid="uid://cijtbb1pavxg7" path="res://Assets/Models/Rocks/PF_RockI-convcol.glb" id="9_203be"]
@@ -365,7 +365,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.8734, -0.490211, -9.88763
 
 [node name="WaterArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815, 0)
-visible = false
 collision_layer = 32
 collision_mask = 4
 script = ExtResource("5_rrpac")
@@ -376,38 +375,38 @@ shape = SubResource("BoxShape3D_h1rqx")
 
 [node name="Flies" type="Node3D" parent="."]
 
-[node name="Fly" parent="Flies" instance=ExtResource("7_000dt")]
+[node name="fly_spawner-n1" parent="Flies" instance=ExtResource("7_s2vkn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.1478, -1.90735e-06, 11.8517)
 
-[node name="Fly5" parent="Flies" instance=ExtResource("7_000dt")]
+[node name="fly_spawner-n2" parent="Flies" instance=ExtResource("7_s2vkn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.6931, -1.90735e-06, 4.19891)
 
-[node name="Fly2" parent="Flies" instance=ExtResource("7_000dt")]
+[node name="fly_spawner-n3" parent="Flies" instance=ExtResource("7_s2vkn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.06709, 1.43051e-06, 18.823)
 
-[node name="Fly11" parent="Flies" instance=ExtResource("7_000dt")]
+[node name="fly_spawner-n4" parent="Flies" instance=ExtResource("7_s2vkn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.55566, 2.38418e-06, -0.130648)
 
-[node name="Fly12" parent="Flies" instance=ExtResource("7_000dt")]
+[node name="fly_spawner-n5" parent="Flies" instance=ExtResource("7_s2vkn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71653, 2.38418e-06, 22.4404)
 
-[node name="Fly6" parent="Flies" instance=ExtResource("7_000dt")]
+[node name="fly_spawner-n6" parent="Flies" instance=ExtResource("7_s2vkn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.73347, 1.43051e-06, 20.6534)
 
-[node name="Fly3" parent="Flies" instance=ExtResource("7_000dt")]
+[node name="fly_spawner-n7" parent="Flies" instance=ExtResource("7_s2vkn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.0126, 0, 12.455)
 
-[node name="Fly4" parent="Flies" instance=ExtResource("7_000dt")]
+[node name="fly_spawner-n8" parent="Flies" instance=ExtResource("7_s2vkn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.7206, 3.8147e-06, -16.3428)
 
-[node name="Fly7" parent="Flies" instance=ExtResource("7_000dt")]
+[node name="fly_spawner-n9" parent="Flies" instance=ExtResource("7_s2vkn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2356, 3.8147e-06, -19.0004)
 
-[node name="Fly8" parent="Flies" instance=ExtResource("7_000dt")]
+[node name="fly_spawner-n10" parent="Flies" instance=ExtResource("7_s2vkn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5451, 3.8147e-06, -16.9339)
 
-[node name="Fly9" parent="Flies" instance=ExtResource("7_000dt")]
+[node name="fly_spawner-n11" parent="Flies" instance=ExtResource("7_s2vkn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.4769, 3.8147e-06, -10.4669)
 
-[node name="Fly10" parent="Flies" instance=ExtResource("7_000dt")]
+[node name="fly_spawner-n12" parent="Flies" instance=ExtResource("7_s2vkn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.01871, 3.8147e-06, -9.66287)
