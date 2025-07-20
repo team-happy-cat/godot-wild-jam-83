@@ -40,6 +40,7 @@ Transition="*res://Demo/UI/Autoload/Transition.tscn"
 PauseMenu="*res://Demo/UI/Autoload/PauseMenu.tscn"
 GameOver="*res://Demo/UI/Autoload/GameOver.tscn"
 JukeBox="*res://Demo/Script/JukeBox.gd"
+LevelCompletion="*res://Demo/UI/Autoload/LevelCompletion.tscn"
 
 [dialogue_manager]
 
