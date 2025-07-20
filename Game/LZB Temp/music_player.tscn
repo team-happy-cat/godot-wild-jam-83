@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmo76c5ypv4ba"]
+
+[ext_resource type="Script" uid="uid://c604f3f1javld" path="res://LZB Temp/music_player.gd" id="1_ljlnd"]
+[ext_resource type="AudioStream" uid="uid://cw6qw84eqn8jt" path="res://LZB Temp/underrail HL2.mp3" id="2_4ytko"]
+[ext_resource type="AudioStream" uid="uid://tnarvnha8yf0" path="res://LZB Temp/Space Game Jam phoner 1.mp3" id="3_qmu1i"]
+
+[node name="Music Player" type="Node" node_paths=PackedStringArray("music_1", "music_2")]
+script = ExtResource("1_ljlnd")
+music_1 = NodePath("Music1")
+music_2 = NodePath("Music2")
+
+[node name="Music1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4ytko")
+autoplay = true
+
+[node name="Music2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qmu1i")
+volume_db = -80.0
+autoplay = true
+
+[node name="song 1" type="Button" parent="."]
+offset_left = 398.0
+offset_top = 48.0
+offset_right = 464.0
+offset_bottom = 79.0
+text = "songs 1"
+
+[node name="song 2" type="Button" parent="."]
+offset_left = 231.0
+offset_top = 39.0
+offset_right = 297.0
+offset_bottom = 70.0
+text = "song 2"
+
+[connection signal="button_down" from="song 1" to="." method="_on_song_1_button_down"]
+[connection signal="button_down" from="song 2" to="." method="_on_song_2_button_down"]
