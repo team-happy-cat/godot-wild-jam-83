@@ -341,7 +341,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.0905, -0.495984, 9.10126)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.4957, -0.495984, -18.9871)
 
 [node name="PF_Chicken_Friend_Fast_Random_Walker-n2" parent="Enemies" instance=ExtResource("4_h1rqx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.00356, -0.495984, 17.1398)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.53631, -0.495984, 14.7699)
 
 [node name="PF_Chicken_Friend_Fast_Random_Walker-n3" parent="Enemies" instance=ExtResource("4_h1rqx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.4705, -0.495984, 7.07851)
