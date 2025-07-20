@@ -323,7 +323,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5451, 3.8147e-06, -16.9339
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.4769, 3.8147e-06, -10.4669)
 
 [node name="Fly10" parent="Flies" instance=ExtResource("7_000dt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0208473, 3.8147e-06, 0.0176748)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80942, 3.8147e-06, -3.28436)
 
 [node name="Goose" type="Node3D" parent="."]
 
