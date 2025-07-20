@@ -3,6 +3,9 @@ using Godot;
 
 public partial class Transition : CanvasLayer
 {
+    [Signal]
+    public delegate void OnCleanupEventHandler();
+    
     [Export] public Control InputBlocker;
     [Export] public AnimationPlayer Animations;
     
@@ -23,10 +26,22 @@ public partial class Transition : CanvasLayer
         
         Hide();
     }
-
+    
     private void Play()
     {
+        Animations.Play("RESET");
+        GetTree().Paused = true;
         Animations.Play("transition");
         Show();
+    }
+
+    public void ToggleCleanup()
+    {
+        EmitSignal(SignalName.OnCleanup);
+    }
+
+    public void Unpause()
+    {
+        GetTree().Paused = false;
     }
 }

@@ -22,12 +22,10 @@ public partial class PauseMenu : CanvasLayer
 		_instance = this;
 		_levelManager = GetNode<LevelManager>("/root/LevelManager");
 
-		_buttonExit.Pressed += () =>
-		{
-			Close();
-			_levelManager.ChangeLevel("Main_Menu");
-		};
+		_buttonExit.Pressed += () => _levelManager.ChangeLevel("Main_Menu");
 		_buttonResume.Pressed += Close;
+
+		GetNode<Transition>("/root/Transition").OnCleanup += CloseWithoutUnpausing;
 	}
 
 	public override void _Input(InputEvent @event)
@@ -63,5 +61,11 @@ public partial class PauseMenu : CanvasLayer
 		
 		if (_captureOnClose)
 			Mouse.SetCaptured();
+	}
+
+	private static void CloseWithoutUnpausing()
+	{
+		_instance._animations.Play("RESET");
+		_opened = false;
 	}
 }

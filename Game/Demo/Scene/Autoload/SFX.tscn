@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://yh7p4wbpondj" path="res://Demo/Audio/SFX/velcro/velcro_03.wav" id="10_58ob0"]
 
 [node name="SFX" type="Node"]
+process_mode = 3
 script = ExtResource("1_nyur7")
 
 [node name="Effect" type="Node" parent="."]
