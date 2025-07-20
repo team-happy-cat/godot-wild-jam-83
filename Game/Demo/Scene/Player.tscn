@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cc1m2a1obsyn4"]
+[gd_scene load_steps=36 format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" uid="uid://hdsvtpxi0o2d" path="res://Demo/Script/CharacterHub.cs" id="1_p8ic4"]
 [ext_resource type="Script" uid="uid://coaqcn4leqqcd" path="res://Demo/Script/CharacterController.cs" id="2_m3i4r"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cv6lmtmyabh3g" path="res://addons/StandardAssets/Script/Dialogue/CameraAngles.cs" id="4_oabsn"]
 [ext_resource type="PackedScene" uid="uid://voiq5jjerjsw" path="res://Demo/Scene/Compass.tscn" id="6_cljnr"]
 [ext_resource type="Texture2D" uid="uid://bf457c8stsvon" path="res://Demo/UI/Images/hud_frog_full_mask.png" id="6_ep717"]
+[ext_resource type="Texture2D" uid="uid://ckdgt6kasiu3s" path="res://Demo/UI/Images/hud_frog_slim.png" id="6_mn2kr"]
 [ext_resource type="Texture2D" uid="uid://corpfd6cpmya7" path="res://Demo/UI/Images/Stomach/hud_frog_chicken.png" id="8_5j7mb"]
 [ext_resource type="Script" uid="uid://7a645geywot" path="res://Demo/Script/EatAndLungeAbility.cs" id="8_lc2fc"]
 [ext_resource type="Texture2D" uid="uid://ctd1q7pv6jive" path="res://Demo/UI/Images/hud_frog_full.png" id="8_oabsn"]
@@ -152,6 +153,8 @@ grow_vertical = 0
 texture = ExtResource("8_oabsn")
 expand_mode = 1
 script = ExtResource("10_lc2fc")
+EmptyTexture = ExtResource("6_mn2kr")
+FullTexture = ExtResource("8_oabsn")
 ChickenTexture = NodePath("Chicken")
 MosquitoTexture = NodePath("Fly")
 

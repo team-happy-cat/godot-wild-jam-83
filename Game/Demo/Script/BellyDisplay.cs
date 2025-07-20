@@ -9,17 +9,22 @@ public enum FoodType
 
 public partial class BellyDisplay : TextureRect
 {
+	[Export] public Texture2D EmptyTexture;
+	[Export] public Texture2D FullTexture;
+	
 	[Export] public TextureRect ChickenTexture;
 	[Export] public TextureRect MosquitoTexture;
 
 	public override void _Ready()
 	{
-		ChickenTexture.Visible = false;
-		MosquitoTexture.Visible = false;
+		Empty();
+		// ChickenTexture.Visible = false;
+		// MosquitoTexture.Visible = false;
 	}
 
 	public void Full(FoodType foodType)
 	{
+		Texture = FullTexture;
 		ChickenTexture.Visible = false;
 		MosquitoTexture.Visible = false;
 
@@ -41,6 +46,7 @@ public partial class BellyDisplay : TextureRect
 
 	public void Empty()
 	{
+		Texture = EmptyTexture;
 		ChickenTexture.Visible = false;
 		MosquitoTexture.Visible = false;
 		GD.Print("[BellyDisplay] Set to empty");
