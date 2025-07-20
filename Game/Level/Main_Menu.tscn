@@ -408,6 +408,7 @@ soundHover = "Hover"
 metadata/_custom_type_script = "uid://cr05f2g78pvlt"
 
 [node name="DebugLevelSelector" type="HBoxContainer" parent="Main_Menu"]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0

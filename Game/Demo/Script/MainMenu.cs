@@ -28,9 +28,11 @@ public partial class MainMenu : Control
 		StartButton.Pressed += StartGame;
 		
 		// Debug - to be removed for release
+		/*
 		LevelButton1.Pressed += OnLevelButton1Pressed;
 		LevelButton2.Pressed += OnLevelButton2Pressed;
 		LevelButton3.Pressed += OnLevelButton3Pressed;
+		*/
 		
 		levelManager = GetNode<LevelManager>("/root/LevelManager");
 	}
