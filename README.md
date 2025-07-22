@@ -3,8 +3,6 @@
 ## Useful links
 | Target | Link |
 | --- | --- |
-| Discord | https://discord.gg/tc9SJMvf |
-| Trello | https://trello.com/b/eHowNWet/untitled-game-jam |
 | Itch team page | https://team-happy-cat.itch.io/ |
 | Jam website | https://godotwildjam.com/ |
 | Itch jam page | https://itch.io/jam/godot-wild-jam-83 |
@@ -29,9 +27,6 @@
 | --- | --- |
 | Jam start | July 11 2025 |
 | Jam end | July 20 2025 |
-
-## Suggestions
-- Reduce animations by using a first-person view
 
 ## Tools
 | Usage | Tool |
