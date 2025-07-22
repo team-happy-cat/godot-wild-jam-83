@@ -39,8 +39,4 @@
 | Game engine | Godot |
 | 3D Modeling | Blender |
 | Texturing | Substance 3D Painter |
-
-## Resource Credits
-| Asset | Author | Source |
-| --- | --- | --- |
-|  |  |  |
+| Painting | Krita |
